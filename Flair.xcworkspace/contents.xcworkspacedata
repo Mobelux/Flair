@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Flair/../FlairParser/FlairParser.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "container:Flair/Flair.xcodeproj">
+   </FileRef>
+</Workspace>
