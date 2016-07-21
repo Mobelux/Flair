@@ -10,6 +10,9 @@
 		6B2D459E1D41074900679A0C /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2D459D1D41074900679A0C /* ColorTests.swift */; };
 		6B2D45A01D41079B00679A0C /* ColorSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2D459F1D41079B00679A0C /* ColorSetTests.swift */; };
 		6B2D45A21D41080700679A0C /* PlatformColor+ComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2D45A11D41080700679A0C /* PlatformColor+ComponentsTests.swift */; };
+		6B2D45A41D4108BD00679A0C /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2D45A31D4108BD00679A0C /* UIImage+Color.swift */; };
+		6B2D45A91D410E9800679A0C /* UIImage+ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2D45A81D410E9800679A0C /* UIImage+ColorTests.swift */; };
+		6B83836A1D41420C0055A125 /* CGFloat+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8383691D41420C0055A125 /* CGFloat+Round.swift */; };
 		6B971B4A1D400B7700532C38 /* Flair.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B971B401D400B7700532C38 /* Flair.framework */; };
 		6B971B511D400B7700532C38 /* Flair.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B971B431D400B7700532C38 /* Flair.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6B971B5B1D400C0700532C38 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B971B5A1D400C0700532C38 /* Color.swift */; };
@@ -31,6 +34,9 @@
 		6B2D459D1D41074900679A0C /* ColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTests.swift; sourceTree = "<group>"; };
 		6B2D459F1D41079B00679A0C /* ColorSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSetTests.swift; sourceTree = "<group>"; };
 		6B2D45A11D41080700679A0C /* PlatformColor+ComponentsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlatformColor+ComponentsTests.swift"; sourceTree = "<group>"; };
+		6B2D45A31D4108BD00679A0C /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
+		6B2D45A81D410E9800679A0C /* UIImage+ColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ColorTests.swift"; sourceTree = "<group>"; };
+		6B8383691D41420C0055A125 /* CGFloat+Round.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Round.swift"; sourceTree = "<group>"; };
 		6B971B401D400B7700532C38 /* Flair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Flair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B971B431D400B7700532C38 /* Flair.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Flair.h; sourceTree = "<group>"; };
 		6B971B441D400B7700532C38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,8 +72,23 @@
 				6B2D459D1D41074900679A0C /* ColorTests.swift */,
 				6B2D459F1D41079B00679A0C /* ColorSetTests.swift */,
 				6B2D45A11D41080700679A0C /* PlatformColor+ComponentsTests.swift */,
+				6B2D45A81D410E9800679A0C /* UIImage+ColorTests.swift */,
 			);
 			path = "Test Cases";
+			sourceTree = "<group>";
+		};
+		6B2D45A51D410E7300679A0C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6B2D45AA1D41404200679A0C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		6B971AFE1D40087C00532C38 = {
@@ -102,6 +123,8 @@
 		6B971B4D1D400B7700532C38 /* FlairTests */ = {
 			isa = PBXGroup;
 			children = (
+				6B2D45AA1D41404200679A0C /* Helpers */,
+				6B2D45A51D410E7300679A0C /* Data */,
 				6B2D459C1D4106FE00679A0C /* Test Cases */,
 				6B971B501D400B7700532C38 /* Info.plist */,
 			);
@@ -111,7 +134,9 @@
 		6B971B581D400BC200532C38 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6B8383691D41420C0055A125 /* CGFloat+Round.swift */,
 				6B971B5C1D400CBE00532C38 /* PlatformColor+Components.swift */,
+				6B2D45A31D4108BD00679A0C /* UIImage+Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -242,6 +267,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B971B5D1D400CBE00532C38 /* PlatformColor+Components.swift in Sources */,
+				6B2D45A41D4108BD00679A0C /* UIImage+Color.swift in Sources */,
+				6B83836A1D41420C0055A125 /* CGFloat+Round.swift in Sources */,
 				6B971B5F1D400DB400532C38 /* ColorSet.swift in Sources */,
 				6B971B5B1D400C0700532C38 /* Color.swift in Sources */,
 			);
@@ -252,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B2D45A01D41079B00679A0C /* ColorSetTests.swift in Sources */,
+				6B2D45A91D410E9800679A0C /* UIImage+ColorTests.swift in Sources */,
 				6B2D45A21D41080700679A0C /* PlatformColor+ComponentsTests.swift in Sources */,
 				6B2D459E1D41074900679A0C /* ColorTests.swift in Sources */,
 			);

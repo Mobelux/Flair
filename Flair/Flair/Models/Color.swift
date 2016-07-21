@@ -75,6 +75,26 @@ public func ==(lhs: Color, rhs: Color) -> Bool {
     return lhs.red == rhs.red && lhs.green == rhs.green && lhs.blue == rhs.blue && lhs.alpha == rhs.alpha
 }
 
+/**
+    Are two Colors approximately the same. Compares 2 Colors with around 255 steps of accuracy for each channel.
+*/
+public func ~=(lhs: Color, rhs: Color) -> Bool {
+    // If colors have been converted from UInt8 then we only have 1/255 = 0.0039 for the precision, so realistically we need to compare at most 2 decimals to be approximately equal
+    let numberOfDecimals = 2
+    
+    let lhsRed = lhs.red.roundTo(numberOfDecimalPlaces: numberOfDecimals)
+    let lhsGreen = lhs.green.roundTo(numberOfDecimalPlaces: numberOfDecimals)
+    let lhsBlue = lhs.blue.roundTo(numberOfDecimalPlaces: numberOfDecimals)
+    let lhsAlpha = lhs.alpha.roundTo(numberOfDecimalPlaces: numberOfDecimals)
+    
+    let rhsRed = rhs.red.roundTo(numberOfDecimalPlaces: numberOfDecimals)
+    let rhsGreen = rhs.green.roundTo(numberOfDecimalPlaces: numberOfDecimals)
+    let rhsBlue = rhs.blue.roundTo(numberOfDecimalPlaces: numberOfDecimals)
+    let rhsAlpha = rhs.alpha.roundTo(numberOfDecimalPlaces: numberOfDecimals)
+    
+    return lhsRed == rhsRed && lhsGreen == rhsGreen && lhsBlue == rhsBlue && lhsAlpha == rhsAlpha
+}
+
 public func ==(pixel: Color, color: PlatformColor) -> Bool {
     guard let rhsColor = Color(color: color) else { return false }
     return pixel == rhsColor

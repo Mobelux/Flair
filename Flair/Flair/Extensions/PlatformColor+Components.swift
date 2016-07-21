@@ -19,7 +19,7 @@ public extension PlatformColor {
     /**
      Get the red, green, blue, and alpha components of this color
      
-     - returns: The RGBA components in UIColor/NSColor space (0 to 1.0), or nil if the current color isn't a simple color that can be converted to RGBA components (colors from a pattern image are a good example of colors that will return nil).
+     - returns: The Color components in UIColor/NSColor space (0 to 1.0), or nil if the current color isn't a simple color that can be converted to Color components (colors from a pattern image are a good example of colors that will return nil).
      */
     public func getColor() -> Color? {
         var red: CGFloat = 0
