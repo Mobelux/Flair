@@ -8,11 +8,16 @@
 
 #import <Foundation/Foundation.h>
 @import FlairParserFramework;
+#import "ArgumentParser.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        NSMutableArray<NSString *> *arguments = [[NSMutableArray alloc] initWithCapacity:argc];
+        for (int argumentIndex = 0; argumentIndex < argc; argumentIndex += 1) {
+            NSString *argument = [NSString stringWithUTF8String:argv[argumentIndex]];
+            [arguments addObject:argument];
+        }
+        
+        return [ArgumentParser parseArguments:arguments];
     }
-    return 0;
 }

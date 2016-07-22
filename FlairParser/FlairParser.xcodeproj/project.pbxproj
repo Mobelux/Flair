@@ -10,6 +10,7 @@
 		6B62B43E1D42A5CA00211697 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62B43D1D42A5CA00211697 /* main.m */; };
 		6B62B4631D42A6FA00211697 /* FlairParserFramework.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 6B971B241D400AC900532C38 /* FlairParserFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6B62B4651D42A72400211697 /* FlairParser in Copy Files (1 item) */ = {isa = PBXBuildFile; fileRef = 6B62B43B1D42A5CA00211697 /* FlairParser */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6B62B4701D42ACFC00211697 /* ArgumentParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62B46F1D42ACFC00211697 /* ArgumentParser.m */; };
 		6B971B2D1D400AC900532C38 /* FlairParserFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B971B241D400AC900532C38 /* FlairParserFramework.framework */; };
 		6B971B321D400AC900532C38 /* FlairParserFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B971B311D400AC900532C38 /* FlairParserFrameworkTests.swift */; };
 		6B971B341D400AC900532C38 /* FlairParserFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B971B261D400AC900532C38 /* FlairParserFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -72,6 +73,8 @@
 		6B62B43D1D42A5CA00211697 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6B62B45A1D42A69000211697 /* FlairParser.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlairParser.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B62B45C1D42A69000211697 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B62B46E1D42ACFC00211697 /* ArgumentParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArgumentParser.h; sourceTree = "<group>"; };
+		6B62B46F1D42ACFC00211697 /* ArgumentParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArgumentParser.m; sourceTree = "<group>"; };
 		6B971B241D400AC900532C38 /* FlairParserFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlairParserFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B971B261D400AC900532C38 /* FlairParserFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlairParserFramework.h; sourceTree = "<group>"; };
 		6B971B271D400AC900532C38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				6B62B43D1D42A5CA00211697 /* main.m */,
+				6B62B46E1D42ACFC00211697 /* ArgumentParser.h */,
+				6B62B46F1D42ACFC00211697 /* ArgumentParser.m */,
 			);
 			path = FlairParser;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B62B43E1D42A5CA00211697 /* main.m in Sources */,
+				6B62B4701D42ACFC00211697 /* ArgumentParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
