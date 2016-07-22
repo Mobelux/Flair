@@ -36,6 +36,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6B62B4361D42A0A500211697 /* JSONSpec.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JSONSpec.json; sourceTree = "<group>"; };
 		6B971B0E1D400A4800532C38 /* FlairParser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FlairParser; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B971B111D400A4800532C38 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		6B971B241D400AC900532C38 /* FlairParserFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlairParserFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +76,7 @@
 		6B971B051D400A4800532C38 = {
 			isa = PBXGroup;
 			children = (
+				6B62B4361D42A0A500211697 /* JSONSpec.json */,
 				6B971B101D400A4800532C38 /* FlairParser */,
 				6B971B251D400AC900532C38 /* FlairParserFramework */,
 				6B971B301D400AC900532C38 /* FlairParserFrameworkTests */,
@@ -488,6 +490,7 @@
 				6B971B361D400AC900532C38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6B971B3A1D400AC900532C38 /* Build configuration list for PBXNativeTarget "FlairParserFrameworkTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +499,7 @@
 				6B971B381D400AC900532C38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
