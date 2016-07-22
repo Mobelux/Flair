@@ -11,7 +11,7 @@ import Foundation
 /**
  *  A combination of font, kerning, linespacing, and text color. The most common things needed to style text in one nice package.
  */
-public struct Style {
+public struct Style: Equatable {
     /// The `Font` to use for this style
     public let font: Font
     /// Any kerning that should be applied. A value of 0 disables kerning
@@ -20,6 +20,10 @@ public struct Style {
     public let lineSpacing: CGFloat
     /// The `ColorSet` to use for the text color
     public let textColor: ColorSet?
+    /// The style only has `font` & maybe `textColor`. No `kerning` or `lineSpacing`
+    public var isBasicStyle: Bool {
+        return kerning == 0 && lineSpacing == 0
+    }
     
     /**
      Primary initializer to use when creating a Style
@@ -84,4 +88,8 @@ public struct Style {
         
         return attributes
     }
+}
+
+public func ==(lhs: Style, rhs: Style) -> Bool {
+    return lhs.font == rhs.font && lhs.textColor == rhs.textColor && lhs.kerning == rhs.kerning && lhs.lineSpacing == rhs.lineSpacing
 }
