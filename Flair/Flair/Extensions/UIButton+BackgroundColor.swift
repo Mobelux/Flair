@@ -63,27 +63,22 @@ import Foundation
         private func key(for state: UIControlState) -> UnsafePointer<Void>? {
 
             if state == .normal {
-                return getVoidPointer(string: AssociationKeys.normal)
+                return AssociationKeys.normal.getVoidPointer()
             } else if state == .highlighted {
-                return getVoidPointer(string: AssociationKeys.highlighted)
+                return AssociationKeys.highlighted.getVoidPointer()
             } else if state == .selected {
-                return getVoidPointer(string: AssociationKeys.selected)
+                return AssociationKeys.selected.getVoidPointer()
             } else if state == .disabled {
-                return getVoidPointer(string: AssociationKeys.disabled)
+                return AssociationKeys.disabled.getVoidPointer()
             } else if state == .application {
-                return getVoidPointer(string: AssociationKeys.application)
+                return AssociationKeys.application.getVoidPointer()
             } else if state == .reserved {
-                return getVoidPointer(string: AssociationKeys.reserved)
+                return AssociationKeys.reserved.getVoidPointer()
             } else if state == .focused {
-                return getVoidPointer(string: AssociationKeys.focused)
+                return AssociationKeys.focused.getVoidPointer()
             } else {
                 return nil
             }
-        }
-        
-        private func getVoidPointer(string: NSString) -> UnsafePointer<Void> {
-            let unmanaged = Unmanaged.passUnretained(string)
-            return UnsafePointer(unmanaged.toOpaque())
         }
     }
 #endif
