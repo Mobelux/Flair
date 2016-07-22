@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:FlairTestApp/FlairTestApp.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:FlairPlayground.playground">
+   </FileRef>
+   <FileRef
       location = "group:Flair/../FlairParser/FlairParser.xcodeproj">
    </FileRef>
    <FileRef
