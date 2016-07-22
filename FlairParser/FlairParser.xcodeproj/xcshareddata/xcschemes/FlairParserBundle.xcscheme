@@ -14,10 +14,24 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6B971B3F1D400B7700532C38"
-               BuildableName = "Flair.framework"
-               BlueprintName = "Flair"
-               ReferencedContainer = "container:Flair.xcodeproj">
+               BlueprintIdentifier = "6B62B4591D42A69000211697"
+               BuildableName = "FlairParserBundle.bundle"
+               BlueprintName = "FlairParserBundle"
+               ReferencedContainer = "container:FlairParser.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6B62B43A1D42A5CA00211697"
+               BuildableName = "FlairParser"
+               BlueprintName = "FlairParser"
+               ReferencedContainer = "container:FlairParser.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,24 +43,14 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6B971B481D400B7700532C38"
-               BuildableName = "FlairTests.xctest"
-               BlueprintName = "FlairTests"
-               ReferencedContainer = "container:Flair.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6B971B3F1D400B7700532C38"
-            BuildableName = "Flair.framework"
-            BlueprintName = "Flair"
-            ReferencedContainer = "container:Flair.xcodeproj">
+            BlueprintIdentifier = "6B62B43A1D42A5CA00211697"
+            BuildableName = "FlairParser"
+            BlueprintName = "FlairParser"
+            ReferencedContainer = "container:FlairParser.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -62,15 +66,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6B971B3F1D400B7700532C38"
-            BuildableName = "Flair.framework"
-            BlueprintName = "Flair"
-            ReferencedContainer = "container:Flair.xcodeproj">
+            BlueprintIdentifier = "6B62B43A1D42A5CA00211697"
+            BuildableName = "FlairParser"
+            BlueprintName = "FlairParser"
+            ReferencedContainer = "container:FlairParser.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -83,10 +88,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6B971B3F1D400B7700532C38"
-            BuildableName = "Flair.framework"
-            BlueprintName = "Flair"
-            ReferencedContainer = "container:Flair.xcodeproj">
+            BlueprintIdentifier = "6B62B4591D42A69000211697"
+            BuildableName = "FlairParserBundle.bundle"
+            BlueprintName = "FlairParserBundle"
+            ReferencedContainer = "container:FlairParser.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

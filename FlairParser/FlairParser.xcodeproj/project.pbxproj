@@ -7,13 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B971B121D400A4800532C38 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B971B111D400A4800532C38 /* main.swift */; };
+		6B62B43E1D42A5CA00211697 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62B43D1D42A5CA00211697 /* main.m */; };
+		6B62B4631D42A6FA00211697 /* FlairParserFramework.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 6B971B241D400AC900532C38 /* FlairParserFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6B62B4651D42A72400211697 /* FlairParser in Copy Files (1 item) */ = {isa = PBXBuildFile; fileRef = 6B62B43B1D42A5CA00211697 /* FlairParser */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		6B971B2D1D400AC900532C38 /* FlairParserFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B971B241D400AC900532C38 /* FlairParserFramework.framework */; };
 		6B971B321D400AC900532C38 /* FlairParserFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B971B311D400AC900532C38 /* FlairParserFrameworkTests.swift */; };
 		6B971B341D400AC900532C38 /* FlairParserFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B971B261D400AC900532C38 /* FlairParserFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6B62B4601D42A6DC00211697 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6B971B061D400A4800532C38 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B62B43A1D42A5CA00211697;
+			remoteInfo = FlairParser;
+		};
 		6B971B2E1D400AC900532C38 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6B971B061D400A4800532C38 /* Project object */;
@@ -24,7 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		6B971B0C1D400A4800532C38 /* CopyFiles */ = {
+		6B62B4391D42A5CA00211697 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -33,12 +42,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		6B62B4621D42A6EC00211697 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6B62B4631D42A6FA00211697 /* FlairParserFramework.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B62B4641D42A71700211697 /* Copy Files (1 item) */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				6B62B4651D42A72400211697 /* FlairParser in Copy Files (1 item) */,
+			);
+			name = "Copy Files (1 item)";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6B62B4361D42A0A500211697 /* JSONSpec.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JSONSpec.json; sourceTree = "<group>"; };
-		6B971B0E1D400A4800532C38 /* FlairParser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FlairParser; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B971B111D400A4800532C38 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		6B62B43B1D42A5CA00211697 /* FlairParser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FlairParser; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B62B43D1D42A5CA00211697 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6B62B45A1D42A69000211697 /* FlairParser.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlairParser.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B62B45C1D42A69000211697 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B971B241D400AC900532C38 /* FlairParserFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlairParserFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B971B261D400AC900532C38 /* FlairParserFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlairParserFramework.h; sourceTree = "<group>"; };
 		6B971B271D400AC900532C38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,7 +81,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6B971B0B1D400A4800532C38 /* Frameworks */ = {
+		6B62B4381D42A5CA00211697 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B62B4571D42A69000211697 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -73,13 +113,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B62B43C1D42A5CA00211697 /* FlairParser */ = {
+			isa = PBXGroup;
+			children = (
+				6B62B43D1D42A5CA00211697 /* main.m */,
+			);
+			path = FlairParser;
+			sourceTree = "<group>";
+		};
+		6B62B45B1D42A69000211697 /* FlairParserBundle */ = {
+			isa = PBXGroup;
+			children = (
+				6B62B45C1D42A69000211697 /* Info.plist */,
+			);
+			path = FlairParserBundle;
+			sourceTree = "<group>";
+		};
 		6B971B051D400A4800532C38 = {
 			isa = PBXGroup;
 			children = (
 				6B62B4361D42A0A500211697 /* JSONSpec.json */,
-				6B971B101D400A4800532C38 /* FlairParser */,
+				6B62B43C1D42A5CA00211697 /* FlairParser */,
 				6B971B251D400AC900532C38 /* FlairParserFramework */,
 				6B971B301D400AC900532C38 /* FlairParserFrameworkTests */,
+				6B62B45B1D42A69000211697 /* FlairParserBundle */,
 				6B971B0F1D400A4800532C38 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,19 +144,12 @@
 		6B971B0F1D400A4800532C38 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6B971B0E1D400A4800532C38 /* FlairParser */,
 				6B971B241D400AC900532C38 /* FlairParserFramework.framework */,
 				6B971B2C1D400AC900532C38 /* FlairParserFrameworkTests.xctest */,
+				6B62B43B1D42A5CA00211697 /* FlairParser */,
+				6B62B45A1D42A69000211697 /* FlairParser.bundle */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		6B971B101D400A4800532C38 /* FlairParser */ = {
-			isa = PBXGroup;
-			children = (
-				6B971B111D400A4800532C38 /* main.swift */,
-			);
-			path = FlairParser;
 			sourceTree = "<group>";
 		};
 		6B971B251D400AC900532C38 /* FlairParserFramework */ = {
@@ -134,13 +184,13 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6B971B0D1D400A4800532C38 /* FlairParser */ = {
+		6B62B43A1D42A5CA00211697 /* FlairParser */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6B971B151D400A4800532C38 /* Build configuration list for PBXNativeTarget "FlairParser" */;
+			buildConfigurationList = 6B62B43F1D42A5CA00211697 /* Build configuration list for PBXNativeTarget "FlairParser" */;
 			buildPhases = (
-				6B971B0A1D400A4800532C38 /* Sources */,
-				6B971B0B1D400A4800532C38 /* Frameworks */,
-				6B971B0C1D400A4800532C38 /* CopyFiles */,
+				6B62B4371D42A5CA00211697 /* Sources */,
+				6B62B4381D42A5CA00211697 /* Frameworks */,
+				6B62B4391D42A5CA00211697 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -148,8 +198,28 @@
 			);
 			name = FlairParser;
 			productName = FlairParser;
-			productReference = 6B971B0E1D400A4800532C38 /* FlairParser */;
+			productReference = 6B62B43B1D42A5CA00211697 /* FlairParser */;
 			productType = "com.apple.product-type.tool";
+		};
+		6B62B4591D42A69000211697 /* FlairParserBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B62B45D1D42A69000211697 /* Build configuration list for PBXNativeTarget "FlairParserBundle" */;
+			buildPhases = (
+				6B62B4561D42A69000211697 /* Sources */,
+				6B62B4571D42A69000211697 /* Frameworks */,
+				6B62B4581D42A69000211697 /* Resources */,
+				6B62B4621D42A6EC00211697 /* Copy Frameworks */,
+				6B62B4641D42A71700211697 /* Copy Files (1 item) */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B62B4611D42A6DC00211697 /* PBXTargetDependency */,
+			);
+			name = FlairParserBundle;
+			productName = FlairParserBundle;
+			productReference = 6B62B45A1D42A69000211697 /* FlairParser.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 		6B971B231D400AC900532C38 /* FlairParserFramework */ = {
 			isa = PBXNativeTarget;
@@ -197,7 +267,13 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Mobelux;
 				TargetAttributes = {
-					6B971B0D1D400A4800532C38 = {
+					6B62B43A1D42A5CA00211697 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = X596PH9BUE;
+						DevelopmentTeamName = "MOBELUX LLC";
+						ProvisioningStyle = Automatic;
+					};
+					6B62B4591D42A69000211697 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = X596PH9BUE;
 						DevelopmentTeamName = "MOBELUX LLC";
@@ -229,14 +305,22 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6B971B0D1D400A4800532C38 /* FlairParser */,
+				6B62B43A1D42A5CA00211697 /* FlairParser */,
 				6B971B231D400AC900532C38 /* FlairParserFramework */,
 				6B971B2B1D400AC900532C38 /* FlairParserFrameworkTests */,
+				6B62B4591D42A69000211697 /* FlairParserBundle */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6B62B4581D42A69000211697 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6B971B221D400AC900532C38 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -254,11 +338,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6B971B0A1D400A4800532C38 /* Sources */ = {
+		6B62B4371D42A5CA00211697 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B971B121D400A4800532C38 /* main.swift in Sources */,
+				6B62B43E1D42A5CA00211697 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B62B4561D42A69000211697 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +371,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6B62B4611D42A6DC00211697 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6B62B43A1D42A5CA00211697 /* FlairParser */;
+			targetProxy = 6B62B4601D42A6DC00211697 /* PBXContainerItemProxy */;
+		};
 		6B971B2F1D400AC900532C38 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6B971B231D400AC900532C38 /* FlairParserFramework */;
@@ -288,6 +384,50 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		6B62B4401D42A5CA00211697 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/$(PRODUCT_NAME).bundle/Contents/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6B62B4411D42A5CA00211697 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6B62B45E1D42A69000211697 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FlairParserBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobelux.FlairParserBundle;
+				PRODUCT_NAME = FlairParser;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		6B62B45F1D42A69000211697 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FlairParserBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobelux.FlairParserBundle;
+				PRODUCT_NAME = FlairParser;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		6B971B131D400A4800532C38 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -372,22 +512,6 @@
 			};
 			name = Release;
 		};
-		6B971B161D400A4800532C38 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		6B971B171D400A4800532C38 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
 		6B971B351D400AC900532C38 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -465,20 +589,27 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6B62B43F1D42A5CA00211697 /* Build configuration list for PBXNativeTarget "FlairParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B62B4401D42A5CA00211697 /* Debug */,
+				6B62B4411D42A5CA00211697 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6B62B45D1D42A69000211697 /* Build configuration list for PBXNativeTarget "FlairParserBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B62B45E1D42A69000211697 /* Debug */,
+				6B62B45F1D42A69000211697 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		6B971B091D400A4800532C38 /* Build configuration list for PBXProject "FlairParser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6B971B131D400A4800532C38 /* Debug */,
 				6B971B141D400A4800532C38 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6B971B151D400A4800532C38 /* Build configuration list for PBXNativeTarget "FlairParser" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6B971B161D400A4800532C38 /* Debug */,
-				6B971B171D400A4800532C38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
