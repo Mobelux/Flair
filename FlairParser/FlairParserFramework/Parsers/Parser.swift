@@ -53,7 +53,7 @@ public struct Parser {
         
     }
     
-    typealias JSON = [NSObject : AnyObject];
+    public typealias JSON = [NSObject : AnyObject];
     private let json: JSON
     
     public init(json: URL) throws {
@@ -71,6 +71,10 @@ public struct Parser {
         } catch {
             throw Error.cantOpenJSONFile
         }
+    }
+    
+    public init(json: JSON) {
+        self.json = json
     }
     
     public func parse() throws -> (colors: [NamedColorSet], styles: [NamedStyle]) {

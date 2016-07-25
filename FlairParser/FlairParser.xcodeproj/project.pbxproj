@@ -24,6 +24,7 @@
 		6B6E38371D465A7B0087123A /* Color+InitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E38361D465A7B0087123A /* Color+InitTests.swift */; };
 		6B971B2D1D400AC900532C38 /* FlairParserFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B971B241D400AC900532C38 /* FlairParserFramework.framework */; };
 		6B971B341D400AC900532C38 /* FlairParserFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B971B261D400AC900532C38 /* FlairParserFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6BE5133D1D46672A002ACE48 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5133C1D46672A002ACE48 /* ParserTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		6B971B271D400AC900532C38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B971B2C1D400AC900532C38 /* FlairParserFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlairParserFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B971B331D400AC900532C38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BE5133C1D46672A002ACE48 /* ParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 			children = (
 				6B6E38361D465A7B0087123A /* Color+InitTests.swift */,
 				6B1E4DBE1D465E1700D9E42C /* ColorSet+InitTests.swift */,
+				6BE5133C1D46672A002ACE48 /* ParserTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 			files = (
 				6B1E4DBF1D465E1700D9E42C /* ColorSet+InitTests.swift in Sources */,
 				6B6E38371D465A7B0087123A /* Color+InitTests.swift in Sources */,
+				6BE5133D1D46672A002ACE48 /* ParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
