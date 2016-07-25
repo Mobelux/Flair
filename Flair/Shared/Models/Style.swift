@@ -6,7 +6,13 @@
 //  Copyright © 2016 Mobelux. All rights reserved.
 //
 
-import Foundation
+#if os(iOS) || os(tvOS)
+    import UIKit
+#elseif os(watchOS)
+    import WatchKit
+#elseif os(OSX)
+    import AppKit
+#endif
 
 /**
  *  A combination of font, kerning, linespacing, and text color. The most common things needed to style text in one nice package.

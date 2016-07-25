@@ -7,31 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B2D459E1D41074900679A0C /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2D459D1D41074900679A0C /* ColorTests.swift */; };
-		6B2D45A01D41079B00679A0C /* ColorSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2D459F1D41079B00679A0C /* ColorSetTests.swift */; };
-		6B2D45A21D41080700679A0C /* PlatformColor+ComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2D45A11D41080700679A0C /* PlatformColor+ComponentsTests.swift */; };
+		6B122F491D464486002E77AC /* Flair.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B122F401D464486002E77AC /* Flair.framework */; };
+		6B122F501D464486002E77AC /* FlairMac.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B122F421D464486002E77AC /* FlairMac.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6B122F621D464543002E77AC /* CGFloat+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F591D464543002E77AC /* CGFloat+Round.swift */; };
+		6B122F631D464543002E77AC /* CGFloat+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F591D464543002E77AC /* CGFloat+Round.swift */; };
+		6B122F641D464543002E77AC /* NSString+Pointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F5A1D464543002E77AC /* NSString+Pointer.swift */; };
+		6B122F651D464543002E77AC /* NSString+Pointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F5A1D464543002E77AC /* NSString+Pointer.swift */; };
+		6B122F661D464543002E77AC /* PlatformColor+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F5B1D464543002E77AC /* PlatformColor+Components.swift */; };
+		6B122F671D464543002E77AC /* PlatformColor+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F5B1D464543002E77AC /* PlatformColor+Components.swift */; };
+		6B122F681D464543002E77AC /* String+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F5C1D464543002E77AC /* String+Style.swift */; };
+		6B122F691D464543002E77AC /* String+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F5C1D464543002E77AC /* String+Style.swift */; };
+		6B122F6A1D464543002E77AC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F5E1D464543002E77AC /* Color.swift */; };
+		6B122F6B1D464543002E77AC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F5E1D464543002E77AC /* Color.swift */; };
+		6B122F6C1D464543002E77AC /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F5F1D464543002E77AC /* ColorSet.swift */; };
+		6B122F6D1D464543002E77AC /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F5F1D464543002E77AC /* ColorSet.swift */; };
+		6B122F6E1D464543002E77AC /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F601D464543002E77AC /* Font.swift */; };
+		6B122F6F1D464543002E77AC /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F601D464543002E77AC /* Font.swift */; };
+		6B122F701D464543002E77AC /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F611D464543002E77AC /* Style.swift */; };
+		6B122F711D464543002E77AC /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F611D464543002E77AC /* Style.swift */; };
 		6B2D45A41D4108BD00679A0C /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2D45A31D4108BD00679A0C /* UIImage+Color.swift */; };
 		6B2D45A91D410E9800679A0C /* UIImage+ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2D45A81D410E9800679A0C /* UIImage+ColorTests.swift */; };
 		6B62B4021D42903000211697 /* UILabel+StyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B62B4011D42903000211697 /* UILabel+StyleTests.swift */; };
-		6B83836A1D41420C0055A125 /* CGFloat+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8383691D41420C0055A125 /* CGFloat+Round.swift */; };
-		6B83836C1D41596F0055A125 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B83836B1D41596F0055A125 /* Font.swift */; };
-		6B83836E1D415D2A0055A125 /* FontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B83836D1D415D2A0055A125 /* FontTests.swift */; };
-		6B8383701D416C400055A125 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B83836F1D416C400055A125 /* Style.swift */; };
-		6B8383721D416CF80055A125 /* StyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8383711D416CF80055A125 /* StyleTests.swift */; };
-		6B8383741D416D8A0055A125 /* String+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8383731D416D8A0055A125 /* String+Style.swift */; };
-		6B8383761D416DE80055A125 /* String+StyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8383751D416DE80055A125 /* String+StyleTests.swift */; };
+		6B6E380A1D46478C0087123A /* ColorSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F731D4645BF002E77AC /* ColorSetTests.swift */; };
+		6B6E380B1D46478D0087123A /* ColorSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F731D4645BF002E77AC /* ColorSetTests.swift */; };
+		6B6E380C1D4647900087123A /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F741D4645BF002E77AC /* ColorTests.swift */; };
+		6B6E380D1D4647900087123A /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F741D4645BF002E77AC /* ColorTests.swift */; };
+		6B6E380E1D4647940087123A /* FontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F751D4645BF002E77AC /* FontTests.swift */; };
+		6B6E380F1D4647950087123A /* FontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F751D4645BF002E77AC /* FontTests.swift */; };
+		6B6E38101D4647970087123A /* PlatformColor+ComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F761D4645BF002E77AC /* PlatformColor+ComponentsTests.swift */; };
+		6B6E38111D4647980087123A /* PlatformColor+ComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F761D4645BF002E77AC /* PlatformColor+ComponentsTests.swift */; };
+		6B6E38121D46479C0087123A /* String+StyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F771D4645BF002E77AC /* String+StyleTests.swift */; };
+		6B6E38131D46479D0087123A /* String+StyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F771D4645BF002E77AC /* String+StyleTests.swift */; };
+		6B6E38141D4647A10087123A /* StyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F781D4645BF002E77AC /* StyleTests.swift */; };
+		6B6E38151D4647A20087123A /* StyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F781D4645BF002E77AC /* StyleTests.swift */; };
 		6B8383781D416EFC0055A125 /* UIButton+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8383771D416EFC0055A125 /* UIButton+BackgroundColor.swift */; };
 		6B83837A1D41712D0055A125 /* UIButton+BackgroundColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8383791D41712D0055A125 /* UIButton+BackgroundColorTests.swift */; };
 		6B83837C1D4173030055A125 /* UILabel+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B83837B1D4173030055A125 /* UILabel+Style.swift */; };
 		6B971B4A1D400B7700532C38 /* Flair.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B971B401D400B7700532C38 /* Flair.framework */; };
 		6B971B511D400B7700532C38 /* Flair.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B971B431D400B7700532C38 /* Flair.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6B971B5B1D400C0700532C38 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B971B5A1D400C0700532C38 /* Color.swift */; };
-		6B971B5D1D400CBE00532C38 /* PlatformColor+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B971B5C1D400CBE00532C38 /* PlatformColor+Components.swift */; };
-		6B971B5F1D400DB400532C38 /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B971B5E1D400DB400532C38 /* ColorSet.swift */; };
-		6BDD5E2C1D4246480086D94F /* NSString+Pointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDD5E2B1D4246480086D94F /* NSString+Pointer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6B122F4A1D464486002E77AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6B971AFF1D40087C00532C38 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B122F3F1D464486002E77AC;
+			remoteInfo = FlairMac;
+		};
 		6B971B4B1D400B7700532C38 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6B971AFF1D40087C00532C38 /* Project object */;
@@ -42,19 +65,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6B2D459D1D41074900679A0C /* ColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTests.swift; sourceTree = "<group>"; };
-		6B2D459F1D41079B00679A0C /* ColorSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSetTests.swift; sourceTree = "<group>"; };
-		6B2D45A11D41080700679A0C /* PlatformColor+ComponentsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlatformColor+ComponentsTests.swift"; sourceTree = "<group>"; };
+		6B122F401D464486002E77AC /* Flair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Flair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B122F421D464486002E77AC /* FlairMac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlairMac.h; sourceTree = "<group>"; };
+		6B122F431D464486002E77AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B122F481D464486002E77AC /* FlairMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlairMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B122F4F1D464486002E77AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B122F591D464543002E77AC /* CGFloat+Round.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Round.swift"; sourceTree = "<group>"; };
+		6B122F5A1D464543002E77AC /* NSString+Pointer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+Pointer.swift"; sourceTree = "<group>"; };
+		6B122F5B1D464543002E77AC /* PlatformColor+Components.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlatformColor+Components.swift"; sourceTree = "<group>"; };
+		6B122F5C1D464543002E77AC /* String+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Style.swift"; sourceTree = "<group>"; };
+		6B122F5E1D464543002E77AC /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		6B122F5F1D464543002E77AC /* ColorSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSet.swift; sourceTree = "<group>"; };
+		6B122F601D464543002E77AC /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		6B122F611D464543002E77AC /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		6B122F731D4645BF002E77AC /* ColorSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSetTests.swift; sourceTree = "<group>"; };
+		6B122F741D4645BF002E77AC /* ColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTests.swift; sourceTree = "<group>"; };
+		6B122F751D4645BF002E77AC /* FontTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontTests.swift; sourceTree = "<group>"; };
+		6B122F761D4645BF002E77AC /* PlatformColor+ComponentsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlatformColor+ComponentsTests.swift"; sourceTree = "<group>"; };
+		6B122F771D4645BF002E77AC /* String+StyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+StyleTests.swift"; sourceTree = "<group>"; };
+		6B122F781D4645BF002E77AC /* StyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleTests.swift; sourceTree = "<group>"; };
 		6B2D45A31D4108BD00679A0C /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		6B2D45A81D410E9800679A0C /* UIImage+ColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ColorTests.swift"; sourceTree = "<group>"; };
 		6B62B4011D42903000211697 /* UILabel+StyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+StyleTests.swift"; sourceTree = "<group>"; };
-		6B8383691D41420C0055A125 /* CGFloat+Round.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Round.swift"; sourceTree = "<group>"; };
-		6B83836B1D41596F0055A125 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
-		6B83836D1D415D2A0055A125 /* FontTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontTests.swift; sourceTree = "<group>"; };
-		6B83836F1D416C400055A125 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
-		6B8383711D416CF80055A125 /* StyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleTests.swift; sourceTree = "<group>"; };
-		6B8383731D416D8A0055A125 /* String+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Style.swift"; sourceTree = "<group>"; };
-		6B8383751D416DE80055A125 /* String+StyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+StyleTests.swift"; sourceTree = "<group>"; };
 		6B8383771D416EFC0055A125 /* UIButton+BackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+BackgroundColor.swift"; sourceTree = "<group>"; };
 		6B8383791D41712D0055A125 /* UIButton+BackgroundColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+BackgroundColorTests.swift"; sourceTree = "<group>"; };
 		6B83837B1D4173030055A125 /* UILabel+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Style.swift"; sourceTree = "<group>"; };
@@ -63,13 +95,24 @@
 		6B971B441D400B7700532C38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B971B491D400B7700532C38 /* FlairTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlairTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B971B501D400B7700532C38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6B971B5A1D400C0700532C38 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		6B971B5C1D400CBE00532C38 /* PlatformColor+Components.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlatformColor+Components.swift"; sourceTree = "<group>"; };
-		6B971B5E1D400DB400532C38 /* ColorSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSet.swift; sourceTree = "<group>"; };
-		6BDD5E2B1D4246480086D94F /* NSString+Pointer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+Pointer.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6B122F3C1D464486002E77AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B122F451D464486002E77AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B122F491D464486002E77AC /* Flair.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6B971B3C1D400B7700532C38 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -88,16 +131,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B122F411D464486002E77AC /* FlairMac */ = {
+			isa = PBXGroup;
+			children = (
+				6B122F421D464486002E77AC /* FlairMac.h */,
+				6B122F431D464486002E77AC /* Info.plist */,
+			);
+			path = FlairMac;
+			sourceTree = "<group>";
+		};
+		6B122F4C1D464486002E77AC /* FlairMacTests */ = {
+			isa = PBXGroup;
+			children = (
+				6B122F4F1D464486002E77AC /* Info.plist */,
+			);
+			path = FlairMacTests;
+			sourceTree = "<group>";
+		};
+		6B122F571D464543002E77AC /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				6B122F581D464543002E77AC /* Extensions */,
+				6B122F5D1D464543002E77AC /* Models */,
+				6B122F721D4645BF002E77AC /* Tests */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		6B122F581D464543002E77AC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6B122F591D464543002E77AC /* CGFloat+Round.swift */,
+				6B122F5A1D464543002E77AC /* NSString+Pointer.swift */,
+				6B122F5B1D464543002E77AC /* PlatformColor+Components.swift */,
+				6B122F5C1D464543002E77AC /* String+Style.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6B122F5D1D464543002E77AC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6B122F5E1D464543002E77AC /* Color.swift */,
+				6B122F5F1D464543002E77AC /* ColorSet.swift */,
+				6B122F601D464543002E77AC /* Font.swift */,
+				6B122F611D464543002E77AC /* Style.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6B122F721D4645BF002E77AC /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				6B122F731D4645BF002E77AC /* ColorSetTests.swift */,
+				6B122F741D4645BF002E77AC /* ColorTests.swift */,
+				6B122F751D4645BF002E77AC /* FontTests.swift */,
+				6B122F761D4645BF002E77AC /* PlatformColor+ComponentsTests.swift */,
+				6B122F771D4645BF002E77AC /* String+StyleTests.swift */,
+				6B122F781D4645BF002E77AC /* StyleTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		6B2D459C1D4106FE00679A0C /* Test Cases */ = {
 			isa = PBXGroup;
 			children = (
-				6B2D459D1D41074900679A0C /* ColorTests.swift */,
-				6B2D459F1D41079B00679A0C /* ColorSetTests.swift */,
-				6B2D45A11D41080700679A0C /* PlatformColor+ComponentsTests.swift */,
 				6B2D45A81D410E9800679A0C /* UIImage+ColorTests.swift */,
-				6B83836D1D415D2A0055A125 /* FontTests.swift */,
-				6B8383711D416CF80055A125 /* StyleTests.swift */,
-				6B8383751D416DE80055A125 /* String+StyleTests.swift */,
 				6B8383791D41712D0055A125 /* UIButton+BackgroundColorTests.swift */,
 				6B62B4011D42903000211697 /* UILabel+StyleTests.swift */,
 			);
@@ -121,8 +220,11 @@
 		6B971AFE1D40087C00532C38 = {
 			isa = PBXGroup;
 			children = (
+				6B122F571D464543002E77AC /* Shared */,
 				6B971B421D400B7700532C38 /* Flair */,
 				6B971B4D1D400B7700532C38 /* FlairTests */,
+				6B122F411D464486002E77AC /* FlairMac */,
+				6B122F4C1D464486002E77AC /* FlairMacTests */,
 				6B971B411D400B7700532C38 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -132,6 +234,8 @@
 			children = (
 				6B971B401D400B7700532C38 /* Flair.framework */,
 				6B971B491D400B7700532C38 /* FlairTests.xctest */,
+				6B122F401D464486002E77AC /* Flair.framework */,
+				6B122F481D464486002E77AC /* FlairMacTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,13 +265,9 @@
 		6B971B581D400BC200532C38 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				6B8383691D41420C0055A125 /* CGFloat+Round.swift */,
-				6B971B5C1D400CBE00532C38 /* PlatformColor+Components.swift */,
 				6B2D45A31D4108BD00679A0C /* UIImage+Color.swift */,
-				6B8383731D416D8A0055A125 /* String+Style.swift */,
 				6B8383771D416EFC0055A125 /* UIButton+BackgroundColor.swift */,
 				6B83837B1D4173030055A125 /* UILabel+Style.swift */,
-				6BDD5E2B1D4246480086D94F /* NSString+Pointer.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -175,10 +275,6 @@
 		6B971B591D400BC200532C38 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6B971B5A1D400C0700532C38 /* Color.swift */,
-				6B971B5E1D400DB400532C38 /* ColorSet.swift */,
-				6B83836B1D41596F0055A125 /* Font.swift */,
-				6B83836F1D416C400055A125 /* Style.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -186,6 +282,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		6B122F3D1D464486002E77AC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B122F501D464486002E77AC /* FlairMac.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6B971B3D1D400B7700532C38 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -197,6 +301,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		6B122F3F1D464486002E77AC /* FlairMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B122F551D464486002E77AC /* Build configuration list for PBXNativeTarget "FlairMac" */;
+			buildPhases = (
+				6B122F3B1D464486002E77AC /* Sources */,
+				6B122F3C1D464486002E77AC /* Frameworks */,
+				6B122F3D1D464486002E77AC /* Headers */,
+				6B122F3E1D464486002E77AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlairMac;
+			productName = FlairMac;
+			productReference = 6B122F401D464486002E77AC /* Flair.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6B122F471D464486002E77AC /* FlairMacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B122F561D464486002E77AC /* Build configuration list for PBXNativeTarget "FlairMacTests" */;
+			buildPhases = (
+				6B122F441D464486002E77AC /* Sources */,
+				6B122F451D464486002E77AC /* Frameworks */,
+				6B122F461D464486002E77AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B122F4B1D464486002E77AC /* PBXTargetDependency */,
+			);
+			name = FlairMacTests;
+			productName = FlairMacTests;
+			productReference = 6B122F481D464486002E77AC /* FlairMacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		6B971B3F1D400B7700532C38 /* Flair */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B971B521D400B7700532C38 /* Build configuration list for PBXNativeTarget "Flair" */;
@@ -243,6 +383,18 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Mobelux;
 				TargetAttributes = {
+					6B122F3F1D464486002E77AC = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = X596PH9BUE;
+						DevelopmentTeamName = "MOBELUX LLC";
+						ProvisioningStyle = Automatic;
+					};
+					6B122F471D464486002E77AC = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = X596PH9BUE;
+						DevelopmentTeamName = "MOBELUX LLC";
+						ProvisioningStyle = Automatic;
+					};
 					6B971B3F1D400B7700532C38 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = X596PH9BUE;
@@ -273,11 +425,27 @@
 			targets = (
 				6B971B3F1D400B7700532C38 /* Flair */,
 				6B971B481D400B7700532C38 /* FlairTests */,
+				6B122F3F1D464486002E77AC /* FlairMac */,
+				6B122F471D464486002E77AC /* FlairMacTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6B122F3E1D464486002E77AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B122F461D464486002E77AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6B971B3E1D400B7700532C38 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -295,21 +463,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6B122F3B1D464486002E77AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B122F691D464543002E77AC /* String+Style.swift in Sources */,
+				6B122F631D464543002E77AC /* CGFloat+Round.swift in Sources */,
+				6B122F6F1D464543002E77AC /* Font.swift in Sources */,
+				6B122F651D464543002E77AC /* NSString+Pointer.swift in Sources */,
+				6B122F6B1D464543002E77AC /* Color.swift in Sources */,
+				6B122F6D1D464543002E77AC /* ColorSet.swift in Sources */,
+				6B122F671D464543002E77AC /* PlatformColor+Components.swift in Sources */,
+				6B122F711D464543002E77AC /* Style.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B122F441D464486002E77AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B6E38121D46479C0087123A /* String+StyleTests.swift in Sources */,
+				6B6E380F1D4647950087123A /* FontTests.swift in Sources */,
+				6B6E380A1D46478C0087123A /* ColorSetTests.swift in Sources */,
+				6B6E38141D4647A10087123A /* StyleTests.swift in Sources */,
+				6B6E38101D4647970087123A /* PlatformColor+ComponentsTests.swift in Sources */,
+				6B6E380C1D4647900087123A /* ColorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6B971B3B1D400B7700532C38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B8383741D416D8A0055A125 /* String+Style.swift in Sources */,
-				6B971B5D1D400CBE00532C38 /* PlatformColor+Components.swift in Sources */,
 				6B8383781D416EFC0055A125 /* UIButton+BackgroundColor.swift in Sources */,
+				6B122F641D464543002E77AC /* NSString+Pointer.swift in Sources */,
+				6B122F6E1D464543002E77AC /* Font.swift in Sources */,
+				6B122F661D464543002E77AC /* PlatformColor+Components.swift in Sources */,
+				6B122F681D464543002E77AC /* String+Style.swift in Sources */,
+				6B122F6C1D464543002E77AC /* ColorSet.swift in Sources */,
+				6B122F621D464543002E77AC /* CGFloat+Round.swift in Sources */,
+				6B122F6A1D464543002E77AC /* Color.swift in Sources */,
 				6B2D45A41D4108BD00679A0C /* UIImage+Color.swift in Sources */,
-				6B83836C1D41596F0055A125 /* Font.swift in Sources */,
-				6BDD5E2C1D4246480086D94F /* NSString+Pointer.swift in Sources */,
-				6B83836A1D41420C0055A125 /* CGFloat+Round.swift in Sources */,
 				6B83837C1D4173030055A125 /* UILabel+Style.swift in Sources */,
-				6B971B5F1D400DB400532C38 /* ColorSet.swift in Sources */,
-				6B8383701D416C400055A125 /* Style.swift in Sources */,
-				6B971B5B1D400C0700532C38 /* Color.swift in Sources */,
+				6B122F701D464543002E77AC /* Style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,21 +513,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B2D45A01D41079B00679A0C /* ColorSetTests.swift in Sources */,
+				6B6E38131D46479D0087123A /* String+StyleTests.swift in Sources */,
+				6B6E380B1D46478D0087123A /* ColorSetTests.swift in Sources */,
+				6B6E38151D4647A20087123A /* StyleTests.swift in Sources */,
 				6B2D45A91D410E9800679A0C /* UIImage+ColorTests.swift in Sources */,
+				6B6E380D1D4647900087123A /* ColorTests.swift in Sources */,
 				6B62B4021D42903000211697 /* UILabel+StyleTests.swift in Sources */,
-				6B2D45A21D41080700679A0C /* PlatformColor+ComponentsTests.swift in Sources */,
-				6B2D459E1D41074900679A0C /* ColorTests.swift in Sources */,
-				6B83836E1D415D2A0055A125 /* FontTests.swift in Sources */,
+				6B6E380E1D4647940087123A /* FontTests.swift in Sources */,
+				6B6E38111D4647980087123A /* PlatformColor+ComponentsTests.swift in Sources */,
 				6B83837A1D41712D0055A125 /* UIButton+BackgroundColorTests.swift in Sources */,
-				6B8383721D416CF80055A125 /* StyleTests.swift in Sources */,
-				6B8383761D416DE80055A125 /* String+StyleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6B122F4B1D464486002E77AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6B122F3F1D464486002E77AC /* FlairMac */;
+			targetProxy = 6B122F4A1D464486002E77AC /* PBXContainerItemProxy */;
+		};
 		6B971B4C1D400B7700532C38 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6B971B3F1D400B7700532C38 /* Flair */;
@@ -340,6 +541,222 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		6B122F511D464486002E77AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = FlairMac/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobelux.Flair;
+				PRODUCT_NAME = Flair;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6B122F521D464486002E77AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = FlairMac/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobelux.Flair;
+				PRODUCT_NAME = Flair;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6B122F531D464486002E77AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = FlairMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobelux.FlairMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6B122F541D464486002E77AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = FlairMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobelux.FlairMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		6B971B031D40087C00532C38 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -571,6 +988,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6B122F551D464486002E77AC /* Build configuration list for PBXNativeTarget "FlairMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B122F511D464486002E77AC /* Debug */,
+				6B122F521D464486002E77AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B122F561D464486002E77AC /* Build configuration list for PBXNativeTarget "FlairMacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B122F531D464486002E77AC /* Debug */,
+				6B122F541D464486002E77AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6B971B021D40087C00532C38 /* Build configuration list for PBXProject "Flair" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
