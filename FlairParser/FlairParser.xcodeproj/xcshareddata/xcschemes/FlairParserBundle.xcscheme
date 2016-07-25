@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6B62B4591D42A69000211697"
-               BuildableName = "FlairParserBundle.bundle"
+               BuildableName = "FlairParser.bundle"
                BlueprintName = "FlairParserBundle"
                ReferencedContainer = "container:FlairParser.xcodeproj">
             </BuildableReference>
@@ -89,7 +89,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6B62B4591D42A69000211697"
-            BuildableName = "FlairParserBundle.bundle"
+            BuildableName = "FlairParser.bundle"
             BlueprintName = "FlairParserBundle"
             ReferencedContainer = "container:FlairParser.xcodeproj">
          </BuildableReference>

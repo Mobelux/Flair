@@ -7,6 +7,7 @@
 //
 
 #import "ArgumentParser.h"
+@import FlairParserFramework;
 
 @implementation ArgumentParser
 
@@ -19,11 +20,20 @@
             return 0;
         } else {
             NSURL *outputDirectoryURL = [self outputDirectoryFor:arguments];
-            NSLog(@"%@", outputDirectoryURL);
             NSURL *jsonURL = [self jsonURLFor:arguments];
-            NSLog(@"%@", jsonURL);
             
-            return 0;
+            if (outputDirectoryURL != nil && jsonURL != nil) {
+                NSError *error = [LegacyParser parseWithJson:jsonURL outputDirectory:outputDirectoryURL];
+                if (error == nil) {
+                    return 0;
+                } else {
+                    NSLog(@"%@", error);
+                    return (int)error.code;
+                }
+            } else {
+                [self displayHelp];
+                return 1;
+            }
         }
     }
     
