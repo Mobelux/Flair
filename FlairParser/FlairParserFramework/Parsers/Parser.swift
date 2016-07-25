@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Flair
 
 public struct Parser {
 
@@ -14,6 +15,11 @@ public struct Parser {
         case unknown = 10
         case cantOpenJSONFile = 11
         case unreadableJSONSyntax = 12
+        case noColorsOrStyles = 13
+        case missingColorDict = 14
+        case missingStyleDict = 15
+        case invalidColorValue = 16
+        case missingStandardColor = 17
         
         static let domain = "com.mobelux.flair.parser"
         
@@ -26,10 +32,25 @@ public struct Parser {
                     return "Unknown error"
                 case .unreadableJSONSyntax:
                     return "The JSON file has a syntax error that prevents parsing"
+                case .noColorsOrStyles:
+                    return "The JSON does not contain any colors or styles"
+                case .missingColorDict:
+                    return "The JSON is missing the color dictionary"
+                case .missingStyleDict:
+                    return "The JSON is missing the style dictionary"
+                case .invalidColorValue:
+                    return "The color value is not in the format: rgba(0.0, 1.1, 0.25, 1.0)"
+                case .missingStandardColor:
+                    return "A ColorSet is missing it's required standard color"
                 }
             }()
             return NSError(domain: Error.domain, code: rawValue, userInfo: [NSLocalizedDescriptionKey : message])
         }
+    }
+    
+    private enum Constants {
+        static let stylesKey = "styles"
+        
     }
     
     typealias JSON = [NSObject : AnyObject];
@@ -50,5 +71,14 @@ public struct Parser {
         } catch {
             throw Error.cantOpenJSONFile
         }
+    }
+    
+    public func parse() throws -> (colors: [NamedColorSet], styles: [NamedStyle]) {
+        let colors = try ColorParser.parse(json: json)
+        let styles = try StyleParser.parse(json: json, namedColors: colors)
+        
+        guard colors.count > 0 || styles.count > 0 else { throw Error.noColorsOrStyles }
+        return (colors: colors, styles: styles)
+        
     }
 }

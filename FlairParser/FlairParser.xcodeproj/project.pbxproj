@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B1E4DBD1D465CEC00D9E42C /* Flair.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1E4DBC1D465CEC00D9E42C /* Flair.framework */; };
+		6B1E4DBF1D465E1700D9E42C /* ColorSet+InitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1E4DBE1D465E1700D9E42C /* ColorSet+InitTests.swift */; };
 		6B62B43E1D42A5CA00211697 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62B43D1D42A5CA00211697 /* main.m */; };
 		6B62B4631D42A6FA00211697 /* FlairParserFramework.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 6B971B241D400AC900532C38 /* FlairParserFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6B62B4651D42A72400211697 /* FlairParser in Copy Files (1 item) */ = {isa = PBXBuildFile; fileRef = 6B62B43B1D42A5CA00211697 /* FlairParser */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		6B62B4701D42ACFC00211697 /* ArgumentParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62B46F1D42ACFC00211697 /* ArgumentParser.m */; };
-		6B62B4721D42B95000211697 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B62B4711D42B95000211697 /* Parser.swift */; };
-		6B62B4781D42BDE100211697 /* LegacyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B62B4771D42BDE100211697 /* LegacyParser.swift */; };
+		6B6E382A1D4659E90087123A /* Color+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E38211D4659E90087123A /* Color+Init.swift */; };
+		6B6E382B1D4659E90087123A /* NamedColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E38231D4659E90087123A /* NamedColorSet.swift */; };
+		6B6E382C1D4659E90087123A /* NamedStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E38241D4659E90087123A /* NamedStyle.swift */; };
+		6B6E382D1D4659E90087123A /* ColorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E38261D4659E90087123A /* ColorParser.swift */; };
+		6B6E382E1D4659E90087123A /* LegacyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E38271D4659E90087123A /* LegacyParser.swift */; };
+		6B6E382F1D4659E90087123A /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E38281D4659E90087123A /* Parser.swift */; };
+		6B6E38301D4659E90087123A /* StyleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E38291D4659E90087123A /* StyleParser.swift */; };
+		6B6E38321D465A260087123A /* ColorSet+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E38311D465A260087123A /* ColorSet+Init.swift */; };
+		6B6E38371D465A7B0087123A /* Color+InitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E38361D465A7B0087123A /* Color+InitTests.swift */; };
 		6B971B2D1D400AC900532C38 /* FlairParserFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B971B241D400AC900532C38 /* FlairParserFramework.framework */; };
-		6B971B321D400AC900532C38 /* FlairParserFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B971B311D400AC900532C38 /* FlairParserFrameworkTests.swift */; };
 		6B971B341D400AC900532C38 /* FlairParserFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B971B261D400AC900532C38 /* FlairParserFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -84,6 +92,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6B1E4DBC1D465CEC00D9E42C /* Flair.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Flair.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Flair-gxbvgzeenocftvaxbnrbeoamgqao/Build/Products/Debug/Flair.framework"; sourceTree = "<group>"; };
+		6B1E4DBE1D465E1700D9E42C /* ColorSet+InitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ColorSet+InitTests.swift"; sourceTree = "<group>"; };
 		6B62B4361D42A0A500211697 /* JSONSpec.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JSONSpec.json; sourceTree = "<group>"; };
 		6B62B43B1D42A5CA00211697 /* FlairParser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FlairParser; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B62B43D1D42A5CA00211697 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -91,14 +101,20 @@
 		6B62B45C1D42A69000211697 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B62B46E1D42ACFC00211697 /* ArgumentParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArgumentParser.h; sourceTree = "<group>"; };
 		6B62B46F1D42ACFC00211697 /* ArgumentParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArgumentParser.m; sourceTree = "<group>"; };
-		6B62B4711D42B95000211697 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
-		6B62B4771D42BDE100211697 /* LegacyParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegacyParser.swift; sourceTree = "<group>"; };
 		6B62B47A1D42C15200211697 /* Flair.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Flair.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Flair-gxbvgzeenocftvaxbnrbeoamgqao/Build/Products/Debug-iphoneos/Flair.framework"; sourceTree = "<group>"; };
+		6B6E38211D4659E90087123A /* Color+Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Init.swift"; sourceTree = "<group>"; };
+		6B6E38231D4659E90087123A /* NamedColorSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamedColorSet.swift; sourceTree = "<group>"; };
+		6B6E38241D4659E90087123A /* NamedStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamedStyle.swift; sourceTree = "<group>"; };
+		6B6E38261D4659E90087123A /* ColorParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorParser.swift; sourceTree = "<group>"; };
+		6B6E38271D4659E90087123A /* LegacyParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegacyParser.swift; sourceTree = "<group>"; };
+		6B6E38281D4659E90087123A /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		6B6E38291D4659E90087123A /* StyleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleParser.swift; sourceTree = "<group>"; };
+		6B6E38311D465A260087123A /* ColorSet+Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ColorSet+Init.swift"; sourceTree = "<group>"; };
+		6B6E38361D465A7B0087123A /* Color+InitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+InitTests.swift"; sourceTree = "<group>"; };
 		6B971B241D400AC900532C38 /* FlairParserFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlairParserFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B971B261D400AC900532C38 /* FlairParserFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlairParserFramework.h; sourceTree = "<group>"; };
 		6B971B271D400AC900532C38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B971B2C1D400AC900532C38 /* FlairParserFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlairParserFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B971B311D400AC900532C38 /* FlairParserFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlairParserFrameworkTests.swift; sourceTree = "<group>"; };
 		6B971B331D400AC900532C38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B1E4DBD1D465CEC00D9E42C /* Flair.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,9 +173,62 @@
 		6B62B4791D42C15200211697 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B1E4DBC1D465CEC00D9E42C /* Flair.framework */,
 				6B62B47A1D42C15200211697 /* Flair.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6B6E38201D4659E90087123A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6B6E38211D4659E90087123A /* Color+Init.swift */,
+				6B6E38311D465A260087123A /* ColorSet+Init.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6B6E38221D4659E90087123A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6B6E38231D4659E90087123A /* NamedColorSet.swift */,
+				6B6E38241D4659E90087123A /* NamedStyle.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6B6E38251D4659E90087123A /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				6B6E38261D4659E90087123A /* ColorParser.swift */,
+				6B6E38271D4659E90087123A /* LegacyParser.swift */,
+				6B6E38281D4659E90087123A /* Parser.swift */,
+				6B6E38291D4659E90087123A /* StyleParser.swift */,
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
+		6B6E38331D465A620087123A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6B6E38341D465A620087123A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		6B6E38351D465A620087123A /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				6B6E38361D465A7B0087123A /* Color+InitTests.swift */,
+				6B1E4DBE1D465E1700D9E42C /* ColorSet+InitTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		6B971B051D400A4800532C38 = {
@@ -188,10 +258,11 @@
 		6B971B251D400AC900532C38 /* FlairParserFramework */ = {
 			isa = PBXGroup;
 			children = (
+				6B6E38201D4659E90087123A /* Extensions */,
+				6B6E38221D4659E90087123A /* Models */,
+				6B6E38251D4659E90087123A /* Parsers */,
 				6B971B261D400AC900532C38 /* FlairParserFramework.h */,
 				6B971B271D400AC900532C38 /* Info.plist */,
-				6B62B4711D42B95000211697 /* Parser.swift */,
-				6B62B4771D42BDE100211697 /* LegacyParser.swift */,
 			);
 			path = FlairParserFramework;
 			sourceTree = "<group>";
@@ -199,7 +270,9 @@
 		6B971B301D400AC900532C38 /* FlairParserFrameworkTests */ = {
 			isa = PBXGroup;
 			children = (
-				6B971B311D400AC900532C38 /* FlairParserFrameworkTests.swift */,
+				6B6E38331D465A620087123A /* Data */,
+				6B6E38341D465A620087123A /* Helpers */,
+				6B6E38351D465A620087123A /* Tests */,
 				6B971B331D400AC900532C38 /* Info.plist */,
 			);
 			path = FlairParserFrameworkTests;
@@ -327,6 +400,7 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = X596PH9BUE;
 						DevelopmentTeamName = "MOBELUX LLC";
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -396,8 +470,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B62B4721D42B95000211697 /* Parser.swift in Sources */,
-				6B62B4781D42BDE100211697 /* LegacyParser.swift in Sources */,
+				6B6E38321D465A260087123A /* ColorSet+Init.swift in Sources */,
+				6B6E382E1D4659E90087123A /* LegacyParser.swift in Sources */,
+				6B6E382D1D4659E90087123A /* ColorParser.swift in Sources */,
+				6B6E382F1D4659E90087123A /* Parser.swift in Sources */,
+				6B6E38301D4659E90087123A /* StyleParser.swift in Sources */,
+				6B6E382C1D4659E90087123A /* NamedStyle.swift in Sources */,
+				6B6E382B1D4659E90087123A /* NamedColorSet.swift in Sources */,
+				6B6E382A1D4659E90087123A /* Color+Init.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,7 +485,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B971B321D400AC900532C38 /* FlairParserFrameworkTests.swift in Sources */,
+				6B1E4DBF1D465E1700D9E42C /* ColorSet+InitTests.swift in Sources */,
+				6B6E38371D465A7B0087123A /* Color+InitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +535,6 @@
 		6B62B45E1D42A69000211697 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FlairParserBundle/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
@@ -468,7 +548,6 @@
 		6B62B45F1D42A69000211697 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FlairParserBundle/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
@@ -617,12 +696,14 @@
 		6B971B371D400AC900532C38 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FlairParserFrameworkTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobelux.FlairParserFrameworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -630,6 +711,7 @@
 		6B971B381D400AC900532C38 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FlairParserFrameworkTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
