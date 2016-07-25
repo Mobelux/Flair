@@ -20,6 +20,8 @@ public struct Parser {
         case missingStyleDict = 15
         case invalidColorValue = 16
         case missingStandardColor = 17
+        case invalidFontValue = 18
+        case missingFontDict = 19
         
         static let domain = "com.mobelux.flair.parser"
         
@@ -42,6 +44,10 @@ public struct Parser {
                     return "The color value is not in the format: rgba(0.0, 1.1, 0.25, 1.0)"
                 case .missingStandardColor:
                     return "A ColorSet is missing it's required standard color"
+                case .invalidFontValue:
+                    return "A Font value is not correct"
+                case .missingFontDict:
+                    return "A Style is missing it's Font key/value"
                 }
             }()
             return NSError(domain: Error.domain, code: rawValue, userInfo: [NSLocalizedDescriptionKey : message])
