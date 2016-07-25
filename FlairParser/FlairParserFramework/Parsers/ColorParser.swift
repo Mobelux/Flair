@@ -22,8 +22,7 @@ enum ColorParser {
         
         for colorKey in colorDict.keys {
             if let colorName = colorKey as? String, let colorValueDict = colorDict[colorName] as? Parser.JSON {
-                let colorSet = try ColorSet(colorValues: colorValueDict)
-                let namedColorSet = NamedColorSet(name: colorName, colorSet: colorSet)
+                let namedColorSet = try NamedColorSet(name: colorName, colorValues: colorValueDict)
                 colors.append(namedColorSet)
             }
         }

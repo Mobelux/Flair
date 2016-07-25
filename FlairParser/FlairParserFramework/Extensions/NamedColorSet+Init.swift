@@ -1,5 +1,5 @@
 //
-//  ColorSet+Init.swift
+//  NamedColorSet+Init.swift
 //  FlairParser
 //
 //  Created by Jerry Mayers on 7/25/16.
@@ -9,7 +9,7 @@
 import Foundation
 import Flair
 
-extension ColorSet {
+extension NamedColorSet {
     private enum Constants {
         static let normalColorKey = "normal"
         static let highlightedColorKey = "highlighted"
@@ -17,7 +17,9 @@ extension ColorSet {
         static let disabledColorKey = "disabled"
     }
     
-    init(colorValues: Parser.JSON) throws {
+    init(name: String, colorValues: Parser.JSON) throws {
+        self.name = name
+        
         guard let normalValue = colorValues[Constants.normalColorKey] as? String else { throw Parser.Error.missingStandardColor }
         normalColor = try Color(string: normalValue)
         

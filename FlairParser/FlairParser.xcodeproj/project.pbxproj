@@ -20,7 +20,7 @@
 		6B6E382E1D4659E90087123A /* LegacyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E38271D4659E90087123A /* LegacyParser.swift */; };
 		6B6E382F1D4659E90087123A /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E38281D4659E90087123A /* Parser.swift */; };
 		6B6E38301D4659E90087123A /* StyleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E38291D4659E90087123A /* StyleParser.swift */; };
-		6B6E38321D465A260087123A /* ColorSet+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E38311D465A260087123A /* ColorSet+Init.swift */; };
+		6B6E38321D465A260087123A /* NamedColorSet+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E38311D465A260087123A /* NamedColorSet+Init.swift */; };
 		6B6E38371D465A7B0087123A /* Color+InitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E38361D465A7B0087123A /* Color+InitTests.swift */; };
 		6B971B2D1D400AC900532C38 /* FlairParserFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B971B241D400AC900532C38 /* FlairParserFramework.framework */; };
 		6B971B341D400AC900532C38 /* FlairParserFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B971B261D400AC900532C38 /* FlairParserFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -110,7 +110,7 @@
 		6B6E38271D4659E90087123A /* LegacyParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegacyParser.swift; sourceTree = "<group>"; };
 		6B6E38281D4659E90087123A /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		6B6E38291D4659E90087123A /* StyleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleParser.swift; sourceTree = "<group>"; };
-		6B6E38311D465A260087123A /* ColorSet+Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ColorSet+Init.swift"; sourceTree = "<group>"; };
+		6B6E38311D465A260087123A /* NamedColorSet+Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NamedColorSet+Init.swift"; sourceTree = "<group>"; };
 		6B6E38361D465A7B0087123A /* Color+InitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+InitTests.swift"; sourceTree = "<group>"; };
 		6B971B241D400AC900532C38 /* FlairParserFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlairParserFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B971B261D400AC900532C38 /* FlairParserFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlairParserFramework.h; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				6B6E38211D4659E90087123A /* Color+Init.swift */,
-				6B6E38311D465A260087123A /* ColorSet+Init.swift */,
+				6B6E38311D465A260087123A /* NamedColorSet+Init.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -473,7 +473,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B6E38321D465A260087123A /* ColorSet+Init.swift in Sources */,
+				6B6E38321D465A260087123A /* NamedColorSet+Init.swift in Sources */,
 				6B6E382E1D4659E90087123A /* LegacyParser.swift in Sources */,
 				6B6E382D1D4659E90087123A /* ColorParser.swift in Sources */,
 				6B6E382F1D4659E90087123A /* Parser.swift in Sources */,
