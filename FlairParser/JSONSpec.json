@@ -1,7 +1,7 @@
 {
     "colors" : { // optional
     	"colorName" : { // color values are in the sRGB color space, but can extend outside the 0-1 range such as 1.1 and reach into the P3 space.
-    		"standard" : "rgba(0.0, 1.1, 0.25, 1.0)", // required
+    		"normal" : "rgba(0.0, 1.1, 0.25, 1.0)", // required
     		"highlighted" : "rgba(0.0, 1.1, 0.25, 1.0)", // optional
     		"selected" : "rgba(0.0, 1.1, 0.25, 1.0)", // optional
     		"disabled" : "rgba(0.0, 1.1, 0.25, 1.0)" // optional
