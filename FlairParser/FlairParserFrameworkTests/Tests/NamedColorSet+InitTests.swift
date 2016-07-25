@@ -1,5 +1,5 @@
 //
-//  ColorSet+InitTests.swift
+//  NamedColorSet+InitTests.swift
 //  FlairParser
 //
 //  Created by Jerry Mayers on 7/25/16.
@@ -10,7 +10,7 @@ import XCTest
 import Flair
 @testable import FlairParserFramework
 
-class ColorSet_InitTests: XCTestCase {
+class NamedColorSet_InitTests: XCTestCase {
 
     func testValidCompleteColorSet() {
         let normal = "rgba(0.0, 1.0, 0.5, 1.0)"
@@ -21,7 +21,7 @@ class ColorSet_InitTests: XCTestCase {
         let colorValues = ["normal" : normal, "highlighted" : highlighted, "selected" : selected, "disabled" : disabled]
         
         do {
-            let colorSet = try ColorSet(colorValues: colorValues)
+            let colorSet = try NamedColorSet(name: "Test", colorValues: colorValues)
             
             XCTAssert(colorSet.normalColor.red == 0, "Red is incorrect")
             XCTAssert(colorSet.normalColor.green == 1, "Green is incorrect")
@@ -56,7 +56,7 @@ class ColorSet_InitTests: XCTestCase {
         let colorValues = ["normal" : normal, "disabled" : disabled]
         
         do {
-            let colorSet = try ColorSet(colorValues: colorValues)
+            let colorSet = try NamedColorSet(name: "Test", colorValues: colorValues)
             
             XCTAssert(colorSet.normalColor.red == 0, "Red is incorrect")
             XCTAssert(colorSet.normalColor.green == 1, "Green is incorrect")
@@ -83,7 +83,7 @@ class ColorSet_InitTests: XCTestCase {
         let colorValues = ["normal" : normal]
         
         do {
-            let colorSet = try ColorSet(colorValues: colorValues)
+            let colorSet = try NamedColorSet(name: "Test", colorValues: colorValues)
             
             XCTAssert(colorSet.normalColor.red == 0, "Red is incorrect")
             XCTAssert(colorSet.normalColor.green == 1, "Green is incorrect")
@@ -104,7 +104,7 @@ class ColorSet_InitTests: XCTestCase {
         let colorValues: Parser.JSON = [:]
         
         do {
-            let _ = try ColorSet(colorValues: colorValues)
+            let _ = try NamedColorSet(name: "Test", colorValues: colorValues)
             XCTAssert(false, "We shouldn't have a valid color set")
         } catch Parser.Error.missingStandardColor {
             // Expected case
@@ -121,7 +121,7 @@ class ColorSet_InitTests: XCTestCase {
         let colorValues = ["normal" : normal]
         
         do {
-            let _ = try ColorSet(colorValues: colorValues)
+            let _ = try NamedColorSet(name: "Test", colorValues: colorValues)
             XCTAssert(false, "We shouldn't have a valid color set")
         } catch Parser.Error.invalidColorValue {
             // Expected Case
