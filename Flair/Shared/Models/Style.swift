@@ -14,22 +14,11 @@
     import AppKit
 #endif
 
-/**
- *  A combination of font, kerning, linespacing, and text color. The most common things needed to style text in one nice package.
- */
-public struct Style: Equatable {
-    /// The `Font` to use for this style
+public struct Style: StyleType {
     public let font: Font
-    /// Any kerning that should be applied. A value of 0 disables kerning
     public let kerning: CGFloat
-    /// Any line spacing that should be applied. A value of 0 disables line spacing. Values must be >= 0.
     public let lineSpacing: CGFloat
-    /// The `ColorSet` to use for the text color
     public let textColor: ColorSet?
-    /// The style only has `font` & maybe `textColor`. No `kerning` or `lineSpacing`
-    public var isBasicStyle: Bool {
-        return kerning == 0 && lineSpacing == 0
-    }
     
     /**
      Primary initializer to use when creating a Style
@@ -60,42 +49,4 @@ public struct Style: Equatable {
     public init(style: Style, textColor: ColorSet?) {
         self.init(font: style.font, kerning: style.kerning, lineSpacing: style.lineSpacing, textColor: textColor)
     }
-    
-    /**
-     Creates a dictionary of text attributes. Commenly used to create an `NSAttributedString` or used in `UIAppearance` methods. If `textColor` is not nil then `textColor.normalColor` will be used for the text. If `backgroundColor` is not nil and `showBackgroundColor` is `true` then `backgroundColor.normalColor` will be used for the background.
-     
-     - parameter alignment:           The text alignment to use. (Defaults to Left)
-     - parameter lineBreakMode:       The line break mode to use. (Defaults to Word Wrapping)
-     
-     - returns: A dictionary of attributes
-     */
-    public func textAttributes(alignment: NSTextAlignment = .left, lineBreakMode: NSLineBreakMode = .byWordWrapping) -> [String : AnyObject] {
-        var attributes = [String : AnyObject]()
-        
-        attributes[NSFontAttributeName] = font.font
-        
-        if let textColor = textColor {
-            attributes[NSForegroundColorAttributeName] = textColor.normalColor.color
-        }
-        
-        if kerning != 0 {
-            attributes[NSKernAttributeName] = kerning
-        }
-        
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineBreakMode = lineBreakMode
-        paragraphStyle.alignment = alignment
-        
-        if lineSpacing != 0 {
-            paragraphStyle.lineSpacing = lineSpacing
-        }
-        
-        attributes[NSParagraphStyleAttributeName] = paragraphStyle
-        
-        return attributes
-    }
-}
-
-public func ==(lhs: Style, rhs: Style) -> Bool {
-    return lhs.font == rhs.font && lhs.textColor == rhs.textColor && lhs.kerning == rhs.kerning && lhs.lineSpacing == rhs.lineSpacing
 }
