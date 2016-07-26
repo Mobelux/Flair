@@ -29,6 +29,8 @@
 		6BE5133F1D4673E2002ACE48 /* Font+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5133E1D4673E2002ACE48 /* Font+init.swift */; };
 		6BE513411D467812002ACE48 /* NamedStyle+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE513401D467812002ACE48 /* NamedStyle+Init.swift */; };
 		6BEF44AF1D478A3A006C4ED2 /* NamedStyle+InitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEF44AE1D478A3A006C4ED2 /* NamedStyle+InitTests.swift */; };
+		6BEF44B11D479D95006C4ED2 /* validColorAndStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BEF44B01D479D95006C4ED2 /* validColorAndStyle.json */; };
+		6BEF44B31D47A0A2006C4ED2 /* syntaxErrorColorAndStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BEF44B21D47A0A2006C4ED2 /* syntaxErrorColorAndStyle.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +128,8 @@
 		6BE5133E1D4673E2002ACE48 /* Font+init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+init.swift"; sourceTree = "<group>"; };
 		6BE513401D467812002ACE48 /* NamedStyle+Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NamedStyle+Init.swift"; sourceTree = "<group>"; };
 		6BEF44AE1D478A3A006C4ED2 /* NamedStyle+InitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NamedStyle+InitTests.swift"; sourceTree = "<group>"; };
+		6BEF44B01D479D95006C4ED2 /* validColorAndStyle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = validColorAndStyle.json; sourceTree = "<group>"; };
+		6BEF44B21D47A0A2006C4ED2 /* syntaxErrorColorAndStyle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = syntaxErrorColorAndStyle.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +227,8 @@
 		6B6E38331D465A620087123A /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				6BEF44B01D479D95006C4ED2 /* validColorAndStyle.json */,
+				6BEF44B21D47A0A2006C4ED2 /* syntaxErrorColorAndStyle.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -459,6 +465,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BEF44B11D479D95006C4ED2 /* validColorAndStyle.json in Resources */,
+				6BEF44B31D47A0A2006C4ED2 /* syntaxErrorColorAndStyle.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

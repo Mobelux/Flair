@@ -1,0 +1,35 @@
+{
+    "colors" : {
+        "brandBlue" : {
+            "normal" : "rgba(0, 0, 0.75, 1)",
+            "highlighted" : "rgba(0, 0, 0.6, 1)",
+            "selected" : "rgba(0, 0, 0.5, 1)",
+            "disabled" : "rgba(0, 0, 0.5, 0.5)"
+        },
+        "coolOrange" : {
+            "normal" : "rgba(0.5, 0.25, 0.75, 1)",
+            "highlighted" : "rgba(0.4, 0.15, 0.6, 1)"
+        }
+    },
+    
+    "styles" : {
+        "title" : {
+            "font" : {
+                "size" : 20,
+                "fontName" : "Arial-Black",
+                "sizeType" : "static"
+            },
+            "textColor" : "brandBlue"
+        },
+        "body" : {
+            "font" : {
+                "size" : 16,
+                "systemFontWeight" : "ultralight",
+                "sizeType" : "dynamic"
+            },
+            "lineSpacing" : 30,
+            "kerning" : 3.25,
+            "textColor" : "coolOrange"
+        }
+    }
+}

@@ -63,19 +63,22 @@ public struct Parser {
     private let json: JSON
     
     public init(json: URL) throws {
-        do {
-            let data = try Data(contentsOf: json)
+        let data: Data = try {
             do {
-                guard let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? JSON else {
-                    throw Error.unreadableJSONSyntax
-                }
-                
-                self.json = jsonDict
+                return try Data(contentsOf: json)
             } catch {
+                throw Error.cantOpenJSONFile
+            }
+        }()
+
+        do {
+            guard let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? JSON else {
                 throw Error.unreadableJSONSyntax
             }
+            
+            self.json = jsonDict
         } catch {
-            throw Error.cantOpenJSONFile
+            throw Error.unreadableJSONSyntax
         }
     }
     

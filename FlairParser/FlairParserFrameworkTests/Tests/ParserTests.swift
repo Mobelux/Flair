@@ -131,4 +131,50 @@ class ParserTests: XCTestCase {
             XCTAssert(false, "Unknown error")
         }
     }
+    
+    func testInitFromURL() {
+        let json = Bundle(for: ParserTests.self).urlForResource("validColorAndStyle", withExtension: "json")!
+        
+        do {
+            let parser = try Parser(json: json)
+            let (colors, styles) = try parser.parse()
+            XCTAssert(colors.count == 2, "Invalid # of colors")
+            XCTAssert(styles.count == 2, "Invalid # of styles")
+            
+        } catch let error as Parser.Error {
+            XCTAssert(false, "Failed with error \(error.legacyError)")
+        } catch {
+            XCTAssert(false, "Unknown error")
+        }
+    }
+    
+    func testInitFromURLSyntaxError() {
+        let json = Bundle(for: ParserTests.self).urlForResource("syntaxErrorColorAndStyle", withExtension: "json")!
+        
+        do {
+            let _ = try Parser(json: json)
+            XCTAssert(false, "We should have thrown an error")
+        } catch Parser.Error.unreadableJSONSyntax {
+            // Expected case
+        } catch let error as Parser.Error {
+            XCTAssert(false, "Failed with error \(error.legacyError)")
+        } catch {
+            XCTAssert(false, "Unknown error")
+        }
+    }
+    
+    func testInitFromInvalidURLError() {
+        let json = URL(fileURLWithPath: "")
+        
+        do {
+            let _ = try Parser(json: json)
+            XCTAssert(false, "We should have thrown an error")
+        } catch Parser.Error.cantOpenJSONFile {
+            // Expected case
+        } catch let error as Parser.Error {
+            XCTAssert(false, "Failed with error \(error.legacyError)")
+        } catch {
+            XCTAssert(false, "Unknown error")
+        }
+    }
 }
