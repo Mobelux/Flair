@@ -100,4 +100,73 @@ class NamedStyle_InitTests: XCTestCase {
             XCTAssert(false, "Unknown error")
         }
     }
+    
+    func testTextColorMissing() {
+        let color = NamedColorSet(name: "other name", normalColor: Color(red: 0, green: 0, blue: 0.75, alpha: 1))
+        
+        let fontSize: CGFloat = 25
+        let fontName = "Arial-Black"
+        let fontValue: Parser.JSON = ["size" : fontSize, "fontName" : fontName, "sizeType" : "static"]
+        
+        let lineSpacing: CGFloat = 34
+        let kerning: CGFloat = 3
+        
+        let styleValues: Parser.JSON = ["font" : fontValue, "lineSpacing" : lineSpacing, "kerning" : kerning]
+        let styleName = "title"
+        
+        do {
+            let style = try NamedStyle(name: styleName, styleValues: styleValues, colors: [color])
+            XCTAssertNil(style.textColor, "TextColor should be nil")
+        } catch let error as Parser.Error {
+            XCTAssert(false, "Failed with error \(error.legacyError)")
+        } catch {
+            XCTAssert(false, "Unknown error")
+        }
+    }
+    
+    func testKerningMissing() {
+        let colorName = "brandBlue"
+        let color = NamedColorSet(name: colorName, normalColor: Color(red: 0, green: 0, blue: 0.75, alpha: 1))
+        
+        let fontSize: CGFloat = 25
+        let fontName = "Arial-Black"
+        let fontValue: Parser.JSON = ["size" : fontSize, "fontName" : fontName, "sizeType" : "static"]
+        
+        let lineSpacing: CGFloat = 34
+        
+        let styleValues: Parser.JSON = ["font" : fontValue, "lineSpacing" : lineSpacing, "textColor" : colorName]
+        let styleName = "title"
+        
+        do {
+            let style = try NamedStyle(name: styleName, styleValues: styleValues, colors: [color])
+            XCTAssert(style.kerning == 0, "Kerning incorrect")
+        } catch let error as Parser.Error {
+            XCTAssert(false, "Failed with error \(error.legacyError)")
+        } catch {
+            XCTAssert(false, "Unknown error")
+        }
+    }
+    
+    func testLineSpacingMissing() {
+        let colorName = "brandBlue"
+        let color = NamedColorSet(name: colorName, normalColor: Color(red: 0, green: 0, blue: 0.75, alpha: 1))
+        
+        let fontSize: CGFloat = 25
+        let fontName = "Arial-Black"
+        let fontValue: Parser.JSON = ["size" : fontSize, "fontName" : fontName, "sizeType" : "static"]
+        
+        let kerning: CGFloat = 4
+        
+        let styleValues: Parser.JSON = ["font" : fontValue, "kerning" : kerning, "textColor" : colorName]
+        let styleName = "title"
+        
+        do {
+            let style = try NamedStyle(name: styleName, styleValues: styleValues, colors: [color])
+            XCTAssert(style.lineSpacing == 0, "Line spacing incorrect")
+        } catch let error as Parser.Error {
+            XCTAssert(false, "Failed with error \(error.legacyError)")
+        } catch {
+            XCTAssert(false, "Unknown error")
+        }
+    }
 }
