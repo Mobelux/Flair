@@ -11,10 +11,6 @@ import Foundation
 enum StyleParser {
     private enum Constants {
         static let stylesKey = "styles"
-        static let fontKey = "font"
-        static let lineSpacingKey = "lineSpacing"
-        static let kerningKey = "kerning"
-        static let textColorNameKey = "textColor"
     }
     
     static func parse(json: Parser.JSON, namedColors: [NamedColorSet]) throws -> [NamedStyle] {

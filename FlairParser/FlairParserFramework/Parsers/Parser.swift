@@ -54,11 +54,6 @@ public struct Parser {
         }
     }
     
-    private enum Constants {
-        static let stylesKey = "styles"
-        
-    }
-    
     public typealias JSON = [NSObject : AnyObject];
     private let json: JSON
     
