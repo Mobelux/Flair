@@ -21,7 +21,7 @@ class ParserTests: XCTestCase {
         let colorValues = ["normal" : normal, "highlighted" : highlighted, "selected" : selected, "disabled" : disabled]
         let colorNames = ["coolColor", "strangeColor"]
         let colors = [colorNames[0] : colorValues, colorNames[1] : colorValues]
-        let json: Parser.JSON = ["colors" : colors, "styles" : [:]]
+        let json: JSON = ["colors" : colors, "styles" : [:]]
         
         let parser = Parser(json: json)
         
@@ -41,7 +41,7 @@ class ParserTests: XCTestCase {
     }
     
     func testNoColorsOrStyles() {
-        let json: Parser.JSON = ["colors" : [:], "styles" : [:]]
+        let json: JSON = ["colors" : [:], "styles" : [:]]
         
         let parser = Parser(json: json)
         
@@ -58,7 +58,7 @@ class ParserTests: XCTestCase {
     }
     
     func testMissingStyles() {
-        let json: Parser.JSON = ["colors" : [:]]
+        let json: JSON = ["colors" : [:]]
         
         let parser = Parser(json: json)
         
@@ -75,7 +75,7 @@ class ParserTests: XCTestCase {
     }
     
     func testMissingColors() {
-        let json: Parser.JSON = ["styles" : [:]]
+        let json: JSON = ["styles" : [:]]
         
         let parser = Parser(json: json)
         
@@ -101,15 +101,15 @@ class ParserTests: XCTestCase {
         let colorNames = ["coolColor", "strangeColor"]
         let colors = [colorNames[0] : colorValues, colorNames[1] : colorValues]
         
-        let titleFontValue: Parser.JSON = ["size" : 25, "fontName" : "Arial-Black", "sizeType" : "static"]
-        let titleStyleValues: Parser.JSON = ["font" : titleFontValue, "lineSpacing" : 34, "kerning" : 3, "textColor" : colorNames[0]]
+        let titleFontValue: JSON = ["size" : 25, "fontName" : "Arial-Black", "sizeType" : "static"]
+        let titleStyleValues: JSON = ["font" : titleFontValue, "lineSpacing" : 34, "kerning" : 3, "textColor" : colorNames[0]]
         
-        let bodyFontValue: Parser.JSON = ["size" : 15, "fontName" : "Arial-Black", "sizeType" : "dynamic"]
-        let bodyStyleValues: Parser.JSON = ["font" : bodyFontValue, "lineSpacing" : 14, "kerning" : 1, "textColor" : colorNames[1]]
+        let bodyFontValue: JSON = ["size" : 15, "fontName" : "Arial-Black", "sizeType" : "dynamic"]
+        let bodyStyleValues: JSON = ["font" : bodyFontValue, "lineSpacing" : 14, "kerning" : 1, "textColor" : colorNames[1]]
         
         let styleNames = ["title", "body"]
-        let namedStyles: Parser.JSON = [styleNames[0] : titleStyleValues, styleNames[1] : bodyStyleValues]
-        let json: Parser.JSON = ["colors" : colors, "styles" : namedStyles]
+        let namedStyles: JSON = [styleNames[0] : titleStyleValues, styleNames[1] : bodyStyleValues]
+        let json: JSON = ["colors" : colors, "styles" : namedStyles]
         
         let parser = Parser(json: json)
         

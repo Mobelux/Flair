@@ -17,10 +17,10 @@ extension NamedStyle {
         static let textColorKey = "textColor"
     }
     
-    init(name: String, styleValues: Parser.JSON, colors: [NamedColorSet]) throws {
+    init(name: String, styleValues: JSON, colors: [NamedColorSet]) throws {
         self.name = name
         
-        guard let fontValue = styleValues[Constants.fontKey] as? Parser.JSON else { throw Parser.Error.missingFontDict }
+        guard let fontValue = styleValues[Constants.fontKey] as? JSON else { throw Parser.Error.missingFontDict }
         font = try Font(fontValues: fontValue)
         
         if let lineSpacing = styleValues[Constants.lineSpacingKey] as? CGFloat {

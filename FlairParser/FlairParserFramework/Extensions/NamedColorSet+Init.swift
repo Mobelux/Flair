@@ -17,7 +17,7 @@ extension NamedColorSet {
         static let disabledColorKey = "disabled"
     }
     
-    init(name: String, colorValues: Parser.JSON) throws {
+    init(name: String, colorValues: JSON) throws {
         self.name = name
         
         guard let normalValue = colorValues[Constants.normalColorKey] as? String else { throw Parser.Error.missingStandardColor }

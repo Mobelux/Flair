@@ -14,14 +14,14 @@ enum ColorParser {
         static let colorsKey = "colors"
     }
     
-    static func parse(json: Parser.JSON) throws -> [NamedColorSet] {
-        guard let colorDict = json[Constants.colorsKey] as? Parser.JSON else { throw Parser.Error.missingColorDict }
+    static func parse(json: JSON) throws -> [NamedColorSet] {
+        guard let colorDict = json[Constants.colorsKey] as? JSON else { throw Parser.Error.missingColorDict }
     
         var colors: [NamedColorSet] = []
         colors.reserveCapacity(colorDict.count)
         
         for colorKey in colorDict.keys {
-            if let colorName = colorKey as? String, let colorValueDict = colorDict[colorName] as? Parser.JSON {
+            if let colorName = colorKey as? String, let colorValueDict = colorDict[colorName] as? JSON {
                 let namedColorSet = try NamedColorSet(name: colorName, colorValues: colorValueDict)
                 colors.append(namedColorSet)
             }

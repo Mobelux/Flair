@@ -54,7 +54,6 @@ public struct Parser {
         }
     }
     
-    public typealias JSON = [NSObject : AnyObject];
     private let json: JSON
     
     public init(json: URL) throws {

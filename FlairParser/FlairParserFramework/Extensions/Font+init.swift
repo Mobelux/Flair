@@ -19,7 +19,7 @@ extension Font {
         static let sizeTypeDynamic = "dynamic"
     }
     
-    init(fontValues: Parser.JSON) throws {
+    init(fontValues: JSON) throws {
         guard let size = fontValues[Constants.fontSizeKey] as? CGFloat, let sizeType = fontValues[Constants.sizeTypeKey] as? String else { throw Parser.Error.invalidFontValue }
         
         if let fontName = fontValues[Constants.fontNameKey] as? String {

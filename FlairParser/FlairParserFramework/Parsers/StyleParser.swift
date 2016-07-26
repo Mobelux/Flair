@@ -13,12 +13,12 @@ enum StyleParser {
         static let stylesKey = "styles"
     }
     
-    static func parse(json: Parser.JSON, namedColors: [NamedColorSet]) throws -> [NamedStyle] {
-        guard let styleDict = json[Constants.stylesKey] as? Parser.JSON else { throw Parser.Error.missingStyleDict }
+    static func parse(json: JSON, namedColors: [NamedColorSet]) throws -> [NamedStyle] {
+        guard let styleDict = json[Constants.stylesKey] as? JSON else { throw Parser.Error.missingStyleDict }
         
         var styles: [NamedStyle] = []
         for styleKey in styleDict.keys {
-            if let styleName = styleKey as? String, let value = styleDict[styleName] as? Parser.JSON {
+            if let styleName = styleKey as? String, let value = styleDict[styleName] as? JSON {
                 let style = try NamedStyle(name: styleName, styleValues: value, colors: namedColors)
                 styles.append(style)
             }

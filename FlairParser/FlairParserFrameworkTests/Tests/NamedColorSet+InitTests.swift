@@ -101,7 +101,7 @@ class NamedColorSet_InitTests: XCTestCase {
     }
     
     func testInvalidNoColorSet() {
-        let colorValues: Parser.JSON = [:]
+        let colorValues: JSON = [:]
         
         do {
             let _ = try NamedColorSet(name: "Test", colorValues: colorValues)
