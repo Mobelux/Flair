@@ -90,4 +90,45 @@ class ParserTests: XCTestCase {
             XCTAssert(false, "Unknown error")
         }
     }
+    
+    func testValidColorsAndStyles() {
+        let normal = "rgba(0.0, 1.0, 0.5, 1.0)"
+        let highlighted = "rgba(1.0, 0.0, 0.0, 0.5)"
+        let selected = "rgba(0.25, 0.5, 0.75, 1.0)"
+        let disabled = "rgba(1.0, 1.0, 1, 1)"
+        
+        let colorValues = ["normal" : normal, "highlighted" : highlighted, "selected" : selected, "disabled" : disabled]
+        let colorNames = ["coolColor", "strangeColor"]
+        let colors = [colorNames[0] : colorValues, colorNames[1] : colorValues]
+        
+        let titleFontValue: Parser.JSON = ["size" : 25, "fontName" : "Arial-Black", "sizeType" : "static"]
+        let titleStyleValues: Parser.JSON = ["font" : titleFontValue, "lineSpacing" : 34, "kerning" : 3, "textColor" : colorNames[0]]
+        
+        let bodyFontValue: Parser.JSON = ["size" : 15, "fontName" : "Arial-Black", "sizeType" : "dynamic"]
+        let bodyStyleValues: Parser.JSON = ["font" : bodyFontValue, "lineSpacing" : 14, "kerning" : 1, "textColor" : colorNames[1]]
+        
+        let styleNames = ["title", "body"]
+        let namedStyles: Parser.JSON = [styleNames[0] : titleStyleValues, styleNames[1] : bodyStyleValues]
+        let json: Parser.JSON = ["colors" : colors, "styles" : namedStyles]
+        
+        let parser = Parser(json: json)
+        
+        do {
+            let (namedColors, styles) = try parser.parse()
+            XCTAssert(namedColors.count == colors.count, "Incorrect # of colors")
+            XCTAssert(styles.count == namedStyles.count, "Incorrect # of styles")
+            
+            for namedColorSet in namedColors {
+                XCTAssert(colorNames.contains(namedColorSet.name), "Expected name doesn't match")
+            }
+            
+            for namedStyle in styles {
+                XCTAssert(styleNames.contains(namedStyle.name), "Expected name doesn't match")
+            }
+        } catch let error as Parser.Error {
+            XCTAssert(false, "Failed with error \(error.legacyError)")
+        } catch {
+            XCTAssert(false, "Unknown error")
+        }
+    }
 }
