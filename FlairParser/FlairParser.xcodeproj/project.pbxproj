@@ -10,6 +10,8 @@
 		6B1E4DBD1D465CEC00D9E42C /* Flair.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1E4DBC1D465CEC00D9E42C /* Flair.framework */; };
 		6B1E4DBF1D465E1700D9E42C /* NamedColorSet+InitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1E4DBE1D465E1700D9E42C /* NamedColorSet+InitTests.swift */; };
 		6B2F206F1D47CCF600E02797 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2F206E1D47CCF600E02797 /* JSON.swift */; };
+		6B2F20781D47F3F500E02797 /* NSString+SHA256.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B2F20761D47F3F500E02797 /* NSString+SHA256.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6B2F20791D47F3F500E02797 /* NSString+SHA256.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2F20771D47F3F500E02797 /* NSString+SHA256.m */; };
 		6B62B43E1D42A5CA00211697 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62B43D1D42A5CA00211697 /* main.m */; };
 		6B62B4631D42A6FA00211697 /* FlairParserFramework.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 6B971B241D400AC900532C38 /* FlairParserFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6B62B4651D42A72400211697 /* FlairParser in Copy Files (1 item) */ = {isa = PBXBuildFile; fileRef = 6B62B43B1D42A5CA00211697 /* FlairParser */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -103,6 +105,8 @@
 		6B1E4DBC1D465CEC00D9E42C /* Flair.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Flair.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Flair-gxbvgzeenocftvaxbnrbeoamgqao/Build/Products/Debug/Flair.framework"; sourceTree = "<group>"; };
 		6B1E4DBE1D465E1700D9E42C /* NamedColorSet+InitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NamedColorSet+InitTests.swift"; sourceTree = "<group>"; };
 		6B2F206E1D47CCF600E02797 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		6B2F20761D47F3F500E02797 /* NSString+SHA256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SHA256.h"; sourceTree = "<group>"; };
+		6B2F20771D47F3F500E02797 /* NSString+SHA256.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SHA256.m"; sourceTree = "<group>"; };
 		6B62B4361D42A0A500211697 /* JSONSpec.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JSONSpec.json; sourceTree = "<group>"; };
 		6B62B43B1D42A5CA00211697 /* FlairParser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FlairParser; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B62B43D1D42A5CA00211697 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 				6B6E38311D465A260087123A /* NamedColorSet+Init.swift */,
 				6BE5133E1D4673E2002ACE48 /* Font+init.swift */,
 				6BE513401D467812002ACE48 /* NamedStyle+Init.swift */,
+				6B2F20761D47F3F500E02797 /* NSString+SHA256.h */,
+				6B2F20771D47F3F500E02797 /* NSString+SHA256.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -310,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B971B341D400AC900532C38 /* FlairParserFramework.h in Headers */,
+				6B2F20781D47F3F500E02797 /* NSString+SHA256.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +510,7 @@
 				6B6E382D1D4659E90087123A /* ColorParser.swift in Sources */,
 				6B6E382F1D4659E90087123A /* Parser.swift in Sources */,
 				6BE513411D467812002ACE48 /* NamedStyle+Init.swift in Sources */,
+				6B2F20791D47F3F500E02797 /* NSString+SHA256.m in Sources */,
 				6B6E38301D4659E90087123A /* StyleParser.swift in Sources */,
 				6B6E382C1D4659E90087123A /* NamedStyle.swift in Sources */,
 				6B6E382B1D4659E90087123A /* NamedColorSet.swift in Sources */,
