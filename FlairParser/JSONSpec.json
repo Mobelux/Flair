@@ -18,7 +18,7 @@
     		},
     		"lineSpacing" : 24, // optional
     		"kerning" : 2.5, // optional
-    		"textColor" : "colorName" // optional
+    		"textColor" : "colorName" // optional, must match a color name from the colors dict above
     	}
     }
 }
