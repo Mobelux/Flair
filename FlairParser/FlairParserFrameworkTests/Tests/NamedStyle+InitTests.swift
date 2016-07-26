@@ -26,6 +26,9 @@ class NamedStyle_InitTests: XCTestCase {
         let styleValues: Parser.JSON = ["font" : fontValue, "lineSpacing" : lineSpacing, "kerning" : kerning, "textColor" : colorName]
         let styleName = "title"
         
+        let expectedFont = Font(fontName: fontName, sizeType: .staticSize(pointSize: fontSize))
+        let expectedStyle = NamedStyle(name: styleName, font: expectedFont, kerning: kerning, lineSpacing: lineSpacing, textColor: color)
+        
         do {
             let style = try NamedStyle(name: styleName, styleValues: styleValues, colors: [color])
             XCTAssert(style.textColor == color, "TextColor is incorrect")
@@ -48,6 +51,7 @@ class NamedStyle_InitTests: XCTestCase {
                 XCTAssert(false, "Should be a normal font")
             }
             
+            XCTAssert(expectedStyle == style, "Expected style doesn't match created style")
         } catch let error as Parser.Error {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
