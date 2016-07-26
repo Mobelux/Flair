@@ -86,6 +86,5 @@ public struct Parser {
         
         guard colors.count > 0 || styles.count > 0 else { throw Error.noColorsOrStyles }
         return (colors: colors, styles: styles)
-        
     }
 }
