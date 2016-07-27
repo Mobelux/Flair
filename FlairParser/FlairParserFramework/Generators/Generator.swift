@@ -9,6 +9,7 @@
 import Foundation
 import Flair
 
+/// Object that handles creating Swift code for ColorSets & Styles, and writing them to disk.
 public enum Generator {
     public enum Error: Int, ErrorProtocol {
         case unknown = 10
@@ -43,6 +44,14 @@ public enum Generator {
         static let hashCommentMessage = "\n// Do not modify this file. The previous line is a hash of the JSON used to generate this file. This file will not be regenerated unless the JSON changes, or this comment is removed."
     }
     
+    /**
+        Generates Swift extensions on `ColorSet` and `Style` to add static accessors for specific colors & styles. The Swift files will only be regenerated if the `jsonHash` is different from the hash that the existing files have (if they exist).`jsonHash`. Throws `Generator.Error` errors.
+
+        - parameter colors:             The colors that we want to create Swift for. If both `colors` and `styles` is 0 then throws `Generator.Error.noColorsOrStyles`
+        - parameter styles:             The styles that we want to creat Swift for. If both `colors` and `styles` is 0 then throws `Generator.Error.noColorsOrStyles`
+        - parameter outputDirectory:    The directory where we should write/overwrite the Swift extensions. The extension's file names will be in the pattern `<ColorSet/Style>+FlairParser.swift`
+        - parameter jsonHash:           The hash of the JSON that was used to generate these `colors` & `styles` so we can be smart about not regenerating the Swift files, if there are no changes since last generation
+    */
     public static func generate(colors: [NamedColorSet], styles: [NamedStyle], outputDirectory: URL, jsonHash: String) throws {
         guard colors.count > 0 || styles.count > 0 else { throw Error.noColorsOrStyles }
         

@@ -9,6 +9,7 @@
 import Foundation
 import Flair
 
+/// Generates the Swift code for `NamedColorSet` as an extension on `ColorSet`
 enum NamedColorSetGenerator {
     private enum Constants {
         static let normal = "normal"
@@ -17,6 +18,14 @@ enum NamedColorSetGenerator {
         static let disabled = "disabled"
     }
     
+    /**
+        Generates the Swift code for `NamedColorSet` as an extension on `ColorSet`
+     
+        - parameter colors:         The colors that we want in the extension. Ordering of this array is ignored, and generated colors will always be sorted by `color.name`
+        - parameter headerComment:  The comment to place at the very beginning of the `String`. This comment should include the JSON hash, but that isn't required
+        
+        - returns: The Swift source for this new extension on `ColorSet`, ready to write to disk
+    */
     static func generate(colors: [NamedColorSet], headerComment: String) -> String {
         var swiftCode = "\(headerComment)\n\nimport Flair\n\nextension ColorSet {\n"
         
