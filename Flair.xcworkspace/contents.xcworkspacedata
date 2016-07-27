@@ -10,7 +10,4 @@
    <FileRef
       location = "group:Flair/../FlairParser/FlairParser.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "container:Flair/Flair.xcodeproj">
-   </FileRef>
 </Workspace>
