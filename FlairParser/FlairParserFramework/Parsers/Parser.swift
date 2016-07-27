@@ -80,11 +80,13 @@ public struct Parser {
         self.json = json
     }
     
-    public func parse() throws -> (colors: [NamedColorSet], styles: [NamedStyle]) {
+    public func parse() throws -> (colors: [NamedColorSet], styles: [NamedStyle], jsonHash: String) {
         let colors = try ColorParser.parse(json: json)
         let styles = try StyleParser.parse(json: json, namedColors: colors)
         
         guard colors.count > 0 || styles.count > 0 else { throw Error.noColorsOrStyles }
-        return (colors: colors, styles: styles)
+        
+        let hash = try json.hash()
+        return (colors: colors, styles: styles, jsonHash: hash)
     }
 }

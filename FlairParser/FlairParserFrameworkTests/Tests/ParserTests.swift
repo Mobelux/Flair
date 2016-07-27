@@ -26,13 +26,15 @@ class ParserTests: XCTestCase {
         let parser = Parser(json: json)
         
         do {
-            let (namedColors, styles) = try parser.parse()
+            let (namedColors, styles, jsonHash) = try parser.parse()
             XCTAssert(namedColors.count == colors.count, "Incorrect # of colors")
             XCTAssert(styles.count == 0, "Shouldn't have any styles")
             
             for namedColorSet in namedColors {
                 XCTAssert(colorNames.contains(namedColorSet.name), "Expected name doesn't match")
             }
+            
+            XCTAssert(jsonHash.characters.count > 0, "No JSON Hash")
         } catch let error as Parser.Error {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
@@ -114,7 +116,7 @@ class ParserTests: XCTestCase {
         let parser = Parser(json: json)
         
         do {
-            let (namedColors, styles) = try parser.parse()
+            let (namedColors, styles, _) = try parser.parse()
             XCTAssert(namedColors.count == colors.count, "Incorrect # of colors")
             XCTAssert(styles.count == namedStyles.count, "Incorrect # of styles")
             
@@ -137,7 +139,7 @@ class ParserTests: XCTestCase {
         
         do {
             let parser = try Parser(json: json)
-            let (colors, styles) = try parser.parse()
+            let (colors, styles, _) = try parser.parse()
             XCTAssert(colors.count == 2, "Invalid # of colors")
             XCTAssert(styles.count == 2, "Invalid # of styles")
             
