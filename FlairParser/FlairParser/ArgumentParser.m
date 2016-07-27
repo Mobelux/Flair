@@ -23,7 +23,7 @@
             NSURL *jsonURL = [self jsonURLFor:arguments];
             
             if (outputDirectoryURL != nil && jsonURL != nil) {
-                NSError *error = [LegacyParser parseWithJson:jsonURL outputDirectory:outputDirectoryURL];
+                NSError *error = [LegacyParserGenerator parseWithJson:jsonURL outputDirectory:outputDirectoryURL];
                 if (error == nil) {
                     return 0;
                 } else {
