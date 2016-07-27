@@ -10,7 +10,7 @@ import Foundation
 import Flair
 
 /// Generates the Swift code for `NamedColorSet` as an extension on `ColorSet`
-enum NamedColorSetGenerator {
+enum NamedColorSetGenerator: ExtensionGenerator {
     private enum Constants {
         static let normal = "normal"
         static let highlighted = "highlighted"
@@ -27,15 +27,10 @@ enum NamedColorSetGenerator {
         - returns: The Swift source for this new extension on `ColorSet`, ready to write to disk
     */
     static func generate(colors: [NamedColorSet], headerComment: String) -> String {
-        var swiftCode = "\(headerComment)\n\nimport Flair\n\nextension ColorSet {\n"
-        
         let sortedColors = colors.sorted { $0.name < $1.name }
-        for color in sortedColors {
-            let colorFunc = generate(color: color)
-            swiftCode.append(colorFunc)
-        }
+        let functions = sortedColors.map({ generate(color: $0) })
         
-        swiftCode.append("}\n")
+        let swiftCode = generate(functions: functions, extending: "ColorSet", headerComment: headerComment)
         return swiftCode
     }
     
