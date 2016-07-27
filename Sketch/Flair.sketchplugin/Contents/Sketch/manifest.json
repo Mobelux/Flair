@@ -1,0 +1,44 @@
+{
+  "name" : "Flair",
+  "description" : "Export colors & styles in Sketch to Flair's JSON format",
+  "author" : "Mobelux",
+  "homepage" : "https://github.com/mobelux/flair",
+  "version" : 1.0,
+  "identifier" : "com.mobelux.flair",
+  "updateURL" : "https://github.com/mobelux/flair",
+  "compatibleVersion" : 3.5,
+  "bundleVersion" : 1,
+  "commands" : [
+    {
+      "name" : "Export Everything",
+      "identifier" : "com.mobeulx.flair.export.all",
+      "script" : "export.js",
+      "handlers" : {
+        "run" : "exportAll"
+      }
+    },
+    {
+      "name" : "Export Colors",
+      "identifier" : "com.mobelux.flair.export.colors",
+      "script" : "export.js",
+      "handlers" : {
+        "run" : "exportColors"
+      }
+    },
+    {
+      "name" : "Export Text Styles",
+      "identifier" : "com.mobelux.flair.export.textstyles",
+      "script" : "export.js",
+      "handlers" : {
+        "run" : "exportTextStyles"
+      }
+    }
+  ],
+  "menu" : {
+    "items" : [
+        "com.mobeulx.flair.export.all",
+        "com.mobelux.flair.export.colors",
+        "com.mobelux.flair.export.textstyles"
+    ]
+  }
+}
