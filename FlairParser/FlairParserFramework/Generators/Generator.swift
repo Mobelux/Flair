@@ -68,9 +68,11 @@ public enum Generator {
         }
         
         if doesSwiftNeedGeneration(swiftFile: stylesFileURL, jsonHashComment: hashComment) {
-            // TODO
+            let stylesSwift = NamedStyleGenerator.generate(styles: styles, headerComment: hashComment)
+            
+            let stylesSwiftData = try stylesSwift.utf8Data()
+            try stylesSwiftData.writeData(to: stylesFileURL)
         }
-        
     }
     
     /// Internal so we can test

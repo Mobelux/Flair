@@ -12,7 +12,7 @@ import Flair
 
 class GeneratorTests: XCTestCase {
 
-    func testColorGeneration() {
+    func testColorAndStyleGeneration() {
         let json = Bundle(for: ParserTests.self).urlForResource("validColorAndStyle", withExtension: "json")!
         
         do {
@@ -24,20 +24,34 @@ class GeneratorTests: XCTestCase {
             
             let outputDirectory = URL(fileURLWithPath: NSTemporaryDirectory())
             let generatedColorFile = try! Generator.createFileURL(fileName: Generator.Constants.colorsFileName, outputDirectory: outputDirectory)
+            let generatedStyleFile = try! Generator.createFileURL(fileName: Generator.Constants.stylesFileName, outputDirectory: outputDirectory)
+            
+            let _ = try? FileManager.default.removeItem(at: generatedColorFile)
+            let _ = try? FileManager.default.removeItem(at: generatedStyleFile)
+            
             try Generator.generate(colors: colors, styles: styles, outputDirectory: outputDirectory, jsonHash: jsonHash)
             
             do {
-                let generatedSwift = try String(contentsOf: generatedColorFile)
+                let generatedColorSwift = try String(contentsOf: generatedColorFile)
+                let generatedStyleSwift = try String(contentsOf: generatedStyleFile)
                 
-                let expectedURL = Bundle(for: NamedColorSetGeneratorTests.self).urlForResource("ColorSet+FlairParser", withExtension: "swift.output")!
-                let expectedSwift = try! String(contentsOf: expectedURL)
+                let expectedColorURL = Bundle(for: NamedColorSetGeneratorTests.self).urlForResource("ColorSet+FlairParser", withExtension: "swift.output")!
+                let expectedStyleURL = Bundle(for: NamedColorSetGeneratorTests.self).urlForResource("Style+FlairParser", withExtension: "swift.output")!
                 
-                XCTAssert(generatedSwift == expectedSwift, "Generated code doesn't match the expected")
+                let expectedColorSwift = try! String(contentsOf: expectedColorURL)
+                let expectedStyleSwift = try! String(contentsOf: expectedStyleURL)
+                
+                XCTAssert(generatedColorSwift == expectedColorSwift, "Generated color code doesn't match the expected")
+                XCTAssert(generatedStyleSwift == expectedStyleSwift, "Generated style code doesn't match the expected")
             } catch let error as Generator.Error {
                 XCTAssert(false, "Failed with error \(error.legacyError)")
             } catch {
                 XCTAssert(false, "Unknown error")
             }
+            
+            let _ = try? FileManager.default.removeItem(at: generatedColorFile)
+            let _ = try? FileManager.default.removeItem(at: generatedStyleFile)
+            
         } catch let error as Parser.Error {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {

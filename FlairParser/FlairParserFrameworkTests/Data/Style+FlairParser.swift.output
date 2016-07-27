@@ -1,0 +1,17 @@
+// hash: c69678d981c799052a7fdd939957a576a7e5d25174c7b9a3a70f4db4e2a2456c
+// Do not modify this file. The previous line is a hash of the JSON used to generate this file. This file will not be regenerated unless the JSON changes, or this comment is removed.
+
+import Flair
+
+extension Style {
+    static func body() -> Style {
+        let font = Font(type: .system(weight: .ultralight), sizeType: .dynamic(pointSizeBase: 16.0))
+        return Style(font: font, kerning: 3.25, lineSpacing: 30.0, textColor: ColorSet.coolOrange())
+    }
+
+    static func title() -> Style {
+        let font = Font(type: .normal(fontName: "Arial-Black"), sizeType: .staticSize(pointSize: 20.0))
+        return Style(font: font, textColor: ColorSet.brandBlue())
+    }
+
+}
