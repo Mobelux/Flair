@@ -66,6 +66,42 @@ flair.export = {
 		return colorSetJSON;
 	},
 
+	textStylesJSONString: function (textStyles) {
+		var json = '';
+		log(textStyles);
+		for (styleIndex = 0; styleIndex < textStyles.length; styleIndex += 1) {
+			var style = textStyles[styleIndex];
+
+			if (style.name != null && style.font != null) {
+				var styleJSON = '';
+				if (styleIndex > 0) {
+					styleJSON += '\n';
+				}
+				styleJSON += '\t\t"' + flair.sanitizeName(style.name) + '" : {\n';
+				styleJSON += '\t\t\t"font" : {\n';
+				styleJSON += '\t\t\t\t"size" : ' + style.font.size + ',\n';
+				styleJSON += '\t\t\t\t"sizeType" : "' + style.font.sizeType + '",\n';
+				if (style.font.isSystemFont) {
+					styleJSON += '\t\t\t\t"systemFontWeight" : "' + style.font.systemFontWeight + '"\n';
+				} else {
+					styleJSON += '\t\t\t\t"fontName" : "' + style.font.fontName + '"\n';
+				}
+				styleJSON += '\t\t\t},\n';
+
+				styleJSON += '\t\t\t"kerning" : ' + style.kerning + ',\n';
+				styleJSON += '\t\t\t"lineSpacing" : ' + style.lineSpacing + '\n';
+				styleJSON += '\t\t}';
+
+				if (styleIndex + 1 != textStyles.length) {
+					styleJSON += ',';
+				}
+
+				json += styleJSON;
+			}
+		}
+		return json;
+	},
+
 	generateJSON: function (colors, textStyles) {
 		var json = "{\n";
 		json += '\t"colors" : {\n';
@@ -75,7 +111,7 @@ flair.export = {
 		json += '\n\t},\n';
 		json += '\t"styles" : {\n';
 
-		// For each textStyle
+		json += flair.export.textStylesJSONString(textStyles);
 
 		json += '\n\t}\n';
 		json += "}\n";
