@@ -61,5 +61,4 @@ flair.colors = {
     	}
     	return colors;
     }
-    
 }

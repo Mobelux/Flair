@@ -17,10 +17,7 @@ flair.ui = {
 		var responseCode = [alert runModal];
 		var selectedItemIndex = [accessory indexOfSelectedItem];
 
-		var response = new Object();
-		response.responseCode = responseCode;
-		response.selectedItemIndex = selectedItemIndex;
-		return response;
+		return {responseCode: responseCode, selectedItemIndex: selectedItemIndex};
 	},
 
 	showSavePanel: function () {
