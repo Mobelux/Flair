@@ -405,15 +405,11 @@
 					};
 					6B971B3F1D400B7700532C38 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = X596PH9BUE;
-						DevelopmentTeamName = "MOBELUX LLC";
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					6B971B481D400B7700532C38 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = X596PH9BUE;
-						DevelopmentTeamName = "MOBELUX LLC";
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
