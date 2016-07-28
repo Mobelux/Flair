@@ -68,7 +68,6 @@ flair.export = {
 
 	textStylesJSONString: function (textStyles) {
 		var json = '';
-		log(textStyles);
 		for (styleIndex = 0; styleIndex < textStyles.length; styleIndex += 1) {
 			var style = textStyles[styleIndex];
 
@@ -128,7 +127,6 @@ flair.export = {
 		var sortedTextStyles = flair.export.sort(textStyles);
 
 		var json = flair.export.generateJSON(sortedColors, sortedTextStyles);
-		log(json);
 		var url = flair.ui.showSavePanel();
 		if (url != null) {
 			flair.export.saveStringToURL(json, url);
