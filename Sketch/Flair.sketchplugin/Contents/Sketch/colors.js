@@ -45,7 +45,8 @@ flair.colors = {
 		var selectedColor = flair.colors.getColorValueForNameFromLayers(flair.colors.selectedColorName, groupLayers);
 		var disabledColor = flair.colors.getColorValueForNameFromLayers(flair.colors.disabledColorName, groupLayers);
 
-		return {name: nameTextLayer.stringValue(), normal: normalColor, highlighted: highlightedColor, selected: selectedColor, disabled: disabledColor};
+		var colorName = flair.sanitizedName(nameTextLayer.stringValue());
+		return {name: colorName, normal: normalColor, highlighted: highlightedColor, selected: selectedColor, disabled: disabledColor};
 	},
 
 

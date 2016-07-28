@@ -29,6 +29,7 @@ flair.textStyles = {
     // Converts a MSSharedStyle into a Style JS object
     convertStyle: function (sharedStyle, workingScale) {
     	var styleName = String(sharedStyle.name());
+    	var sanitizedName = flair.sanitizedName(styleName);
 
     	var isDynamicSize = true;
     	if (styleName.indexOf(flair.textStyles.staticStylePrefix) == 0) {
@@ -57,6 +58,7 @@ flair.textStyles = {
     	} else {
     		font.fontName = fontName;
     	}
-    	return {name: styleName, font: font, lineSpacing: lineHeight, kerning: kerning};
+    	var textStyle = {name: sanitizedName, font: font, lineSpacing: lineHeight, kerning: kerning};
+    	return textStyle;
     },
 }

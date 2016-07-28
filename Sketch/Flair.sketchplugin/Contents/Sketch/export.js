@@ -41,7 +41,7 @@ flair.export = {
 				if (colorIndex > 0) {
 					colorJSON += '\n';
 				}
-				colorJSON += '\t\t"' + flair.sanitizeName(color.name) + '" : {\n';
+				colorJSON += '\t\t"' + color.name + '" : {\n';
 				
 				var normalColor = flair.export.colorJSONString(color.normal);
 				colorJSON += '\t\t\t"normal" : "' + normalColor + '",\n';
@@ -77,7 +77,7 @@ flair.export = {
 				if (styleIndex > 0) {
 					styleJSON += '\n';
 				}
-				styleJSON += '\t\t"' + flair.sanitizeName(style.name) + '" : {\n';
+				styleJSON += '\t\t"' + style.name + '" : {\n';
 				styleJSON += '\t\t\t"font" : {\n';
 				styleJSON += '\t\t\t\t"size" : ' + style.font.size + ',\n';
 				styleJSON += '\t\t\t\t"sizeType" : "' + style.font.sizeType + '",\n';
