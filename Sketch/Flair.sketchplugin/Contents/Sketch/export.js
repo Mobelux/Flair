@@ -30,7 +30,7 @@ flair.export = {
 		return jsonString;
 	},
 
-	colorSetJSONString: function(colorSets) {
+	colorSetJSONString: function (colorSets) {
 		var colorSetJSON = '';
 
 		for (colorIndex = 0; colorIndex < colorSets.length; colorIndex += 1) {
@@ -41,7 +41,7 @@ flair.export = {
 				if (colorIndex > 0) {
 					colorJSON += '\n';
 				}
-				colorJSON += '\t\t"' + color.name + '" : {\n';
+				colorJSON += '\t\t"' + flair.sanitizeName(color.name) + '" : {\n';
 				
 				var normalColor = flair.export.colorJSONString(color.normal);
 				colorJSON += '\t\t\t"normal" : "' + normalColor + '",\n';
@@ -77,8 +77,8 @@ flair.export = {
 
 		// For each textStyle
 
-		json += '\t}\n';
-		json += "\n}\n";
+		json += '\n\t}\n';
+		json += "}\n";
 		return json;
 	},
 
