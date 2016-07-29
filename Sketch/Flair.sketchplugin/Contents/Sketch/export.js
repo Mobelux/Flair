@@ -88,7 +88,12 @@ flair.export = {
 				styleJSON += '\t\t\t},\n';
 
 				styleJSON += '\t\t\t"kerning" : ' + style.kerning + ',\n';
-				styleJSON += '\t\t\t"lineSpacing" : ' + style.lineSpacing + '\n';
+				styleJSON += '\t\t\t"lineSpacing" : ' + style.lineSpacing;
+				if (style.textColor != null) {
+					styleJSON += ',\n\t\t\t"textColor" : "' + style.textColor + '"\n';
+				} else {
+					styleJSON += '\n';
+				}
 				styleJSON += '\t\t}';
 
 				if (styleIndex + 1 != textStyles.length) {
@@ -142,14 +147,13 @@ flair.export = {
 }
 
 var exportAll = function(context) {
-	log("Export all");
 	flair.init(context);
 
 	var workingScale = flair.export.getWorkingScale();
 	if (workingScale > 0) {
-		var textStyles = flair.textStyles.getTextStyles(workingScale);
-		var colors = flair.colors.getColors();
-		flair.export.export(colors, textStyles);
+		var colorSets = flair.colors.getColors();
+		var textStyles = flair.textStyles.getTextStyles(workingScale, colorSets);
+		flair.export.export(colorSets, textStyles);
 	} else {
 		log('User cancelled the working scale input, aborting export');
 	}
@@ -163,13 +167,12 @@ var exportColors = function(context) {
 };
 
 var exportTextStyles = function(context) {
-	log("Export text styles");
 	flair.init(context);
 
 	var workingScale = flair.export.getWorkingScale();
 	if (workingScale > 0) {
-		var textStyles = flair.textStyles.getTextStyles(workingScale);
-		var colors = [];
-		flair.export.export(colors, textStyles);
+		var colorSets = [];
+		var textStyles = flair.textStyles.getTextStyles(workingScale, colorSets);
+		flair.export.export(colorSets, textStyles);
 	}
 };

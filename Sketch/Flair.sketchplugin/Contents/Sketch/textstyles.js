@@ -9,10 +9,10 @@ flair.textStyles = {
 	systemFontNamePrefix: 'SFUIDisplay-',
 
 	// Returns an array of Style objects, that are not set to be ignored
-    getTextStyles: function (workingScale) {
+    getTextStyles: function (workingScale, colorSets) {
     	var rawTextStyles = flair.textStyles.rawTextStyles();
     	var convertedTextStyles = rawTextStyles.map(function(style) {
-    		return flair.textStyles.convertStyle(style, workingScale);
+    		return flair.textStyles.convertStyle(style, workingScale, colorSets);
     	});
     	return convertedTextStyles;
     },
@@ -27,9 +27,9 @@ flair.textStyles = {
     },
 
     // Converts a MSSharedStyle into a Style JS object
-    convertStyle: function (sharedStyle, workingScale) {
+    convertStyle: function (sharedStyle, workingScale, colorSets) {
     	var styleName = String(sharedStyle.name());
-    	var sanitizedName = flair.sanitizedName(styleName);
+    	var sanitizedName = flair.sanitizeName(styleName);
 
     	var isDynamicSize = true;
     	if (styleName.indexOf(flair.textStyles.staticStylePrefix) == 0) {
@@ -58,7 +58,12 @@ flair.textStyles = {
     	} else {
     		font.fontName = fontName;
     	}
+
     	var textStyle = {name: sanitizedName, font: font, lineSpacing: lineHeight, kerning: kerning};
+    	var textColorName = flair.colors.matchingColorSetName(colorSets, attributes.NSColor);
+    	if (textColorName != null) {
+    		textStyle.textColor = textColorName;
+    	}
     	return textStyle;
-    },
+    }
 }
