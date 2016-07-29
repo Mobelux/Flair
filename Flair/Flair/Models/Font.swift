@@ -76,7 +76,7 @@ public struct Font: Equatable {
     */
     public enum SizeType: Equatable {
         case staticSize(pointSize: CGFloat)
-        case dynamic(pointSizeBase: CGFloat)
+        case dynamicSize(pointSizeBase: CGFloat)
     }
     
     // MARK: - Property definitions
@@ -136,7 +136,7 @@ public struct Font: Equatable {
         switch sizeType {
         case .staticSize(let pointSize):
             return pointSize
-        case .dynamic(let pointSizeBase):
+        case .dynamicSize(let pointSizeBase):
             return dynamicPointSize(pointSizeBase: pointSizeBase)
         }
     }
@@ -172,7 +172,7 @@ public func ==(lhs: Font.SizeType, rhs: Font.SizeType) -> Bool {
     switch (lhs, rhs) {
     case (.staticSize(let lhsSize), .staticSize(let rhsSize)):
         return lhsSize == rhsSize
-    case (.dynamic(let lhsSize), .dynamic(let rhsSize)):
+    case (.dynamicSize(let lhsSize), .dynamicSize(let rhsSize)):
         return lhsSize == rhsSize
     default:
         return false

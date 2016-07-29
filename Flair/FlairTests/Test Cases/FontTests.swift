@@ -37,8 +37,8 @@ class FontTests: XCTestCase {
         
         let sizeType0 = Font.SizeType.staticSize(pointSize: 10)
         let sizeType1 = Font.SizeType.staticSize(pointSize: 11)
-        let sizeType2 = Font.SizeType.dynamic(pointSizeBase: 10)
-        let sizeType3 = Font.SizeType.dynamic(pointSizeBase: 11)
+        let sizeType2 = Font.SizeType.dynamicSize(pointSizeBase: 10)
+        let sizeType3 = Font.SizeType.dynamicSize(pointSizeBase: 11)
         
         XCTAssert(sizeType0 == sizeType0, "SizeTypes should be equal")
         XCTAssert(sizeType0 != sizeType1, "SizeTypes shouldn't be equal")
@@ -57,7 +57,7 @@ class FontTests: XCTestCase {
     
     func testSystemFont() {
         let size: CGFloat = 26
-        let sizeType = Font.SizeType.dynamic(pointSizeBase: size)
+        let sizeType = Font.SizeType.dynamicSize(pointSizeBase: size)
         let weight = Font.Weight.bold
         
         let font = Font(type: .system(weight: weight), sizeType: sizeType)
