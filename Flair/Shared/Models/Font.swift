@@ -91,11 +91,11 @@ public struct Font: Equatable {
         How this text's point size is determined
      
         - staticSize:   The `font.pointSize` should always be equal to `pointSize` and never change
-        - dynamic:      The `font.pointSize` should be different depending on the user's dynamic text settings. `pointSizeBase` is the desired point size assuming the user's setting is set to default. Once the user's setting isn't default, then when you request `font` the actual `pointSize` used will be calculated by scaling `pointSizeBase` to match the user's size change %.
+        - dynamicSize:  The `font.pointSize` should be different depending on the user's dynamic text settings. `pointSizeBase` is the desired point size assuming the user's setting is set to default. Once the user's setting isn't default, then when you request `font` the actual `pointSize` used will be calculated by scaling `pointSizeBase` to match the user's size change %.
     */
     public enum SizeType: Equatable {
         case staticSize(pointSize: CGFloat)
-        case dynamic(pointSizeBase: CGFloat)
+        case dynamicSize(pointSizeBase: CGFloat)
     }
     
     // MARK: - Property definitions
@@ -155,7 +155,7 @@ public struct Font: Equatable {
         switch sizeType {
         case .staticSize(let pointSize):
             return pointSize
-        case .dynamic(let pointSizeBase):
+        case .dynamicSize(let pointSizeBase):
             return dynamicPointSize(pointSizeBase: pointSizeBase)
         }
     }
@@ -195,7 +195,7 @@ public func ==(lhs: Font.SizeType, rhs: Font.SizeType) -> Bool {
     switch (lhs, rhs) {
     case (.staticSize(let lhsSize), .staticSize(let rhsSize)):
         return lhsSize == rhsSize
-    case (.dynamic(let lhsSize), .dynamic(let rhsSize)):
+    case (.dynamicSize(let lhsSize), .dynamicSize(let rhsSize)):
         return lhsSize == rhsSize
     default:
         return false

@@ -71,7 +71,7 @@ enum NamedStyleGenerator: ExtensionGenerator {
             switch font.sizeType {
             case .staticSize(let pointSize):
                 return ".staticSize(pointSize: \(pointSize))"
-            case .dynamic(let pointSizeBase):
+            case .dynamicSize(let pointSizeBase):
                 return ".dynamic(pointSizeBase: \(pointSizeBase))"
             }
         }()

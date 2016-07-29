@@ -40,7 +40,7 @@ class NamedStyle_InitTests: XCTestCase {
             switch style.font.sizeType {
             case .staticSize(let size):
                 XCTAssert(size == fontSize, "Font size incorrect")
-            case .dynamic:
+            case .dynamicSize:
                 XCTAssert(false, "Should be a static size")
             }
             

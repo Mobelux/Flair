@@ -52,7 +52,7 @@ import Foundation
                 }
                 
                 switch style.font.sizeType {
-                case .dynamic:
+                case .dynamicSize:
                     registerForNotifications()
                 case .staticSize:
                     unregisterForNotifications()

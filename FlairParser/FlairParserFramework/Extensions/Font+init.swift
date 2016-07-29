@@ -38,7 +38,7 @@ extension Font {
         case staticType:
             self.sizeType = .staticSize(pointSize: size)
         case dynamic:
-            self.sizeType = .dynamic(pointSizeBase: size)
+            self.sizeType = .dynamicSize(pointSizeBase: size)
         default:
             throw Parser.Error.invalidFontValue
         }

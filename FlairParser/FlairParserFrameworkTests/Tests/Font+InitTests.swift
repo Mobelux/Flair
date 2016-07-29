@@ -21,7 +21,7 @@ class Font_InitTests: XCTestCase {
             switch font.sizeType {
             case .staticSize(let size):
                 XCTAssert(size == fontSize, "Font size mismatch")
-            case .dynamic:
+            case .dynamicSize:
                 XCTAssert(false, "We should have a static font")
             }
             
@@ -47,7 +47,7 @@ class Font_InitTests: XCTestCase {
             switch font.sizeType {
             case .staticSize:
                 XCTAssert(false, "We should have a dynamic font")
-            case .dynamic(let size):
+            case .dynamicSize(let size):
                 
                 XCTAssert(size == fontSize, "Font size mismatch")
             }

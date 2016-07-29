@@ -12,7 +12,7 @@ import Flair
 class StyleTests: XCTestCase {
     
     func systemFont() -> Font {
-        return Font(systemFontWeight: .regular, sizeType: .dynamic(pointSizeBase: 17))
+        return Font(systemFontWeight: .regular, sizeType: .dynamicSize(pointSizeBase: 17))
     }
     
     func testStyleLineSpacingFixing() {
