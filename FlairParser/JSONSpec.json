@@ -1,0 +1,24 @@
+{
+    "colors" : { // optional
+    	"colorName" : { // color values are in the sRGB color space, but can extend outside the 0-1 range such as 1.1 and reach into the P3 space.
+    		"standard" : "rgba(0.0, 1.1, 0.25, 1.0)", // required
+    		"highlighted" : "rgba(0.0, 1.1, 0.25, 1.0)", // optional
+    		"selected" : "rgba(0.0, 1.1, 0.25, 1.0)", // optional
+    		"disabled" : "rgba(0.0, 1.1, 0.25, 1.0)" // optional
+    	}
+    },
+    
+    "styles" : {
+    	"styleName" : {
+    		"font" : { // required. 
+    			"size" : 17, // required. If "sizeType" is "dynamic" then this size is the size that will be used if the user hasn't adjusted dynamic text sizing. Once a user does change it, then the visible font size will follow allong with the % change that the user requested.
+    			"fontName" : "Arial-Black", // optional. If not set, then "systemFontWeight" must be set
+    			"systemFontWeight" : "<value from comments>" // optional. If not set, then "fontName" must be set Both this and "fontName" can't both be set. Value options: regular, medium, bold, thin, black, semibold, ultralight
+    			"sizeType" : "<value from comments>" // required. Value options: static, dynamic
+    		},
+    		"lineSpacing" : 24, // optional
+    		"kerning" : 2.5, // optional
+    		"textColor" : "colorName" // optional
+    	}
+    }
+}
