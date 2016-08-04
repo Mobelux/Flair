@@ -11,7 +11,7 @@ import Flair
 
 /// Object that handles creating Swift code for ColorSets & Styles, and writing them to disk.
 public enum Generator {
-    public enum Error: Int, ErrorProtocol {
+    public enum GeneratorError: Int, Error {
         case unknown = 10
         case cantWriteSwiftFile = 11
         case noColorsOrStyles = 12
@@ -32,7 +32,7 @@ public enum Generator {
                     return "There was a problem converting the generated Swift string to data"
                 }
             }()
-            return NSError(domain: Error.domain, code: rawValue, userInfo: [NSLocalizedDescriptionKey : message])
+            return NSError(domain: GeneratorError.domain, code: rawValue, userInfo: [NSLocalizedDescriptionKey : message])
         }
     }
     
@@ -53,7 +53,7 @@ public enum Generator {
         - parameter jsonHash:           The hash of the JSON that was used to generate these `colors` & `styles` so we can be smart about not regenerating the Swift files, if there are no changes since last generation
     */
     public static func generate(colors: [NamedColorSet], styles: [NamedStyle], outputDirectory: URL, jsonHash: String) throws {
-        guard colors.count > 0 || styles.count > 0 else { throw Error.noColorsOrStyles }
+        guard colors.count > 0 || styles.count > 0 else { throw GeneratorError.noColorsOrStyles }
         
         let colorsFileURL = try createFileURL(fileName: Constants.colorsFileName, outputDirectory: outputDirectory)
         let stylesFileURL = try createFileURL(fileName: Constants.stylesFileName, outputDirectory: outputDirectory)
@@ -83,12 +83,8 @@ public enum Generator {
     
     /// Internal so we can test
     static func createFileURL(fileName: String, outputDirectory: URL) throws -> URL {
-        do {
-            let fileURL = try outputDirectory.appendingPathComponent(fileName)
-            return fileURL
-        } catch {
-            throw Error.unknown
-        }
+        let fileURL = outputDirectory.appendingPathComponent(fileName)
+        return fileURL
     }
     
     private static func doesSwiftNeedGeneration(swiftFile: URL, jsonHashComment: String) -> Bool {
@@ -103,7 +99,7 @@ public enum Generator {
 
 private extension String {
     func utf8Data() throws -> Data {
-        guard let data = self.data(using: .utf8) else { throw Generator.Error.cantConvertSwiftStringToData }
+        guard let data = self.data(using: .utf8) else { throw Generator.GeneratorError.cantConvertSwiftStringToData }
         return data
     }
 }
@@ -115,7 +111,7 @@ private extension Data {
         do {
             try write(to: url)
         } catch {
-            throw FlairParserFramework.Generator.Error.cantWriteSwiftFile
+            throw FlairParserFramework.Generator.GeneratorError.cantWriteSwiftFile
         }
     }
 }

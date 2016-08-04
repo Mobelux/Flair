@@ -31,7 +31,7 @@ class Font_InitTests: XCTestCase {
             case .system:
                 XCTAssert(false, "We should have a normal font")
             }
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")
@@ -58,7 +58,7 @@ class Font_InitTests: XCTestCase {
             case .system(let weight):
                 XCTAssert(weight.rawValue == fontWeight, "Font weight mismatch")
             }
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")
@@ -72,9 +72,9 @@ class Font_InitTests: XCTestCase {
         do {
             let _ = try Font(fontValues: fontValues)
             XCTAssert(false, "We shouldn't have font")
-        } catch Parser.Error.invalidFontValue {
+        } catch Parser.ParserError.invalidFontValue {
             // Expected case
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")
@@ -88,9 +88,9 @@ class Font_InitTests: XCTestCase {
         do {
             let _ = try Font(fontValues: fontValues)
             XCTAssert(false, "We shouldn't have font")
-        } catch Parser.Error.invalidFontValue {
+        } catch Parser.ParserError.invalidFontValue {
             // Expected case
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")
@@ -105,9 +105,9 @@ class Font_InitTests: XCTestCase {
         do {
             let _ = try Font(fontValues: fontValues)
             XCTAssert(false, "We shouldn't have font")
-        } catch Parser.Error.invalidFontValue {
+        } catch Parser.ParserError.invalidFontValue {
             // Expected case
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")

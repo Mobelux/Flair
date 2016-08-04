@@ -11,7 +11,7 @@ import Flair
 
 public struct Parser {
 
-    public enum Error: Int, ErrorProtocol {
+    public enum ParserError: Int, Error {
         case unknown = 10
         case cantOpenJSONFile = 11
         case unreadableJSONSyntax = 12
@@ -50,7 +50,7 @@ public struct Parser {
                     return "A Style is missing it's Font key/value"
                 }
             }()
-            return NSError(domain: Error.domain, code: rawValue, userInfo: [NSLocalizedDescriptionKey : message])
+            return NSError(domain: ParserError.domain, code: rawValue, userInfo: [NSLocalizedDescriptionKey : message])
         }
     }
     
@@ -61,18 +61,18 @@ public struct Parser {
             do {
                 return try Data(contentsOf: json)
             } catch {
-                throw Error.cantOpenJSONFile
+                throw ParserError.cantOpenJSONFile
             }
         }()
 
         do {
             guard let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? JSON else {
-                throw Error.unreadableJSONSyntax
+                throw ParserError.unreadableJSONSyntax
             }
             
             self.json = jsonDict
         } catch {
-            throw Error.unreadableJSONSyntax
+            throw ParserError.unreadableJSONSyntax
         }
     }
     
@@ -84,7 +84,7 @@ public struct Parser {
         let colors = try ColorParser.parse(json: json)
         let styles = try StyleParser.parse(json: json, namedColors: colors)
         
-        guard colors.count > 0 || styles.count > 0 else { throw Error.noColorsOrStyles }
+        guard colors.count > 0 || styles.count > 0 else { throw ParserError.noColorsOrStyles }
         
         let hash = try json.hash()
         return (colors: colors, styles: styles, jsonHash: hash)

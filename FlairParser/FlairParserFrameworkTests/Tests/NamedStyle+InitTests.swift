@@ -52,7 +52,7 @@ class NamedStyle_InitTests: XCTestCase {
             }
             
             XCTAssert(expectedStyle == style, "Expected style doesn't match created style")
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")
@@ -72,9 +72,9 @@ class NamedStyle_InitTests: XCTestCase {
         do {
             let _ = try NamedStyle(name: styleName, styleValues: styleValues, colors: [color])
             XCTAssert(false, "Shouldn't have a valid style")
-        } catch Parser.Error.missingFontDict {
+        } catch Parser.ParserError.missingFontDict {
             // Expected case
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")
@@ -98,7 +98,7 @@ class NamedStyle_InitTests: XCTestCase {
         do {
             let style = try NamedStyle(name: styleName, styleValues: styleValues, colors: [color])
             XCTAssertNil(style.textColor, "TextColor should be nil")
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")
@@ -121,7 +121,7 @@ class NamedStyle_InitTests: XCTestCase {
         do {
             let style = try NamedStyle(name: styleName, styleValues: styleValues, colors: [color])
             XCTAssertNil(style.textColor, "TextColor should be nil")
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")
@@ -144,7 +144,7 @@ class NamedStyle_InitTests: XCTestCase {
         do {
             let style = try NamedStyle(name: styleName, styleValues: styleValues, colors: [color])
             XCTAssert(style.kerning == 0, "Kerning incorrect")
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")
@@ -167,7 +167,7 @@ class NamedStyle_InitTests: XCTestCase {
         do {
             let style = try NamedStyle(name: styleName, styleValues: styleValues, colors: [color])
             XCTAssert(style.lineSpacing == 0, "Line spacing incorrect")
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")

@@ -15,7 +15,7 @@ enum ColorParser {
     }
     
     static func parse(json: JSON) throws -> [NamedColorSet] {
-        guard let colorDict = json[Constants.colorsKey] as? JSON else { throw Parser.Error.missingColorDict }
+        guard let colorDict = json[Constants.colorsKey] as? JSON else { throw Parser.ParserError.missingColorDict }
     
         var colors: [NamedColorSet] = []
         colors.reserveCapacity(colorDict.count)

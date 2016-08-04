@@ -42,8 +42,8 @@ import Foundation
                 objc_setAssociatedObject(self, key, styleBox, .OBJC_ASSOCIATION_RETAIN)
                 
                 guard let style = newValue else {
-                    font = UIFont.systemFont(ofSize: UIFont.labelSize())
-                    textColor = UIColor.black()
+                    font = UIFont.systemFont(ofSize: UIFont.labelFontSize)
+                    textColor = UIColor.black
                     let text = self.text
                     attributedText = nil
                     self.text = text

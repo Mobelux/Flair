@@ -162,7 +162,7 @@ public struct Font: Equatable {
     
     private static func dynamicPointSize(pointSizeBase: CGFloat) -> CGFloat {
         #if os(iOS) || os(tvOS) || os(watchOS)
-            let defaultFontSize = PlatformFont.labelSize()
+            let defaultFontSize = PlatformFont.labelFontSize
             let adjustedFontSize = PlatformFont.preferredFont(forTextStyle: UIFontTextStyleBody).pointSize
             let scaleFactor = adjustedFontSize / defaultFontSize
             let dynamicPointSize = scaleFactor * pointSizeBase

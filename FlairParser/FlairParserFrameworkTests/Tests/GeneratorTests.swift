@@ -13,7 +13,7 @@ import Flair
 class GeneratorTests: XCTestCase {
 
     func testColorAndStyleGeneration() {
-        let json = Bundle(for: ParserTests.self).urlForResource("validColorAndStyle", withExtension: "json")!
+        let json = Bundle(for: ParserTests.self).url(forResource: "validColorAndStyle", withExtension: "json")!
         
         do {
             let parser = try Parser(json: json)
@@ -35,15 +35,15 @@ class GeneratorTests: XCTestCase {
                 let generatedColorSwift = try String(contentsOf: generatedColorFile)
                 let generatedStyleSwift = try String(contentsOf: generatedStyleFile)
                 
-                let expectedColorURL = Bundle(for: NamedColorSetGeneratorTests.self).urlForResource("ColorSet+FlairParser", withExtension: "swift.output")!
-                let expectedStyleURL = Bundle(for: NamedColorSetGeneratorTests.self).urlForResource("Style+FlairParser", withExtension: "swift.output")!
+                let expectedColorURL = Bundle(for: NamedColorSetGeneratorTests.self).url(forResource: "ColorSet+FlairParser", withExtension: "swift.output")!
+                let expectedStyleURL = Bundle(for: NamedColorSetGeneratorTests.self).url(forResource: "Style+FlairParser", withExtension: "swift.output")!
                 
                 let expectedColorSwift = try! String(contentsOf: expectedColorURL)
                 let expectedStyleSwift = try! String(contentsOf: expectedStyleURL)
                 
                 XCTAssert(generatedColorSwift == expectedColorSwift, "Generated color code doesn't match the expected")
                 XCTAssert(generatedStyleSwift == expectedStyleSwift, "Generated style code doesn't match the expected")
-            } catch let error as Generator.Error {
+            } catch let error as Generator.GeneratorError {
                 XCTAssert(false, "Failed with error \(error.legacyError)")
             } catch {
                 XCTAssert(false, "Unknown error")
@@ -52,7 +52,7 @@ class GeneratorTests: XCTestCase {
             let _ = try? FileManager.default.removeItem(at: generatedColorFile)
             let _ = try? FileManager.default.removeItem(at: generatedStyleFile)
             
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")

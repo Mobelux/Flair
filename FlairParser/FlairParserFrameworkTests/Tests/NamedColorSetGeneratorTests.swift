@@ -13,7 +13,7 @@ import Flair
 class NamedColorSetGeneratorTests: XCTestCase {
 
     func testColorGeneration() {
-        let json = Bundle(for: ParserTests.self).urlForResource("validColorAndStyle", withExtension: "json")!
+        let json = Bundle(for: ParserTests.self).url(forResource: "validColorAndStyle", withExtension: "json")!
         
         do {
             let parser = try Parser(json: json)
@@ -26,12 +26,12 @@ class NamedColorSetGeneratorTests: XCTestCase {
             
             let generatedSwift = NamedColorSetGenerator.generate(colors: colors, headerComment: hashComment)
             
-            let expectedURL = Bundle(for: NamedColorSetGeneratorTests.self).urlForResource("ColorSet+FlairParser", withExtension: "swift.output")!
+            let expectedURL = Bundle(for: NamedColorSetGeneratorTests.self).url(forResource: "ColorSet+FlairParser", withExtension: "swift.output")!
             let expectedSwift = try! String(contentsOf: expectedURL)
             
             XCTAssert(generatedSwift == expectedSwift, "Generated code doesn't match the expected")
             
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")

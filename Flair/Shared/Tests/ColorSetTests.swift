@@ -12,7 +12,7 @@ import Flair
 class ColorSetTests: XCTestCase {
     
     func testColorSetBasicInit() {
-        let color = Color(color: PlatformColor.red())
+        let color = Color(color: PlatformColor.red)
         XCTAssertNotNil(color!, "Didn't create a color")
         let colorSet = ColorSet(normalColor: color!)
         
@@ -23,13 +23,13 @@ class ColorSetTests: XCTestCase {
     }
     
     func tetColorSetFullInit() {
-        let normalColor = Color(color: PlatformColor.red())
+        let normalColor = Color(color: PlatformColor.red)
         XCTAssertNotNil(normalColor, "Didn't create a color")
-        let highlightedColor = Color(color: PlatformColor.green())
+        let highlightedColor = Color(color: PlatformColor.green)
         XCTAssertNotNil(highlightedColor, "Didn't create a color")
-        let selectedColor = Color(color: PlatformColor.orange())
+        let selectedColor = Color(color: PlatformColor.orange)
         XCTAssertNotNil(selectedColor, "Didn't create a color")
-        let disabledColor = Color(color: PlatformColor.gray())
+        let disabledColor = Color(color: PlatformColor.gray)
         XCTAssertNotNil(disabledColor, "Didn't create a color")
         
         let colorSet = ColorSet(normalColor: normalColor!, highlightedColor: highlightedColor!, selectedColor: selectedColor!, disabledColor: disabledColor!)

@@ -19,6 +19,6 @@ extension CGFloat {
         let powerOfTen = pow(10, CGFloat(numberOfDecimalPlaces))
         
         let decimalsRemoved = self * powerOfTen
-        return round(decimalsRemoved) / powerOfTen
+        return decimalsRemoved.rounded() / powerOfTen
     }
 }

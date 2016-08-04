@@ -25,8 +25,8 @@ public extension String {
      
      - returns: A dictionary of attributes
      */
-    public func attributedString(for style: Style, alignment: NSTextAlignment = .left, lineBreakMode: NSLineBreakMode = .byWordWrapping) -> AttributedString {
+    public func attributedString(for style: Style, alignment: NSTextAlignment = .left, lineBreakMode: NSLineBreakMode = .byWordWrapping) -> NSAttributedString {
         let attributes = style.textAttributes(alignment: alignment, lineBreakMode: lineBreakMode)
-        return AttributedString(string: self, attributes: attributes)
+        return NSAttributedString(string: self, attributes: attributes)
     }
 }

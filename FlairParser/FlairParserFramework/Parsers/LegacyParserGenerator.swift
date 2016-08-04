@@ -30,10 +30,10 @@ import Foundation
             let parser = try Parser(json: json)
             let (colors, styles, jsonHash) = try parser.parse()
             return .result(colors: colors, styles: styles, jsonHash: jsonHash)
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             return .error(error: error.legacyError)
         } catch {
-            return .error(error: Parser.Error.unknown.legacyError)
+            return .error(error: Parser.ParserError.unknown.legacyError)
         }
     }
     
@@ -41,10 +41,10 @@ import Foundation
         do {
             try Generator.generate(colors: colors, styles: styles, outputDirectory: outputDirectory, jsonHash: jsonHash)
             return nil
-        } catch let error as Generator.Error {
+        } catch let error as Generator.GeneratorError {
             return error.legacyError
         } catch {
-            return Generator.Error.unknown.legacyError
+            return Generator.GeneratorError.unknown.legacyError
         }
     }
 }

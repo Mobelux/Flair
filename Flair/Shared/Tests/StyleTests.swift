@@ -25,13 +25,13 @@ class StyleTests: XCTestCase {
     }
     
     func testStyleTextColorChange() {
-        let textColor0 = ColorSet(normalColor: Color(color: PlatformColor.red())!)
+        let textColor0 = ColorSet(normalColor: Color(color: PlatformColor.red)!)
         let style0 = Style(font: systemFont(), textColor: textColor0)
         XCTAssertNotNil(style0.textColor, "textColor shouldn't be nil")
         guard let style0TextColor = style0.textColor else { return }
         XCTAssert(style0TextColor == textColor0, "textColors don't match")
         
-        let textColor1 = ColorSet(normalColor: Color(color: PlatformColor.green())!)
+        let textColor1 = ColorSet(normalColor: Color(color: PlatformColor.green)!)
         let style1 = Style(style: style0, textColor: textColor1)
         XCTAssertNotNil(style1.textColor, "textColor shouldn't be nil")
         guard let style1TextColor = style1.textColor else { return }
@@ -39,7 +39,7 @@ class StyleTests: XCTestCase {
     }
     
     func testTextAttributes() {
-        let textColor = ColorSet(normalColor: Color(color: PlatformColor.red())!)
+        let textColor = ColorSet(normalColor: Color(color: PlatformColor.red)!)
         let style = Style(font: systemFont(), kerning: 2, lineSpacing: 20, textColor: textColor)
         let alignment = NSTextAlignment.center
         let lineBreakMode = NSLineBreakMode.byCharWrapping

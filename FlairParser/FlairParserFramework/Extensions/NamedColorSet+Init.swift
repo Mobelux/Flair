@@ -20,7 +20,7 @@ extension NamedColorSet {
     init(name: String, colorValues: JSON) throws {
         self.name = name
         
-        guard let normalValue = colorValues[Constants.normalColorKey] as? String else { throw Parser.Error.missingStandardColor }
+        guard let normalValue = colorValues[Constants.normalColorKey] as? String else { throw Parser.ParserError.missingStandardColor }
         normalColor = try Color(string: normalValue)
         
         if let highlightedValue = colorValues[Constants.highlightedColorKey] as? String {

@@ -12,7 +12,7 @@ import Flair
 class ColorTests: XCTestCase {
     
     func testColorInit() {
-        let color = Color(color: PlatformColor.red())
+        let color = Color(color: PlatformColor.red)
         XCTAssertNotNil(color, "Didn't create a color")
         XCTAssert(color!.red == 1, "Not red")
         XCTAssert(color!.green == 0, "Not red")

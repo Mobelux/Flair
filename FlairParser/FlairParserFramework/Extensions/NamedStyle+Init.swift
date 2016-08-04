@@ -20,7 +20,7 @@ extension NamedStyle {
     init(name: String, styleValues: JSON, colors: [NamedColorSet]) throws {
         self.name = name
         
-        guard let fontValue = styleValues[Constants.fontKey] as? JSON else { throw Parser.Error.missingFontDict }
+        guard let fontValue = styleValues[Constants.fontKey] as? JSON else { throw Parser.ParserError.missingFontDict }
         font = try Font(fontValues: fontValue)
         
         if let lineSpacing = styleValues[Constants.lineSpacingKey] as? CGFloat {

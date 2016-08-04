@@ -35,7 +35,7 @@ class ParserTests: XCTestCase {
             }
             
             XCTAssert(jsonHash.characters.count > 0, "No JSON Hash")
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")
@@ -50,9 +50,9 @@ class ParserTests: XCTestCase {
         do {
             let _ = try parser.parse()
             XCTAssert(false, "We should have thrown an error")
-        } catch Parser.Error.noColorsOrStyles {
+        } catch Parser.ParserError.noColorsOrStyles {
             // Expected case
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")
@@ -67,9 +67,9 @@ class ParserTests: XCTestCase {
         do {
             let _ = try parser.parse()
             XCTAssert(false, "We should have thrown an error")
-        } catch Parser.Error.missingStyleDict {
+        } catch Parser.ParserError.missingStyleDict {
             // Expected case
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")
@@ -84,9 +84,9 @@ class ParserTests: XCTestCase {
         do {
             let _ = try parser.parse()
             XCTAssert(false, "We should have thrown an error")
-        } catch Parser.Error.missingColorDict {
+        } catch Parser.ParserError.missingColorDict {
             // Expected case
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")
@@ -127,7 +127,7 @@ class ParserTests: XCTestCase {
             for namedStyle in styles {
                 XCTAssert(styleNames.contains(namedStyle.name), "Expected name doesn't match")
             }
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")
@@ -135,7 +135,7 @@ class ParserTests: XCTestCase {
     }
     
     func testInitFromURL() {
-        let json = Bundle(for: ParserTests.self).urlForResource("validColorAndStyle", withExtension: "json")!
+        let json = Bundle(for: ParserTests.self).url(forResource: "validColorAndStyle", withExtension: "json")!
         
         do {
             let parser = try Parser(json: json)
@@ -143,7 +143,7 @@ class ParserTests: XCTestCase {
             XCTAssert(colors.count == 2, "Invalid # of colors")
             XCTAssert(styles.count == 2, "Invalid # of styles")
             
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")
@@ -151,14 +151,14 @@ class ParserTests: XCTestCase {
     }
     
     func testInitFromURLSyntaxError() {
-        let json = Bundle(for: ParserTests.self).urlForResource("syntaxErrorColorAndStyle", withExtension: "json")!
+        let json = Bundle(for: ParserTests.self).url(forResource: "syntaxErrorColorAndStyle", withExtension: "json")!
         
         do {
             let _ = try Parser(json: json)
             XCTAssert(false, "We should have thrown an error")
-        } catch Parser.Error.unreadableJSONSyntax {
+        } catch Parser.ParserError.unreadableJSONSyntax {
             // Expected case
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")
@@ -171,9 +171,9 @@ class ParserTests: XCTestCase {
         do {
             let _ = try Parser(json: json)
             XCTAssert(false, "We should have thrown an error")
-        } catch Parser.Error.cantOpenJSONFile {
+        } catch Parser.ParserError.cantOpenJSONFile {
             // Expected case
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")

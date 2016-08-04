@@ -20,14 +20,14 @@ extension Font {
     }
     
     init(fontValues: JSON) throws {
-        guard let size = fontValues[Constants.fontSizeKey] as? CGFloat, let sizeType = fontValues[Constants.sizeTypeKey] as? String else { throw Parser.Error.invalidFontValue }
+        guard let size = fontValues[Constants.fontSizeKey] as? CGFloat, let sizeType = fontValues[Constants.sizeTypeKey] as? String else { throw Parser.ParserError.invalidFontValue }
         
         if let fontName = fontValues[Constants.fontNameKey] as? String {
             type = .normal(fontName: fontName)
         } else if let weightString = fontValues[Constants.systemFontWeightKey] as? String, let weight = Font.Weight(rawValue: weightString) {
             type = .system(weight: weight)
         } else {
-            throw Parser.Error.invalidFontValue
+            throw Parser.ParserError.invalidFontValue
         }
             
         // These are required because of what seems like a compiler error. Using `Constants.sizeType<static/dynamic>` in the switch cases below causes the compiler to think it's an enum case
@@ -40,7 +40,7 @@ extension Font {
         case dynamic:
             self.sizeType = .dynamicSize(pointSizeBase: size)
         default:
-            throw Parser.Error.invalidFontValue
+            throw Parser.ParserError.invalidFontValue
         }
     }
 }

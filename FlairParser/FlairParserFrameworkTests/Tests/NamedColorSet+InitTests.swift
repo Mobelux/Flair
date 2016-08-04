@@ -42,7 +42,7 @@ class NamedColorSet_InitTests: XCTestCase {
             XCTAssert(colorSet.disabledColor!.green == 1, "Green is incorrect")
             XCTAssert(colorSet.disabledColor!.blue == 1, "Blue is incorrect")
             XCTAssert(colorSet.disabledColor!.alpha == 1, "Alpha is incorrect")
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")
@@ -70,7 +70,7 @@ class NamedColorSet_InitTests: XCTestCase {
             
             XCTAssertNil(colorSet.selectedColor, "Selected color not nil")
             XCTAssertNil(colorSet.highlightedColor, "Highlighted color not nil")
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")
@@ -93,7 +93,7 @@ class NamedColorSet_InitTests: XCTestCase {
             XCTAssertNil(colorSet.selectedColor, "Selected color not nil")
             XCTAssertNil(colorSet.highlightedColor, "Highlighted color not nil")
             XCTAssertNil(colorSet.disabledColor, "Disabled color not nil")
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")
@@ -106,9 +106,9 @@ class NamedColorSet_InitTests: XCTestCase {
         do {
             let _ = try NamedColorSet(name: "Test", colorValues: colorValues)
             XCTAssert(false, "We shouldn't have a valid color set")
-        } catch Parser.Error.missingStandardColor {
-            // Expected case
-        } catch let error as Parser.Error {
+        } catch Parser.ParserError.missingStandardColor {
+            // Expected ParserError
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")
@@ -123,9 +123,9 @@ class NamedColorSet_InitTests: XCTestCase {
         do {
             let _ = try NamedColorSet(name: "Test", colorValues: colorValues)
             XCTAssert(false, "We shouldn't have a valid color set")
-        } catch Parser.Error.invalidColorValue {
+        } catch Parser.ParserError.invalidColorValue {
             // Expected Case
-        } catch let error as Parser.Error {
+        } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")

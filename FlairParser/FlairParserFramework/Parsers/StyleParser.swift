@@ -14,7 +14,7 @@ enum StyleParser {
     }
     
     static func parse(json: JSON, namedColors: [NamedColorSet]) throws -> [NamedStyle] {
-        guard let styleDict = json[Constants.stylesKey] as? JSON else { throw Parser.Error.missingStyleDict }
+        guard let styleDict = json[Constants.stylesKey] as? JSON else { throw Parser.ParserError.missingStyleDict }
         
         var styles: [NamedStyle] = []
         for styleKey in styleDict.keys {

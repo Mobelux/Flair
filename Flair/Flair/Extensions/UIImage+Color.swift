@@ -15,7 +15,7 @@ import Foundation
 #endif
 
 #if os(iOS) || os(tvOS) || os(watchOS)
-    public enum ImageError: ErrorProtocol {
+    public enum ImageError: Error {
         case nilCGImage
         case invalidColorSpace
         case couldNotCreateImageContext
@@ -63,7 +63,7 @@ import Foundation
             // Ideally this should take a `UIDisplayGamuet` param and create the correct color space based on that, however I have been unable to properly extract colors in the P3 gamuet outside sRGB...
             
             guard let imageRef = cgImage else { throw ImageError.nilCGImage }
-            guard let colorSpace = CGColorSpace(name: CGColorSpace.srgb) else { throw ImageError.invalidColorSpace }
+            guard let colorSpace = CGColorSpace(name: CGColorSpace.sRGB) else { throw ImageError.invalidColorSpace }
             
             let imageSize = CGSize(width: imageRef.width, height: imageRef.height)
             let numberOfPixels = Int(imageSize.width * imageSize.height)

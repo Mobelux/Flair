@@ -18,10 +18,10 @@ extension Dictionary where Key: JSONKey, Value: JSONValue {
     func hash() throws -> String {
         do {
             let data = try JSONSerialization.data(withJSONObject: self, options: [.prettyPrinted])
-            guard let jsonString = String(data: data, encoding: .utf8), jsonString.characters.count > 0 else { throw Parser.Error.unreadableJSONSyntax }
+            guard let jsonString = String(data: data, encoding: .utf8), jsonString.characters.count > 0 else { throw Parser.ParserError.unreadableJSONSyntax }
             return (jsonString as NSString).sha256()
         } catch {
-            throw Parser.Error.unreadableJSONSyntax
+            throw Parser.ParserError.unreadableJSONSyntax
         }
     }
 }

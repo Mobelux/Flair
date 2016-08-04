@@ -20,7 +20,7 @@ class String_StyleTests: XCTestCase {
         let attributedString = string.attributedString(for: style)
         XCTAssert(attributedString.string == string, "Strings don't match")
         
-        let manualAttributedString = AttributedString(string: string, attributes: style.textAttributes())
+        let manualAttributedString = NSAttributedString(string: string, attributes: style.textAttributes())
         XCTAssert(manualAttributedString == attributedString, "Attributed strings don't match")
     }
     
@@ -38,7 +38,7 @@ class String_StyleTests: XCTestCase {
         XCTAssert(attributedString.string == string, "Strings don't match")
         
         let attributes = style.textAttributes(alignment: textAlignment, lineBreakMode: lineBreakMode)
-        let manualAttributedString = AttributedString(string: string, attributes: attributes)
+        let manualAttributedString = NSAttributedString(string: string, attributes: attributes)
         XCTAssert(manualAttributedString == attributedString, "Attributed strings don't match")
     }
     

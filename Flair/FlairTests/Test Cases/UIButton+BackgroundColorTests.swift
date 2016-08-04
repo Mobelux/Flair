@@ -12,8 +12,8 @@ import Flair
 class UIButton_BackgroundColorTests: XCTestCase {
     
     func testNormalAndHighlightState() {
-        let normalColor = UIColor.red()
-        let highlightedColor = UIColor.green()
+        let normalColor = UIColor.red
+        let highlightedColor = UIColor.green
         
         let button = UIButton(type: .custom)
         button.setBackgroundColor(color: normalColor, for: .normal)
@@ -45,7 +45,7 @@ class UIButton_BackgroundColorTests: XCTestCase {
     }
     
     func testSelectedState() {
-        let color = UIColor.red()
+        let color = UIColor.red
         let state = UIControlState.selected
         
         let button = UIButton(type: .custom)
@@ -65,7 +65,7 @@ class UIButton_BackgroundColorTests: XCTestCase {
     }
     
     func testDisabledState() {
-        let color = UIColor.red()
+        let color = UIColor.red
         let state = UIControlState.disabled
         
         let button = UIButton(type: .custom)
@@ -85,7 +85,7 @@ class UIButton_BackgroundColorTests: XCTestCase {
     }
     
     func testFocusedState() {
-        let color = UIColor.red()
+        let color = UIColor.red
         let state = UIControlState.focused
         
         let button = UIButton(type: .custom)
@@ -105,7 +105,7 @@ class UIButton_BackgroundColorTests: XCTestCase {
     }
     
     func testApplicationState() {
-        let color = UIColor.red()
+        let color = UIColor.red
         let state = UIControlState.application
         
         let button = UIButton(type: .custom)
@@ -125,7 +125,7 @@ class UIButton_BackgroundColorTests: XCTestCase {
     }
     
     func testReservedState() {
-        let color = UIColor.red()
+        let color = UIColor.red
         let state = UIControlState.reserved
         
         let button = UIButton(type: .custom)
@@ -145,7 +145,7 @@ class UIButton_BackgroundColorTests: XCTestCase {
     }
     
     func testInvalidState() {
-        let color = UIColor.red()
+        let color = UIColor.red
         let state: UIControlState = UIControlState(rawValue: 24)
         
         let button = UIButton(type: .custom)
