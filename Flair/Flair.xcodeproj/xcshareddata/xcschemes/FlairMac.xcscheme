@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6B971B3F1D400B7700532C38"
+               BlueprintIdentifier = "6B122F3F1D464486002E77AC"
                BuildableName = "Flair.framework"
-               BlueprintName = "Flair"
+               BlueprintName = "FlairMac"
                ReferencedContainer = "container:Flair.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,16 +26,15 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6B971B481D400B7700532C38"
-               BuildableName = "FlairTests.xctest"
-               BlueprintName = "FlairTests"
+               BlueprintIdentifier = "6B122F471D464486002E77AC"
+               BuildableName = "FlairMacTests.xctest"
+               BlueprintName = "FlairMacTests"
                ReferencedContainer = "container:Flair.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6B971B3F1D400B7700532C38"
+            BlueprintIdentifier = "6B122F3F1D464486002E77AC"
             BuildableName = "Flair.framework"
-            BlueprintName = "Flair"
+            BlueprintName = "FlairMac"
             ReferencedContainer = "container:Flair.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6B971B3F1D400B7700532C38"
+            BlueprintIdentifier = "6B122F3F1D464486002E77AC"
             BuildableName = "Flair.framework"
-            BlueprintName = "Flair"
+            BlueprintName = "FlairMac"
             ReferencedContainer = "container:Flair.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -83,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6B971B3F1D400B7700532C38"
+            BlueprintIdentifier = "6B122F3F1D464486002E77AC"
             BuildableName = "Flair.framework"
-            BlueprintName = "Flair"
+            BlueprintName = "FlairMac"
             ReferencedContainer = "container:Flair.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

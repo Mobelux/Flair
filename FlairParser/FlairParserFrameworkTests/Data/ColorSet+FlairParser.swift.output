@@ -1,0 +1,21 @@
+// hash: c69678d981c799052a7fdd939957a576a7e5d25174c7b9a3a70f4db4e2a2456c
+// Do not modify this file. The previous line is a hash of the JSON used to generate this file. This file will not be regenerated unless the JSON changes, or this comment is removed.
+
+import Flair
+
+extension ColorSet {
+    static func brandBlue() -> ColorSet {
+        let normal = Color(red: 0.0, green: 0.0, blue: 0.75, alpha: 1.0)
+        let highlighted = Color(red: 0.0, green: 0.0, blue: 0.6, alpha: 1.0)
+        let selected = Color(red: 0.0, green: 0.0, blue: 0.5, alpha: 1.0)
+        let disabled = Color(red: 0.0, green: 0.0, blue: 0.5, alpha: 0.5)
+        return ColorSet(normalColor: normal, highlightedColor: highlighted, selectedColor: selected, disabledColor: disabled)
+    }
+
+    static func coolOrange() -> ColorSet {
+        let normal = Color(red: 0.5, green: 0.25, blue: 0.75, alpha: 1.0)
+        let highlighted = Color(red: 0.4, green: 0.15, blue: 0.6, alpha: 1.0)
+        return ColorSet(normalColor: normal, highlightedColor: highlighted)
+    }
+
+}

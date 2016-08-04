@@ -38,22 +38,41 @@ public struct Font: Equatable {
         
         /// Gets the actual `UIFontWeight...` value
         public var value: CGFloat {
-            switch self {
-            case .regular:
-                return UIFontWeightRegular
-            case .medium:
-                return UIFontWeightMedium
-            case .bold:
-                return UIFontWeightBold
-            case .thin:
-                return UIFontWeightThin
-            case .black:
-                return UIFontWeightBlack
-            case .semibold:
-                return UIFontWeightSemibold
-            case .ultralight:
-                return UIFontWeightUltraLight
-            }
+            #if os(iOS) || os(tvOS) || os(watchOS)
+                switch self {
+                case .regular:
+                    return UIFontWeightRegular
+                case .medium:
+                    return UIFontWeightMedium
+                case .bold:
+                    return UIFontWeightBold
+                case .thin:
+                    return UIFontWeightThin
+                case .black:
+                    return UIFontWeightBlack
+                case .semibold:
+                    return UIFontWeightSemibold
+                case .ultralight:
+                    return UIFontWeightUltraLight
+                }
+            #elseif os(OSX)
+                switch self {
+                case .regular:
+                    return NSFontWeightRegular
+                case .medium:
+                    return NSFontWeightMedium
+                case .bold:
+                    return NSFontWeightBold
+                case .thin:
+                    return NSFontWeightThin
+                case .black:
+                    return NSFontWeightBlack
+                case .semibold:
+                    return NSFontWeightSemibold
+                case .ultralight:
+                    return NSFontWeightUltraLight
+                }
+            #endif
         }
     }
     
@@ -72,7 +91,7 @@ public struct Font: Equatable {
         How this text's point size is determined
      
         - staticSize:   The `font.pointSize` should always be equal to `pointSize` and never change
-        - dynamic:      The `font.pointSize` should be different depending on the user's dynamic text settings. `pointSizeBase` is the desired point size assuming the user's setting is set to default. Once the user's setting isn't default, then when you request `font` the actual `pointSize` used will be calculated by scaling `pointSizeBase` to match the user's size change %.
+        - dynamicSize:  The `font.pointSize` should be different depending on the user's dynamic text settings. `pointSizeBase` is the desired point size assuming the user's setting is set to default. Once the user's setting isn't default, then when you request `font` the actual `pointSize` used will be calculated by scaling `pointSizeBase` to match the user's size change %.
     */
     public enum SizeType: Equatable {
         case staticSize(pointSize: CGFloat)
@@ -142,11 +161,15 @@ public struct Font: Equatable {
     }
     
     private static func dynamicPointSize(pointSizeBase: CGFloat) -> CGFloat {
-        let defaultFontSize = UIFont.labelSize()
-        let adjustedFontSize = UIFont.preferredFont(forTextStyle: UIFontTextStyleBody).pointSize
-        let scaleFactor = adjustedFontSize / defaultFontSize
-        let dynamicPointSize = scaleFactor * pointSizeBase
-        return dynamicPointSize
+        #if os(iOS) || os(tvOS) || os(watchOS)
+            let defaultFontSize = PlatformFont.labelSize()
+            let adjustedFontSize = PlatformFont.preferredFont(forTextStyle: UIFontTextStyleBody).pointSize
+            let scaleFactor = adjustedFontSize / defaultFontSize
+            let dynamicPointSize = scaleFactor * pointSizeBase
+            return dynamicPointSize
+        #elseif os(OSX)
+            return pointSizeBase
+        #endif
     }
 }
 

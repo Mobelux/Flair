@@ -6,7 +6,13 @@
 //  Copyright © 2016 Mobelux. All rights reserved.
 //
 
-import Foundation
+#if os(iOS) || os(tvOS)
+    import UIKit
+#elseif os(watchOS)
+    import WatchKit
+#elseif os(OSX)
+    import AppKit
+#endif
 
 public extension PlatformColor {
     /// Is this color opaque? true if alpha == 1

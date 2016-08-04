@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Flair.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6B122F3F1D464486002E77AC"
+               BuildableName = "Flair.framework"
+               BlueprintName = "FlairMac"
+               ReferencedContainer = "container:Flair.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -36,6 +50,16 @@
                BlueprintIdentifier = "6B971B481D400B7700532C38"
                BuildableName = "FlairTests.xctest"
                BlueprintName = "FlairTests"
+               ReferencedContainer = "container:Flair.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6B122F471D464486002E77AC"
+               BuildableName = "FlairMacTests.xctest"
+               BlueprintName = "FlairMacTests"
                ReferencedContainer = "container:Flair.xcodeproj">
             </BuildableReference>
          </TestableReference>
