@@ -101,6 +101,7 @@
 		6B971B501D400B7700532C38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BAC4EC81D46A6A600E223F2 /* ColorSetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSetType.swift; sourceTree = "<group>"; };
 		6BAC4ECB1D46A79700E223F2 /* StyleType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleType.swift; sourceTree = "<group>"; };
+		6BEBD3F41D539DDD00EF1FA6 /* Flair.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; name = Flair.podspec; path = ../Flair.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +229,7 @@
 		6B971AFE1D40087C00532C38 = {
 			isa = PBXGroup;
 			children = (
+				6BEBD3F41D539DDD00EF1FA6 /* Flair.podspec */,
 				6B122F571D464543002E77AC /* Shared */,
 				6B971B421D400B7700532C38 /* Flair */,
 				6B971B4D1D400B7700532C38 /* FlairTests */,

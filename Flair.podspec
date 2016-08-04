@@ -15,7 +15,8 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = "10.0"
 
   s.source       = { :git => "https://github.com/Mobelux/Flair.git", :tag => "#{s.version}" }
-  s.source_files  = "Flair/Flair/**/*.{h,m,swift}"
+  s.source_files  = "Flair/Flair/**/*.{h,m,swift}", "Flair/Shared/**/*.{h,m,swift}"
+  s.exclude_files = "Flair/Shared/Tests"
 
   s.framework  = "Foundation"
 end
