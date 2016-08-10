@@ -435,6 +435,7 @@
 				6B62B4581D42A69000211697 /* Resources */,
 				6B62B4621D42A6EC00211697 /* Copy Frameworks */,
 				6B62B4641D42A71700211697 /* Copy Files (1 item) */,
+				6B19627F1D5BA0E500193445 /* Copy to build folder */,
 			);
 			buildRules = (
 			);
@@ -606,6 +607,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6B19627F1D5BA0E500193445 /* Copy to build folder */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy to build folder";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -f \"${SRCROOT}/../build/parser.zip\"\ncd \"${BUILT_PRODUCTS_DIR}\"\nzip -r \"${SRCROOT}/../build/parser.zip\" \"${WRAPPER_NAME}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6B62B4371D42A5CA00211697 /* Sources */ = {
