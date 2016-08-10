@@ -2,6 +2,7 @@
 A way to provide style (color & text) in JSON, and have that converted to Swift
 
 ## What's the point?
+There are a couple of reasons why we created Flair. We wanted a standardized way to pass color & text style between designers and developers. Many design tools will export Swift or Objective-C code for individual colors, that is hardly the whole picture. It is common that we need to think of color sets, related colors for different states of the same UI. We also wanted a single place to define not just font name/size but line spacing, and tracking/kerning. In iOS the font settings, is seperated from the line/paragraph settings and so that makes it harder to keep these related but distent values in sync. Flair unifies all of these in one place.
 
 ## Consuming app's project setup
 
