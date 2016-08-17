@@ -18,8 +18,8 @@ enum StyleParser {
         
         var styles: [NamedStyle] = []
         for styleKey in styleDict.keys {
-            if let styleName = styleKey as? String, let value = styleDict[styleName] as? JSON {
-                let style = try NamedStyle(name: styleName, styleValues: value, colors: namedColors)
+            if let value = styleDict[styleKey] as? JSON {
+                let style = try NamedStyle(name: styleKey, styleValues: value, colors: namedColors)
                 styles.append(style)
             }
         }

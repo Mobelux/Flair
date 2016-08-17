@@ -53,7 +53,7 @@ public extension StyleType {
         }
         
         if kerning != 0 {
-            attributes[NSKernAttributeName] = kerning
+            attributes[NSKernAttributeName] = kerning as NSNumber
         }
         
         let paragraphStyle = NSMutableParagraphStyle()

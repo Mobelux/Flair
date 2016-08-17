@@ -18,7 +18,7 @@ class NamedColorSet_InitTests: XCTestCase {
         let selected = "rgba(0.25, 0.5, 0.75, 1.0)"
         let disabled = "rgba(1.0, 1.0, 1, 1)"
         
-        let colorValues = ["normal" : normal, "highlighted" : highlighted, "selected" : selected, "disabled" : disabled]
+        let colorValues: JSON = ["normal" : normal, "highlighted" : highlighted, "selected" : selected, "disabled" : disabled]
         
         do {
             let colorSet = try NamedColorSet(name: "Test", colorValues: colorValues)
@@ -53,7 +53,7 @@ class NamedColorSet_InitTests: XCTestCase {
         let normal = "rgba(0.0, 1.0, 0.5, 1.0)"
         let disabled = "rgba(1.0, 1.0, 1, 1)"
         
-        let colorValues = ["normal" : normal, "disabled" : disabled]
+        let colorValues: JSON = ["normal" : normal, "disabled" : disabled]
         
         do {
             let colorSet = try NamedColorSet(name: "Test", colorValues: colorValues)
@@ -80,7 +80,7 @@ class NamedColorSet_InitTests: XCTestCase {
     func testValidMinimalColorSet() {
         let normal = "rgba(0.0, 1.0, 0.5, 1.0)"
         
-        let colorValues = ["normal" : normal]
+        let colorValues: JSON = ["normal" : normal]
         
         do {
             let colorSet = try NamedColorSet(name: "Test", colorValues: colorValues)
@@ -118,7 +118,7 @@ class NamedColorSet_InitTests: XCTestCase {
     func testInvalidColorColorSet() {
         let normal = "r(0.0, 1.0, 0.5, 1.0)"
         
-        let colorValues = ["normal" : normal]
+        let colorValues: JSON = ["normal" : normal]
         
         do {
             let _ = try NamedColorSet(name: "Test", colorValues: colorValues)

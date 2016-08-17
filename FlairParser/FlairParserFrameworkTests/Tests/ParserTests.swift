@@ -101,13 +101,13 @@ class ParserTests: XCTestCase {
         
         let colorValues = ["normal" : normal, "highlighted" : highlighted, "selected" : selected, "disabled" : disabled]
         let colorNames = ["coolColor", "strangeColor"]
-        let colors = [colorNames[0] : colorValues, colorNames[1] : colorValues]
+        let colors: JSON = [colorNames[0] : colorValues, colorNames[1] : colorValues]
         
-        let titleFontValue: JSON = ["size" : 25, "fontName" : "Arial-Black", "sizeType" : "static"]
-        let titleStyleValues: JSON = ["font" : titleFontValue, "lineSpacing" : 34, "kerning" : 3, "textColor" : colorNames[0]]
+        let titleFontValue: JSON = ["size" : 25 as NSNumber, "fontName" : "Arial-Black", "sizeType" : "static"]
+        let titleStyleValues: JSON = ["font" : titleFontValue, "lineSpacing" : 34 as NSNumber, "kerning" : 3 as NSNumber, "textColor" : colorNames[0]]
         
-        let bodyFontValue: JSON = ["size" : 15, "fontName" : "Arial-Black", "sizeType" : "dynamic"]
-        let bodyStyleValues: JSON = ["font" : bodyFontValue, "lineSpacing" : 14, "kerning" : 1, "textColor" : colorNames[1]]
+        let bodyFontValue: JSON = ["size" : 15 as NSNumber, "fontName" : "Arial-Black", "sizeType" : "dynamic"]
+        let bodyStyleValues: JSON = ["font" : bodyFontValue, "lineSpacing" : 14 as NSNumber, "kerning" : 1 as NSNumber, "textColor" : colorNames[1]]
         
         let styleNames = ["title", "body"]
         let namedStyles: JSON = [styleNames[0] : titleStyleValues, styleNames[1] : bodyStyleValues]

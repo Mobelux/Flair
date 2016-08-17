@@ -77,8 +77,7 @@ import Foundation
             
             guard let context = CGContext(data: &rawData, width: Int(imageSize.width), height: Int(imageSize.height), bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: colorSpace, bitmapInfo: info.rawValue) else { throw ImageError.couldNotCreateImageContext }
             
-            context.draw(in: CGRect(origin: .zero, size: imageSize), image: imageRef)
-            
+            context.draw(imageRef, in: CGRect(origin: .zero, size: imageSize))
             
             // Now your rawData contains the image data in the RGBA8888 pixel format, such that each val is 0 to 255. We want 0 to 1.0 since that's what UIColor and the like uses.
             let rawDataTransformed = rawData.map({ CGFloat($0) / 255.0 })

@@ -8,13 +8,12 @@
 
 import Foundation
 
-public typealias JSONKey = NSObject
-public typealias JSONValue = AnyObject
+public typealias JSONKey = String
+public typealias JSONValue = Any
 
 public typealias JSON = [JSONKey : JSONValue]
 
-extension Dictionary where Key: JSONKey, Value: JSONValue {
-    
+extension Sequence where Iterator.Element == (key: JSONKey, value: JSONValue) {
     func hash() throws -> String {
         do {
             let data = try JSONSerialization.data(withJSONObject: self, options: [.prettyPrinted])

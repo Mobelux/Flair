@@ -9,8 +9,8 @@
 import Foundation
 
 extension NSString {
-    func getVoidPointer() -> UnsafePointer<Void> {
+    func getVoidPointer() -> UnsafeRawPointer {
         let unmanaged = Unmanaged.passUnretained(self)
-        return UnsafePointer(unmanaged.toOpaque())
+        return UnsafeRawPointer(unmanaged.toOpaque())
     }
 }
