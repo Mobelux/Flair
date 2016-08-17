@@ -60,7 +60,7 @@ import Foundation
             static var reserved: NSString = "reserved"
         }
         
-        private func key(for state: UIControlState) -> UnsafePointer<Void>? {
+        private func key(for state: UIControlState) -> UnsafeRawPointer? {
 
             if state == .normal {
                 return AssociationKeys.normal.getVoidPointer()

@@ -18,12 +18,12 @@ class NamedStyle_InitTests: XCTestCase {
         
         let fontSize: CGFloat = 25
         let fontName = "Arial-Black"
-        let fontValue: JSON = ["size" : fontSize, "fontName" : fontName, "sizeType" : "static"]
+        let fontValue: JSON = ["size" : fontSize as NSNumber, "fontName" : fontName, "sizeType" : "static"]
         
         let lineSpacing: CGFloat = 34
         let kerning: CGFloat = 3
         
-        let styleValues: JSON = ["font" : fontValue, "lineSpacing" : lineSpacing, "kerning" : kerning, "textColor" : colorName]
+        let styleValues: JSON = ["font" : fontValue, "lineSpacing" : lineSpacing as NSNumber, "kerning" : kerning as NSNumber, "textColor" : colorName]
         let styleName = "title"
         
         let expectedFont = Font(fontName: fontName, sizeType: .staticSize(pointSize: fontSize))
@@ -66,7 +66,7 @@ class NamedStyle_InitTests: XCTestCase {
         let lineSpacing: CGFloat = 34
         let kerning: CGFloat = 3
         
-        let styleValues: JSON = ["lineSpacing" : lineSpacing, "kerning" : kerning, "textColor" : colorName]
+        let styleValues: JSON = ["lineSpacing" : lineSpacing as NSNumber, "kerning" : kerning as NSNumber, "textColor" : colorName]
         let styleName = "title"
         
         do {
@@ -87,12 +87,12 @@ class NamedStyle_InitTests: XCTestCase {
         
         let fontSize: CGFloat = 25
         let fontName = "Arial-Black"
-        let fontValue: JSON = ["size" : fontSize, "fontName" : fontName, "sizeType" : "static"]
+        let fontValue: JSON = ["size" : fontSize as NSNumber, "fontName" : fontName, "sizeType" : "static"]
         
         let lineSpacing: CGFloat = 34
         let kerning: CGFloat = 3
         
-        let styleValues: JSON = ["font" : fontValue, "lineSpacing" : lineSpacing, "kerning" : kerning, "textColor" : colorName]
+        let styleValues: JSON = ["font" : fontValue, "lineSpacing" : lineSpacing as NSNumber, "kerning" : kerning as NSNumber, "textColor" : colorName]
         let styleName = "title"
         
         do {
@@ -110,12 +110,12 @@ class NamedStyle_InitTests: XCTestCase {
         
         let fontSize: CGFloat = 25
         let fontName = "Arial-Black"
-        let fontValue: JSON = ["size" : fontSize, "fontName" : fontName, "sizeType" : "static"]
+        let fontValue: JSON = ["size" : fontSize as NSNumber, "fontName" : fontName, "sizeType" : "static"]
         
         let lineSpacing: CGFloat = 34
         let kerning: CGFloat = 3
         
-        let styleValues: JSON = ["font" : fontValue, "lineSpacing" : lineSpacing, "kerning" : kerning]
+        let styleValues: JSON = ["font" : fontValue, "lineSpacing" : lineSpacing as NSNumber, "kerning" : kerning as NSNumber]
         let styleName = "title"
         
         do {
@@ -134,11 +134,11 @@ class NamedStyle_InitTests: XCTestCase {
         
         let fontSize: CGFloat = 25
         let fontName = "Arial-Black"
-        let fontValue: JSON = ["size" : fontSize, "fontName" : fontName, "sizeType" : "static"]
+        let fontValue: JSON = ["size" : fontSize as NSNumber, "fontName" : fontName, "sizeType" : "static"]
         
         let lineSpacing: CGFloat = 34
         
-        let styleValues: JSON = ["font" : fontValue, "lineSpacing" : lineSpacing, "textColor" : colorName]
+        let styleValues: JSON = ["font" : fontValue, "lineSpacing" : lineSpacing as NSNumber, "textColor" : colorName]
         let styleName = "title"
         
         do {
@@ -157,11 +157,11 @@ class NamedStyle_InitTests: XCTestCase {
         
         let fontSize: CGFloat = 25
         let fontName = "Arial-Black"
-        let fontValue: JSON = ["size" : fontSize, "fontName" : fontName, "sizeType" : "static"]
+        let fontValue: JSON = ["size" : fontSize as NSNumber, "fontName" : fontName, "sizeType" : "static"]
         
         let kerning: CGFloat = 4
         
-        let styleValues: JSON = ["font" : fontValue, "kerning" : kerning, "textColor" : colorName]
+        let styleValues: JSON = ["font" : fontValue, "kerning" : kerning as NSNumber, "textColor" : colorName]
         let styleName = "title"
         
         do {

@@ -15,7 +15,7 @@ class Font_InitTests: XCTestCase {
     func testValidNormalFont() {
         let fontSize: CGFloat = 12
         let fontName = "Arial-Black"
-        let fontValues: JSON = ["size" : fontSize, "fontName" : fontName, "sizeType" : "static"]
+        let fontValues: JSON = ["size" : fontSize as NSNumber, "fontName" : fontName, "sizeType" : "static"]
         do {
             let font = try Font(fontValues: fontValues)
             switch font.sizeType {
@@ -41,7 +41,7 @@ class Font_InitTests: XCTestCase {
     func testValidSystemFont() {
         let fontSize: CGFloat = 22
         let fontWeight = "medium"
-        let fontValues: JSON = ["size" : fontSize, "systemFontWeight" : fontWeight, "sizeType" : "dynamic"]
+        let fontValues: JSON = ["size" : fontSize as NSNumber, "systemFontWeight" : fontWeight, "sizeType" : "dynamic"]
         do {
             let font = try Font(fontValues: fontValues)
             switch font.sizeType {
@@ -83,7 +83,7 @@ class Font_InitTests: XCTestCase {
     
     func testMissingFontName() {
         let fontSize: CGFloat = 12
-        let fontValues: JSON = ["size" : fontSize, "sizeType" : "static"]
+        let fontValues: JSON = ["size" : fontSize as NSNumber, "sizeType" : "static"]
         
         do {
             let _ = try Font(fontValues: fontValues)
@@ -100,7 +100,7 @@ class Font_InitTests: XCTestCase {
     func testMissingSizeType() {
         let fontSize: CGFloat = 12
         let fontName = "Arial-Black"
-        let fontValues: JSON = ["size" : fontSize, "fontName" : fontName, "sizeType" : "random"]
+        let fontValues: JSON = ["size" : fontSize as NSNumber, "fontName" : fontName, "sizeType" : "random"]
         
         do {
             let _ = try Font(fontValues: fontValues)

@@ -21,8 +21,8 @@ enum ColorParser {
         colors.reserveCapacity(colorDict.count)
         
         for colorKey in colorDict.keys {
-            if let colorName = colorKey as? String, let colorValueDict = colorDict[colorName] as? JSON {
-                let namedColorSet = try NamedColorSet(name: colorName, colorValues: colorValueDict)
+            if let colorValueDict = colorDict[colorKey] as? JSON {
+                let namedColorSet = try NamedColorSet(name: colorKey, colorValues: colorValueDict)
                 colors.append(namedColorSet)
             }
         }
