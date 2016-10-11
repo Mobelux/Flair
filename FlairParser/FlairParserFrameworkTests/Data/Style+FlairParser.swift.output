@@ -5,7 +5,7 @@ import Flair
 
 extension Style {
     static func body() -> Style {
-        let font = Font(type: .system(weight: .ultralight), sizeType: .dynamic(pointSizeBase: 16.0))
+        let font = Font(type: .system(weight: .ultralight), sizeType: .dynamicSize(pointSizeBase: 16.0))
         return Style(font: font, kerning: 3.25, lineSpacing: 30.0, textColor: ColorSet.coolOrange())
     }
 
