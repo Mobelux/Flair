@@ -72,7 +72,7 @@ enum NamedStyleGenerator: ExtensionGenerator {
             case .staticSize(let pointSize):
                 return ".staticSize(pointSize: \(pointSize))"
             case .dynamicSize(let pointSizeBase):
-                return ".dynamic(pointSizeBase: \(pointSizeBase))"
+                return ".dynamicSize(pointSizeBase: \(pointSizeBase))"
             }
         }()
         

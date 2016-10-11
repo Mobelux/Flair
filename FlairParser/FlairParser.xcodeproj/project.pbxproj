@@ -35,6 +35,9 @@
 		6B6E38301D4659E90087123A /* StyleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E38291D4659E90087123A /* StyleParser.swift */; };
 		6B6E38321D465A260087123A /* NamedColorSet+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E38311D465A260087123A /* NamedColorSet+Init.swift */; };
 		6B6E38371D465A7B0087123A /* Color+InitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E38361D465A7B0087123A /* Color+InitTests.swift */; };
+		6B86A0191DAD420D001933BF /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B86A0181DAD420D001933BF /* AppKit.framework */; };
+		6B86A01E1DAD4245001933BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B86A01D1DAD4245001933BF /* Foundation.framework */; };
+		6B86A01F1DAD4268001933BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B86A01D1DAD4245001933BF /* Foundation.framework */; };
 		6B971B2D1D400AC900532C38 /* FlairParserFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B971B241D400AC900532C38 /* FlairParserFramework.framework */; };
 		6B971B341D400AC900532C38 /* FlairParserFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B971B261D400AC900532C38 /* FlairParserFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6BAC4ED11D46B0FD00E223F2 /* Font+InitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAC4ED01D46B0FD00E223F2 /* Font+InitTests.swift */; };
@@ -179,6 +182,8 @@
 		6B6E38291D4659E90087123A /* StyleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleParser.swift; sourceTree = "<group>"; };
 		6B6E38311D465A260087123A /* NamedColorSet+Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NamedColorSet+Init.swift"; sourceTree = "<group>"; };
 		6B6E38361D465A7B0087123A /* Color+InitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+InitTests.swift"; sourceTree = "<group>"; };
+		6B86A0181DAD420D001933BF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		6B86A01D1DAD4245001933BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6B971B241D400AC900532C38 /* FlairParserFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlairParserFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B971B261D400AC900532C38 /* FlairParserFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlairParserFramework.h; sourceTree = "<group>"; };
 		6B971B271D400AC900532C38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -199,6 +204,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B86A01F1DAD4268001933BF /* Foundation.framework in Frameworks */,
+				6B86A0191DAD420D001933BF /* AppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B86A01E1DAD4245001933BF /* Foundation.framework in Frameworks */,
 				6B01EE271D492E6300A7ECEC /* Flair.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +268,8 @@
 		6B62B4791D42C15200211697 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B86A01D1DAD4245001933BF /* Foundation.framework */,
+				6B86A0181DAD420D001933BF /* AppKit.framework */,
 				6B1E4DBC1D465CEC00D9E42C /* Flair.framework */,
 				6B62B47A1D42C15200211697 /* Flair.framework */,
 			);
