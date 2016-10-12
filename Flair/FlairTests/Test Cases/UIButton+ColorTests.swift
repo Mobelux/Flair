@@ -9,7 +9,7 @@
 import XCTest
 import Flair
 
-class UIButton_BackgroundColorTests: XCTestCase {
+class UIButton_ColorTests: XCTestCase {
     
     func testNormalAndHighlightState() {
         let normalColor = UIColor.red
@@ -154,7 +154,7 @@ class UIButton_BackgroundColorTests: XCTestCase {
         XCTAssertNil(foundColor, "We got a valid color, for an invalid state")
     }
 
-    func testSettingColorSet() {
+    func testBackgroundColorSet() {
         let red = Color(color: UIColor.red)!
         let green = Color(color: UIColor.green)!
         let blue = Color(color: UIColor.blue)!
@@ -168,5 +168,21 @@ class UIButton_BackgroundColorTests: XCTestCase {
         XCTAssert(button.backgroundColor(for: .highlighted) == green.color, "Highlighted color doesn't match")
         XCTAssert(button.backgroundColor(for: .selected) == blue.color, "Selected color doesn't match")
         XCTAssert(button.backgroundColor(for: .disabled) == redFaded.color, "Disabled color doesn't match")
+    }
+
+    func testTitleColorSet() {
+        let red = Color(color: UIColor.red)!
+        let green = Color(color: UIColor.green)!
+        let blue = Color(color: UIColor.blue)!
+        let redFaded = Color(color: UIColor.red.withAlphaComponent(0.25))!
+
+        let colorSet = ColorSet(normalColor: red, highlightedColor: green, selectedColor: blue, disabledColor: redFaded)
+        let button = UIButton(type: .custom)
+        button.setTitle(colorSet: colorSet)
+        XCTAssert(button.titleColorSet() == colorSet, "Color set doesn't match")
+        XCTAssert(button.titleColor(for: .normal) == red.color, "Normal color doesn't match")
+        XCTAssert(button.titleColor(for: .highlighted) == green.color, "Highlighted color doesn't match")
+        XCTAssert(button.titleColor(for: .selected) == blue.color, "Selected color doesn't match")
+        XCTAssert(button.titleColor(for: .disabled) == redFaded.color, "Disabled color doesn't match")
     }
 }
