@@ -63,8 +63,8 @@ public struct Color: Equatable {
      
      - returns: A Color if the passed in `color` is convertable to a basic RGBA color.
      */
-    public init?(color: PlatformColor) {
-        guard let actualColor = color.getColor() else { return nil }
+    public init?(color: PlatformColor?) {
+        guard let actualColor = color?.getColor() else { return nil }
         self.init(red: actualColor.red, green: actualColor.green, blue: actualColor.blue, alpha: actualColor.alpha)
     }
 }
