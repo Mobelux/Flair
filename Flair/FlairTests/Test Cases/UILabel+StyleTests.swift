@@ -43,6 +43,7 @@ class UILabel_StyleTests: XCTestCase {
         let label = UILabel()
         label.text = initialText
         label.style = style
+        label.textAlignment = .center
         
         XCTAssert(label.style == style, "The style we just set doesn't match the style it has now")
         XCTAssert(label.text == initialText, "The text doesn't match")
@@ -50,7 +51,7 @@ class UILabel_StyleTests: XCTestCase {
         label.setStyled(text: initialText)
         XCTAssert(label.text == initialText, "The text doesn't match")
         
-        let expectedAttributedString = initialText.attributedString(for: style)
+        let expectedAttributedString = initialText.attributedString(for: style, alignment: label.textAlignment)
         XCTAssert(label.attributedText == expectedAttributedString, "Attributed string doesn't match expected")
     }
 }

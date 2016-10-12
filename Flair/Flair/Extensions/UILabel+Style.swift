@@ -83,7 +83,7 @@ import Foundation
                 }
             } else {
                 let textToSet = text ?? ""
-                attributedText = textToSet.attributedString(for: style)
+                attributedText = textToSet.attributedString(for: style, alignment: textAlignment)
             }
         }
         
