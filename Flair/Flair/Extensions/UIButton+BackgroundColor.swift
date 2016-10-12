@@ -46,7 +46,33 @@ import Foundation
             let color = objc_getAssociatedObject(self, key) as? UIColor
             return color
         }
-        
+
+        /**
+         Sets the background color for the 4 key states (normal, highlighted, selected & disabled) to the values in the `colorSet`
+         
+         - parameter colorSet: The color set to get the background colors from. If the set is `nil` or a specific color is `nil` then that state will have a nil color
+        */
+        public func setBackground(colorSet: ColorSet?) {
+            setBackgroundColor(color: colorSet?.normalColor.color, for: .normal)
+            setBackgroundColor(color: colorSet?.highlightedColor?.color, for: .highlighted)
+            setBackgroundColor(color: colorSet?.selectedColor?.color, for: .selected)
+            setBackgroundColor(color: colorSet?.disabledColor?.color, for: .disabled)
+        }
+
+        /**
+         Gets a `ColorSet` that represents the background colors that are currently set. You do not have had to call `setBackground(colorSet:)` first. 
+         Just setting 1 or more background colors individually will be enough to rebuild the current `ColorSet`.
+         
+         - returns: Note that this object will not be the same instance that you set via `setBackground(colorSet:)`, but it may have the same values. It also may be different then that, because you may have changed the background color for an individual state after setting the background color set.
+        */
+        public func backgroundColorSet() -> ColorSet? {
+            guard let normal = backgroundColor(for: .normal), let normalColor = Color(color: normal) else { return nil }
+            let highlighted = backgroundColor(for: .highlighted)
+            let selected = backgroundColor(for: .selected)
+            let disabled = backgroundColor(for: .disabled)
+            return ColorSet(normalColor: normalColor, highlightedColor: Color(color: highlighted), selectedColor: Color(color: selected), disabledColor: Color(color: disabled))
+        }
+
         
         // MARK: - Private
         

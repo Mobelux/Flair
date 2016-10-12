@@ -153,4 +153,20 @@ class UIButton_BackgroundColorTests: XCTestCase {
         let foundColor = button.backgroundColor(for: state)
         XCTAssertNil(foundColor, "We got a valid color, for an invalid state")
     }
+
+    func testSettingColorSet() {
+        let red = Color(color: UIColor.red)!
+        let green = Color(color: UIColor.green)!
+        let blue = Color(color: UIColor.blue)!
+        let redFaded = Color(color: UIColor.red.withAlphaComponent(0.25))!
+
+        let colorSet = ColorSet(normalColor: red, highlightedColor: green, selectedColor: blue, disabledColor: redFaded)
+        let button = UIButton(type: .custom)
+        button.setBackground(colorSet: colorSet)
+        XCTAssert(button.backgroundColorSet() == colorSet, "Color set doesn't match")
+        XCTAssert(button.backgroundColor(for: .normal) == red.color, "Normal color doesn't match")
+        XCTAssert(button.backgroundColor(for: .highlighted) == green.color, "Highlighted color doesn't match")
+        XCTAssert(button.backgroundColor(for: .selected) == blue.color, "Selected color doesn't match")
+        XCTAssert(button.backgroundColor(for: .disabled) == redFaded.color, "Disabled color doesn't match")
+    }
 }
