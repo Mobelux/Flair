@@ -44,16 +44,22 @@ flair.export = {
 				colorJSON += '\t\t"' + color.name + '" : {\n';
 				
 				var normalColor = flair.export.colorJSONString(color.normal);
-				colorJSON += '\t\t\t"normal" : "' + normalColor + '",\n';
+				colorJSON += '\t\t\t"normal" : "' + normalColor + '"';
 
-				var highlightedColor = flair.export.colorJSONString(color.highlighted);
-				colorJSON += '\t\t\t"highlighted" : "' + highlightedColor + '",\n';
+				if (color.highlighted != null) {
+					var highlightedColor = flair.export.colorJSONString(color.highlighted);
+					colorJSON += ',\n\t\t\t"highlighted" : "' + highlightedColor + '"';
+				}
 
-				var selectedColor = flair.export.colorJSONString(color.selected);
-				colorJSON += '\t\t\t"selected" : "' + selectedColor + '",\n';
+				if (color.selected != null) {
+					var selectedColor = flair.export.colorJSONString(color.selected);
+					colorJSON += ',\n\t\t\t"selected" : "' + selectedColor + '"';
+				}
 
-				var disabledColor = flair.export.colorJSONString(color.disabled);
-				colorJSON += '\t\t\t"disabled" : "' + disabledColor + '"';
+				if (color.disabled != null) {
+					var disabledColor = flair.export.colorJSONString(color.disabled);
+					colorJSON += ',\n\t\t\t"disabled" : "' + disabledColor + '"';
+				}
 				
 				colorJSON += '\n\t\t}';
 				if (colorIndex + 1 != colorSets.length) {

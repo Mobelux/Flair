@@ -27,9 +27,11 @@ flair.colors = {
 	},
 
 	getColorValueForNameFromLayers: function (colorName, layers) {
-		var colorPredicate = NSPredicate.predicateWithFormat("name == %@", colorName);
+		var colorPredicate = NSPredicate.predicateWithFormat("name ==[c] %@", colorName);
 		var colorLayer = layers.filteredArrayUsingPredicate(colorPredicate).firstObject();
+		if (colorLayer == null) { return null; }
 		var fillStyle = colorLayer.style().fills().firstObject();
+		if (fillStyle == null) { return null; }
 		var color = fillStyle.colorGeneric();
 		return color;
 	},
@@ -37,28 +39,28 @@ flair.colors = {
 	getColorFromColorGroup: function (colorGroup) {
 		var groupLayers = colorGroup.layers();
 
-		var colorNamePredicate = NSPredicate.predicateWithFormat("name CONTAINS[cd] %@", flair.colors.colorName);
-		var nameTextLayer = groupLayers.filteredArrayUsingPredicate(colorNamePredicate).firstObject();
-
 		var normalColor = flair.colors.getColorValueForNameFromLayers(flair.colors.normalColorName, groupLayers);
+		if (normalColor == null) { return null; }
 		var highlightedColor = flair.colors.getColorValueForNameFromLayers(flair.colors.highlightedColorName, groupLayers);
 		var selectedColor = flair.colors.getColorValueForNameFromLayers(flair.colors.selectedColorName, groupLayers);
 		var disabledColor = flair.colors.getColorValueForNameFromLayers(flair.colors.disabledColorName, groupLayers);
 
-		var colorName = flair.sanitizeName(nameTextLayer.stringValue());
+		var colorName = flair.sanitizeName(colorGroup.name());
 		return {name: colorName, normal: normalColor, highlighted: highlightedColor, selected: selectedColor, disabled: disabledColor};
 	},
 
 
     getColors: function () {
-    	var artboards = flair.getArtboardsForName(flair.colors.colorArtboardName);
+		var artboards = flair.getArtboardsForName(flair.colors.colorArtboardName);
     	var colorGroups = flair.colors.getColorGroupsFromArtboards(artboards);
     	var colors = [];
 
     	for (colorGroupIndex = 0; colorGroupIndex < colorGroups.length; colorGroupIndex += 1) {
     		var group = colorGroups[colorGroupIndex];
     		var color = flair.colors.getColorFromColorGroup(group);
-    		colors.push(color);
+    		if (color != null) {
+    			colors.push(color);
+    		}
     	}
     	return colors;
     },
