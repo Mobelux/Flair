@@ -6,7 +6,8 @@ flair.textStyles = {
 	// Putting this string at the beginning of your style name will cause that style to use a static font size. Default styles are dynamic
 	staticStylePrefix: 's ',
 	// If a font's name starts with this prefix consider the font to be the system font
-	systemFontNamePrefix: 'SFUIDisplay-',
+	systemFontDisplayNamePrefix: 'SFUIDisplay-',
+    systemFontTextNamePrefix: 'SFUIText-',
 
 	// Returns an array of Style objects, that are not set to be ignored
     getTextStyles: function (workingScale, colorSets) {
@@ -49,11 +50,17 @@ flair.textStyles = {
     	var fontName = String(attributes.NSFont.fontName());
     	var fontSize = attributes.NSFont.pointSize() / workingScale;
 
-    	var isSystemFont = fontName.indexOf(flair.textStyles.systemFontNamePrefix) == 0;
+    	var isSystemFont = fontName.indexOf(flair.textStyles.systemFontDisplayNamePrefix) == 0 || fontName.indexOf(flair.textStyles.systemFontTextNamePrefix) == 0;
 
     	var font = {size: fontSize, sizeType: sizeType, isSystemFont: isSystemFont, isDynamicSize: isDynamicSize};
     	if (isSystemFont) {
-    		var lengthOfPrefix = flair.textStyles.systemFontNamePrefix.length;
+    		var lengthOfPrefix = 0;
+            if (fontName.indexOf(flair.textStyles.systemFontDisplayNamePrefix) == 0) {
+                lengthOfPrefix = flair.textStyles.systemFontDisplayNamePrefix.length;    
+            } else if (fontName.indexOf(flair.textStyles.systemFontTextNamePrefix) == 0) {
+                lengthOfPrefix = flair.textStyles.systemFontTextNamePrefix.length;
+            }
+            
     		font.systemFontWeight = fontName.slice(lengthOfPrefix).toLowerCase();
     	} else {
     		font.fontName = fontName;
