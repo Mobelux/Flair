@@ -35,6 +35,7 @@ public struct Font: Equatable {
         case black
         case semibold
         case ultralight
+        case light
         
         /// Gets the actual `UIFontWeight...` value
         public var value: CGFloat {
@@ -54,6 +55,8 @@ public struct Font: Equatable {
                     return UIFontWeightSemibold
                 case .ultralight:
                     return UIFontWeightUltraLight
+                case .light:
+                    return UIFontWeightLight
                 }
             #elseif os(OSX)
                 switch self {
@@ -71,6 +74,8 @@ public struct Font: Equatable {
                     return NSFontWeightSemibold
                 case .ultralight:
                     return NSFontWeightUltraLight
+                case .light:
+                    return NSFontWeightLight
                 }
             #endif
         }
