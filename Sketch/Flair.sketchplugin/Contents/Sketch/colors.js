@@ -27,9 +27,11 @@ flair.colors = {
 	},
 
 	getColorValueForNameFromLayers: function (colorName, layers) {
-		var colorPredicate = NSPredicate.predicateWithFormat("name == %@", colorName);
+		var colorPredicate = NSPredicate.predicateWithFormat("name ==[c] %@", colorName);
 		var colorLayer = layers.filteredArrayUsingPredicate(colorPredicate).firstObject();
+		if (colorLayer == null) { return null; }
 		var fillStyle = colorLayer.style().fills().firstObject();
+		if (fillStyle == null) { return null; }
 		var color = fillStyle.colorGeneric();
 		return color;
 	},
