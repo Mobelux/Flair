@@ -60,10 +60,10 @@ flair.textStyles = {
     	}
 
     	var textStyle = {name: sanitizedName, font: font, lineSpacing: lineHeight, kerning: kerning};
-    	var textColorName = flair.colors.matchingColorSetName(colorSets, attributes.NSColor);
-    	if (textColorName != null) {
-    		textStyle.textColor = textColorName;
-    	}
+    	// var textColorName = flair.colors.matchingColorSetName(colorSets, attributes.NSColor);
+    	// if (textColorName != null) {
+    	// 	textStyle.textColor = textColorName;
+    	// }
     	return textStyle;
     }
 }
