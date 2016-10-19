@@ -39,17 +39,13 @@ flair.colors = {
 	getColorFromColorGroup: function (colorGroup) {
 		var groupLayers = colorGroup.layers();
 
-		var colorNamePredicate = NSPredicate.predicateWithFormat("name CONTAINS[cd] %@", flair.colors.colorName);
-		var nameTextLayer = groupLayers.filteredArrayUsingPredicate(colorNamePredicate).firstObject();
-		if (nameTextLayer == null) { return null; }
-
 		var normalColor = flair.colors.getColorValueForNameFromLayers(flair.colors.normalColorName, groupLayers);
 		if (normalColor == null) { return null; }
 		var highlightedColor = flair.colors.getColorValueForNameFromLayers(flair.colors.highlightedColorName, groupLayers);
 		var selectedColor = flair.colors.getColorValueForNameFromLayers(flair.colors.selectedColorName, groupLayers);
 		var disabledColor = flair.colors.getColorValueForNameFromLayers(flair.colors.disabledColorName, groupLayers);
 
-		var colorName = flair.sanitizeName(nameTextLayer.stringValue());
+		var colorName = flair.sanitizeName(colorGroup.name());
 		return {name: colorName, normal: normalColor, highlighted: highlightedColor, selected: selectedColor, disabled: disabledColor};
 	},
 
