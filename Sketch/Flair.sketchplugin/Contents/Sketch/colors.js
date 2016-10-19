@@ -39,8 +39,10 @@ flair.colors = {
 
 		var colorNamePredicate = NSPredicate.predicateWithFormat("name CONTAINS[cd] %@", flair.colors.colorName);
 		var nameTextLayer = groupLayers.filteredArrayUsingPredicate(colorNamePredicate).firstObject();
+		if (nameTextLayer == null) { return null; }
 
 		var normalColor = flair.colors.getColorValueForNameFromLayers(flair.colors.normalColorName, groupLayers);
+		if (normalColor == null) { return null; }
 		var highlightedColor = flair.colors.getColorValueForNameFromLayers(flair.colors.highlightedColorName, groupLayers);
 		var selectedColor = flair.colors.getColorValueForNameFromLayers(flair.colors.selectedColorName, groupLayers);
 		var disabledColor = flair.colors.getColorValueForNameFromLayers(flair.colors.disabledColorName, groupLayers);
@@ -54,11 +56,13 @@ flair.colors = {
     	var artboards = flair.getArtboardsForName(flair.colors.colorArtboardName);
     	var colorGroups = flair.colors.getColorGroupsFromArtboards(artboards);
     	var colors = [];
-
+    	
     	for (colorGroupIndex = 0; colorGroupIndex < colorGroups.length; colorGroupIndex += 1) {
     		var group = colorGroups[colorGroupIndex];
     		var color = flair.colors.getColorFromColorGroup(group);
-    		colors.push(color);
+    		if (color != null) {
+    			colors.push(color);
+    		}
     	}
     	return colors;
     },
