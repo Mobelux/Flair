@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Flair"
-  s.version      = "1.1.0"
+  s.version      = "1.1.1"
   s.summary      = "A way to provide style (color & text) in JSON, and have that converted to Swift"
   s.homepage     = "https://github.com/Mobelux/Flair"
   s.license      = "MIT"
