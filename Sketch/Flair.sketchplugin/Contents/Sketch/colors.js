@@ -51,10 +51,10 @@ flair.colors = {
 
 
     getColors: function () {
-    	var artboards = flair.getArtboardsForName(flair.colors.colorArtboardName);
+		var artboards = flair.getArtboardsForName(flair.colors.colorArtboardName);
     	var colorGroups = flair.colors.getColorGroupsFromArtboards(artboards);
     	var colors = [];
-    	
+
     	for (colorGroupIndex = 0; colorGroupIndex < colorGroups.length; colorGroupIndex += 1) {
     		var group = colorGroups[colorGroupIndex];
     		var color = flair.colors.getColorFromColorGroup(group);
