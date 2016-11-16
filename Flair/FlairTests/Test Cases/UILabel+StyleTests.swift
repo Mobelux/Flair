@@ -36,7 +36,7 @@ class UILabel_StyleTests: XCTestCase {
         let font = Font(systemFontWeight: .medium, sizeType: .staticSize(pointSize: 14))
         let color = Color(red: 0, green: 1, blue: 0, alpha: 1)
         let colorSet = ColorSet(normalColor: color)
-        let style = Style(font: font, kerning: 2, lineSpacing: 26, textColor: colorSet)
+        let style = Style(font: font, kerning: 2, lineHeightMultiple: 2.6, textColor: colorSet)
         
         let initialText = "This text should be set on the label, before setting the style"
         

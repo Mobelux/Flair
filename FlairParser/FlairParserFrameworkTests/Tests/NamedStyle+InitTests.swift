@@ -20,19 +20,19 @@ class NamedStyle_InitTests: XCTestCase {
         let fontName = "Arial-Black"
         let fontValue: JSON = ["size" : fontSize as NSNumber, "fontName" : fontName, "sizeType" : "static"]
         
-        let lineSpacing: CGFloat = 34
+        let lineHeightMultiple: CGFloat = 3.4
         let kerning: CGFloat = 3
         
-        let styleValues: JSON = ["font" : fontValue, "lineSpacing" : lineSpacing as NSNumber, "kerning" : kerning as NSNumber, "textColor" : colorName]
+        let styleValues: JSON = ["font" : fontValue, "lineHeightMultiple" : lineHeightMultiple as NSNumber, "kerning" : kerning as NSNumber, "textColor" : colorName]
         let styleName = "title"
         
         let expectedFont = Font(fontName: fontName, sizeType: .staticSize(pointSize: fontSize))
-        let expectedStyle = NamedStyle(name: styleName, font: expectedFont, kerning: kerning, lineSpacing: lineSpacing, textColor: color)
+        let expectedStyle = NamedStyle(name: styleName, font: expectedFont, kerning: kerning, lineHeightMultiple: lineHeightMultiple, textColor: color)
         
         do {
             let style = try NamedStyle(name: styleName, styleValues: styleValues, colors: [color])
             XCTAssert(style.textColor == color, "TextColor is incorrect")
-            XCTAssert(style.lineSpacing == lineSpacing, "LineSpacing is incorrect")
+            XCTAssert(style.lineHeightMultiple == lineHeightMultiple, "lineHeightMultiple is incorrect")
             XCTAssert(style.kerning == kerning, "Kerning is incorrect")
             XCTAssert(style.name == styleName, "Style name is incorrect")
             XCTAssertFalse(style.isBasicStyle, "Should not be a basic style")
@@ -166,7 +166,7 @@ class NamedStyle_InitTests: XCTestCase {
         
         do {
             let style = try NamedStyle(name: styleName, styleValues: styleValues, colors: [color])
-            XCTAssert(style.lineSpacing == 0, "Line spacing incorrect")
+            XCTAssert(style.lineHeightMultiple == 0, "lineHeightMultiple incorrect")
         } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {

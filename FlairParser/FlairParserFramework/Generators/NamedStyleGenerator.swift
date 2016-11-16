@@ -42,8 +42,8 @@ enum NamedStyleGenerator: ExtensionGenerator {
         if style.kerning != 0 {
             returnLine.append(", kerning: \(style.kerning)")
         }
-        if style.lineSpacing != 0 {
-            returnLine.append(", lineSpacing: \(style.lineSpacing)")
+        if style.lineHeightMultiple != 0 {
+            returnLine.append(", lineHeightMultiple: \(style.lineHeightMultiple)")
         }
         if let textColor = textColor {
             returnLine.append(", textColor: \(textColor)")

@@ -12,7 +12,7 @@ import Flair
 extension NamedStyle {
     private enum Constants {
         static let fontKey = "font"
-        static let lineSpacingKey = "lineSpacing"
+        static let lineHeightMultipleKey = "lineHeightMultiple"
         static let kerningKey = "kerning"
         static let textColorKey = "textColor"
     }
@@ -23,10 +23,10 @@ extension NamedStyle {
         guard let fontValue = styleValues[Constants.fontKey] as? JSON else { throw Parser.ParserError.missingFontDict }
         font = try Font(fontValues: fontValue)
         
-        if let lineSpacing = styleValues[Constants.lineSpacingKey] as? CGFloat {
-            self.lineSpacing = lineSpacing
+        if let lineHeightMultiple = styleValues[Constants.lineHeightMultipleKey] as? CGFloat {
+            self.lineHeightMultiple = lineHeightMultiple
         } else {
-            lineSpacing = 0
+            lineHeightMultiple = 0
         }
         
         if let kerning = styleValues[Constants.kerningKey] as? CGFloat {
