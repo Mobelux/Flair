@@ -16,7 +16,7 @@
     			"systemFontWeight" : "<value from comments>" // optional. If not set, then "fontName" must be set Both this and "fontName" can't both be set. Value options: regular, medium, bold, thin, black, semibold, ultralight
     			"sizeType" : "<value from comments>" // required. Value options: static, dynamic
     		},
-    		"lineSpacing" : 24, // optional
+    		"lineHeightMultiple" : 1.5, // optional
     		"kerning" : 2.5, // optional
     		"textColor" : "colorName" // optional, must match a color name from the colors dict above
     	}

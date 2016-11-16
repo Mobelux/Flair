@@ -71,7 +71,7 @@ A style file should be a valid JSON dictionary, containing two keys: `colors` & 
     			"systemFontWeight" : "<regular, medium, bold, thin, black, semibold, or ultralight>",
     			"sizeType" : "<static or dynamic>"
     		},
-    		"lineSpacing" : 24,
+    		"lineHeightMultiple" : 2.4,
     		"kerning" : 2.5,
     		"textColor" : "colorName"
     	}
