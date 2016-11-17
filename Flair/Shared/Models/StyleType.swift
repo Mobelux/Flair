@@ -24,8 +24,8 @@ public protocol StyleType: Equatable {
     var font: Font { get }
     /// Any kerning that should be applied. A value of 0 disables kerning
     var kerning: CGFloat { get }
-    /// Any line spacing that should be applied. A value of 0 disables line spacing. Values must be >= 0.
-    var lineSpacing: CGFloat { get }
+    /// Any line hight scaling that should be applied. A value of 0 disables line high adjustment. Values must be >= 0.
+    var lineHeightMultiple: CGFloat { get }
     /// The `ColorSet` to use for the text color
     var textColor: AssociatedColorSet? { get }
     /// The style only has `font` & maybe `textColor`. No `kerning` or `lineSpacing`
@@ -33,7 +33,7 @@ public protocol StyleType: Equatable {
 }
 
 public extension StyleType {
-    public var isBasicStyle: Bool { return kerning == 0 && lineSpacing == 0 }
+    public var isBasicStyle: Bool { return kerning == 0 && lineHeightMultiple == 0 }
     
     /**
      Creates a dictionary of text attributes. Commenly used to create an `NSAttributedString` or used in `UIAppearance` methods. If `textColor` is not nil then `textColor.normalColor` will be used for the text. If `backgroundColor` is not nil and `showBackgroundColor` is `true` then `backgroundColor.normalColor` will be used for the background.
@@ -60,8 +60,8 @@ public extension StyleType {
         paragraphStyle.lineBreakMode = lineBreakMode
         paragraphStyle.alignment = alignment
         
-        if lineSpacing != 0 {
-            paragraphStyle.lineSpacing = lineSpacing
+        if lineHeightMultiple != 0 {
+            paragraphStyle.lineHeightMultiple = lineHeightMultiple
         }
         
         attributes[NSParagraphStyleAttributeName] = paragraphStyle
@@ -71,5 +71,5 @@ public extension StyleType {
 }
 
 public func ==<T: StyleType>(lhs: T, rhs: T) -> Bool {
-    return lhs.font == rhs.font && lhs.textColor == rhs.textColor && lhs.kerning == rhs.kerning && lhs.lineSpacing == rhs.lineSpacing
+    return lhs.font == rhs.font && lhs.textColor == rhs.textColor && lhs.kerning == rhs.kerning && lhs.lineHeightMultiple == rhs.lineHeightMultiple
 }

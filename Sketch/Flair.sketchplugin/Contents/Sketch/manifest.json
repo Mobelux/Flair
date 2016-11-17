@@ -3,11 +3,11 @@
   "description" : "Export colors & styles in Sketch to Flair's JSON format",
   "author" : "Mobelux",
   "homepage" : "https://github.com/mobelux/flair",
-  "version" : 1.0,
+  "version" : 1.1,
   "identifier" : "com.mobelux.flair",
   "updateURL" : "https://github.com/mobelux/flair",
   "compatibleVersion" : 3.5,
-  "bundleVersion" : 1,
+  "bundleVersion" : 2,
   "commands" : [
     {
       "name" : "Export Everything",

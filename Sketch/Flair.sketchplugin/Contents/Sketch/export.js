@@ -94,7 +94,7 @@ flair.export = {
 				styleJSON += '\t\t\t},\n';
 
 				styleJSON += '\t\t\t"kerning" : ' + style.kerning + ',\n';
-				styleJSON += '\t\t\t"lineSpacing" : ' + style.lineSpacing;
+				styleJSON += '\t\t\t"lineHeightMultiple" : ' + style.lineHeightMultiple;
 				if (style.textColor != null) {
 					styleJSON += ',\n\t\t\t"textColor" : "' + style.textColor + '"\n';
 				} else {

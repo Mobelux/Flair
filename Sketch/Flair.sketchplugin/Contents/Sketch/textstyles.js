@@ -49,10 +49,10 @@ flair.textStyles = {
     	if (kerning < 0.005 || kerning == null) {
     		kerning = 0;
     	}
-
-    	var lineHeight = attributes.NSParagraphStyle != null ? (attributes.NSParagraphStyle.maximumLineHeight() / workingScale) : 0;
+    	
     	var fontName = String(attributes.NSFont.fontName());
     	var fontSize = attributes.NSFont.pointSize() / workingScale;
+        var lineHeightMultiple = attributes.NSParagraphStyle != null ? (attributes.NSParagraphStyle.maximumLineHeight() / attributes.NSFont.pointSize()) : 0;
 
     	var isSystemFont = fontName.indexOf(flair.textStyles.systemFontDisplayNamePrefix) == 0 || fontName.indexOf(flair.textStyles.systemFontTextNamePrefix) == 0;
 
@@ -70,7 +70,7 @@ flair.textStyles = {
     		font.fontName = fontName;
     	}
 
-    	var textStyle = {name: sanitizedName, font: font, lineSpacing: lineHeight, kerning: kerning};
+    	var textStyle = {name: sanitizedName, font: font, lineHeightMultiple: lineHeightMultiple, kerning: kerning};
     	// var textColorName = flair.colors.matchingColorSetName(colorSets, attributes.NSColor);
     	// if (textColorName != null) {
     	// 	textStyle.textColor = textColorName;

@@ -27,7 +27,7 @@
                 "systemFontWeight" : "ultralight",
                 "sizeType" : "dynamic"
             },
-            "lineSpacing" : 30,
+            "lineHeightMultiple" : 3.0,
             "kerning" : 3.25,
             "textColor" : "coolOrange"
         }

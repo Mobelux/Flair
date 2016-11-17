@@ -17,7 +17,7 @@
 public struct Style: StyleType {
     public let font: Font
     public let kerning: CGFloat
-    public let lineSpacing: CGFloat
+    public let lineHeightMultiple: CGFloat
     public let textColor: ColorSet?
     
     /**
@@ -25,16 +25,16 @@ public struct Style: StyleType {
      
      - parameter font:            The `Font` to use for this style
      - parameter kerning:         Any kerning that should be applied. A value of 0 disables kerning
-     - parameter lineSpacing:     Any line spacing that should be applied. A value of 0 disables line spacing. Values < 0 are invalid and will be clamped to 0.
+     - parameter lineHeightMultiple:     Any line high scaling that should be applied. A value of 0 disables line high adjustment. Values < 0 are invalid and will be clamped to 0.
      - parameter textColor:       The `ColorSet` to use for the text color
      
      - returns: A valid `Style`
      */
-    public init(font: Font, kerning: CGFloat = 0, lineSpacing: CGFloat = 0, textColor: ColorSet? = nil) {
+    public init(font: Font, kerning: CGFloat = 0, lineHeightMultiple: CGFloat = 0, textColor: ColorSet? = nil) {
         self.font = font
         self.kerning = kerning
         // Make sure that the value is >= 0, don't save negitive values
-        self.lineSpacing = lineSpacing >= 0 ? lineSpacing : 0
+        self.lineHeightMultiple = lineHeightMultiple >= 0 ? lineHeightMultiple : 0
         self.textColor = textColor
     }
     
@@ -47,6 +47,6 @@ public struct Style: StyleType {
      - returns: A new `Style`
      */
     public init(style: Style, textColor: ColorSet?) {
-        self.init(font: style.font, kerning: style.kerning, lineSpacing: style.lineSpacing, textColor: textColor)
+        self.init(font: style.font, kerning: style.kerning, lineHeightMultiple: style.lineHeightMultiple, textColor: textColor)
     }
 }
