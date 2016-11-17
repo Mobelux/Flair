@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let font = Font(systemFontWeight: .black, sizeType: .dynamic(pointSizeBase: 24))
+        let font = Font(systemFontWeight: .black, sizeType: .dynamicSize(pointSizeBase: 24))
         let color = Color(red: 0, green: 0, blue: 1, alpha: 1)
         let colorSet = ColorSet(normalColor: color)
         let style = Style(font: font, textColor: colorSet)
