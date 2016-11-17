@@ -12,10 +12,18 @@ extension ColorSet {
         return ColorSet(normalColor: normal, highlightedColor: highlighted, selectedColor: selected, disabledColor: disabled)
     }
 
+    static func brandBlue() -> PlatformColor {
+        return brandBlue().normalColor.color
+    }
+
     static func coolOrange() -> ColorSet {
         let normal = Color(red: 0.5, green: 0.25, blue: 0.75, alpha: 1.0)
         let highlighted = Color(red: 0.4, green: 0.15, blue: 0.6, alpha: 1.0)
         return ColorSet(normalColor: normal, highlightedColor: highlighted)
+    }
+
+    static func coolOrange() -> PlatformColor {
+        return coolOrange().normalColor.color
     }
 
 }
