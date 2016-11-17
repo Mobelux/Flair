@@ -16,7 +16,7 @@ class String_StyleTests: XCTestCase {
         let font = Font(fontName: "helvetica", sizeType: .staticSize(pointSize: 24))
         let colorSet = ColorSet(normalColor: Color(red: 1, green: 0, blue: 0, alpha: 1))
         
-        let style = Style(font: font, kerning: 2, lineSpacing: 3, textColor: colorSet)
+        let style = Style(font: font, kerning: 2, lineHeightMultiple: 3, textColor: colorSet)
         let attributedString = string.attributedString(for: style)
         XCTAssert(attributedString.string == string, "Strings don't match")
         
@@ -29,7 +29,7 @@ class String_StyleTests: XCTestCase {
         let font = Font(fontName: "helvetica", sizeType: .staticSize(pointSize: 24))
         let colorSet = ColorSet(normalColor: Color(red: 1, green: 0, blue: 0, alpha: 1))
         
-        let style = Style(font: font, kerning: 2, lineSpacing: 3, textColor: colorSet)
+        let style = Style(font: font, kerning: 2, lineHeightMultiple: 3, textColor: colorSet)
         
         let textAlignment = NSTextAlignment.center
         let lineBreakMode = NSLineBreakMode.byCharWrapping

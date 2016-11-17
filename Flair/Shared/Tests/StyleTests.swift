@@ -16,12 +16,12 @@ class StyleTests: XCTestCase {
     }
     
     func testStyleLineSpacingFixing() {
-        let style = Style(font: systemFont(), lineSpacing: -25)
-        XCTAssert(style.lineSpacing == 0, "Line spacing wasn't clamped to 0")
+        let style = Style(font: systemFont(), lineHeightMultiple: -25)
+        XCTAssert(style.lineHeightMultiple == 0, "Line height wasn't clamped to 0")
         
-        let lineSpacing: CGFloat = 100
-        let style2 = Style(font: systemFont(), lineSpacing: lineSpacing)
-        XCTAssert(style2.lineSpacing == lineSpacing, "Line spacing doesn't match input")
+        let lineHeightMultiple: CGFloat = 2.5
+        let style2 = Style(font: systemFont(), lineHeightMultiple: lineHeightMultiple)
+        XCTAssert(style2.lineHeightMultiple == lineHeightMultiple, "Line height doesn't match input")
     }
     
     func testStyleTextColorChange() {
@@ -40,7 +40,7 @@ class StyleTests: XCTestCase {
     
     func testTextAttributes() {
         let textColor = ColorSet(normalColor: Color(color: PlatformColor.red)!)
-        let style = Style(font: systemFont(), kerning: 2, lineSpacing: 20, textColor: textColor)
+        let style = Style(font: systemFont(), kerning: 2, lineHeightMultiple: 2.0, textColor: textColor)
         let alignment = NSTextAlignment.center
         let lineBreakMode = NSLineBreakMode.byCharWrapping
         let attributes = style.textAttributes(alignment: alignment, lineBreakMode: lineBreakMode)
@@ -61,6 +61,6 @@ class StyleTests: XCTestCase {
         guard let paragraphStyle = attributes[NSParagraphStyleAttributeName] as? NSParagraphStyle else { return }
         XCTAssert(paragraphStyle.lineBreakMode == lineBreakMode, "Line break mode doesn't match")
         XCTAssert(paragraphStyle.alignment == alignment, "Alignment doesn't match")
-        XCTAssert(paragraphStyle.lineSpacing == style.lineSpacing, "Linespacing doesn't match")
+        XCTAssert(paragraphStyle.lineHeightMultiple == style.lineHeightMultiple, "lineHeightMultiple doesn't match")
     }
 }
