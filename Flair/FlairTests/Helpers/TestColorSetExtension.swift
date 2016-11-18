@@ -1,10 +1,16 @@
-// hash: f4bf014480da090447eb9a6e872f41ff69441feed631a4a8a791804917e5e4a0
-// Do not modify this file. The previous line is a hash of the JSON used to generate this file. This file will not be regenerated unless the JSON changes, or this comment is removed.
+//
+//  TestColorSetExtension.swift
+//  Flair
+//
+//  Created by Jerry Mayers on 11/17/16.
+//  Copyright © 2016 Mobelux. All rights reserved.
+//
 
+import Foundation
 import Flair
 
 extension ColorSet {
-    static func brandBlue() -> ColorSet {
+    static func someBlue() -> ColorSet {
         let normal = Color(red: 0.0, green: 0.0, blue: 0.75, alpha: 1.0)
         let highlighted = Color(red: 0.0, green: 0.0, blue: 0.6, alpha: 1.0)
         let selected = Color(red: 0.0, green: 0.0, blue: 0.5, alpha: 1.0)
@@ -12,18 +18,18 @@ extension ColorSet {
         return ColorSet(normalColor: normal, highlightedColor: highlighted, selectedColor: selected, disabledColor: disabled)
     }
 
-    static func brandBlue() -> PlatformColor {
-        return brandBlue().normalColor.color
+    static func someBlue() -> PlatformColor {
+        return someBlue().normalColor.color
     }
 
-    static func coolOrange() -> ColorSet {
+    static func someOrange() -> ColorSet {
         let normal = Color(red: 0.5, green: 0.25, blue: 0.75, alpha: 1.0)
         let highlighted = Color(red: 0.4, green: 0.15, blue: 0.6, alpha: 1.0)
         return ColorSet(normalColor: normal, highlightedColor: highlighted)
     }
 
-    static func coolOrange() -> PlatformColor {
-        return coolOrange().normalColor.color
+    static func someOrange() -> PlatformColor {
+        return someOrange().normalColor.color
     }
-
+    
 }
