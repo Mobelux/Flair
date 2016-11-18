@@ -66,6 +66,12 @@ enum NamedColorSetGenerator: ExtensionGenerator {
         
         colorFunc.append(returnLine)
         colorFunc.append("    }\n\n")
+
+        // Adds an overload on this color function that returns the normal color's platform color
+        colorFunc.append("    static func \(color.name)() -> PlatformColor {\n")
+        colorFunc.append("        return \(color.name)().normalColor.color\n")
+        colorFunc.append("    }\n\n")
+
         return colorFunc
     }
     
