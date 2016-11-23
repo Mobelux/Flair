@@ -58,23 +58,9 @@ import Foundation
             var attributes = style.textAttributes(alignment: alignment, lineBreakMode: lineBreakMode)
 
             if let textColor = style.textColor {
-                let color: UIColor?
-                if state.contains(.normal) {
-                    color = textColor.normalColor.color
-                } else if state.contains(.highlighted) {
-                    color = textColor.highlightedColor?.color
-                } else if state.contains(.selected) {
-                    color = textColor.selectedColor?.color
-                } else if state.contains(.disabled) {
-                    color = textColor.disabledColor?.color
-                } else {
-                    color = nil
-                }
-
-                if let color = color {
-                    attributes[NSForegroundColorAttributeName] = color
-                }
-            } else if let textColor = titleColor(for: state) {
+                setTitle(colorSet: textColor)
+            }
+            if let textColor = titleColor(for: state) {
                 attributes[NSForegroundColorAttributeName] = textColor
             }
 
