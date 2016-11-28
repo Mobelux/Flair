@@ -74,11 +74,14 @@ import Foundation
         }
 
         /**
-         Sets the title color for the 4 key states (normal, highlighted, selected & disabled) to the values in the `colorSet`
+         Sets the title color for the 4 key states (normal, highlighted, selected & disabled) to the values in the `colorSet`. If you set a `style` on this button and it has a `textColor` then this will have no effect.
 
          - parameter colorSet: The color set to get the title colors from. If the set is `nil` or a specific color is `nil` then that state will have a nil color
         */
         public func setTitle(colorSet: ColorSet?) {
+            if let styleColorSet = style?.textColor, styleColorSet != colorSet {
+                return
+            }
             setTitleColor(colorSet?.normalColor.color, for: .normal)
             setTitleColor(colorSet?.highlightedColor?.color, for: .highlighted)
             setTitleColor(colorSet?.selectedColor?.color, for: .selected)
