@@ -41,6 +41,8 @@
 		6B6E38131D46479D0087123A /* String+StyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F771D4645BF002E77AC /* String+StyleTests.swift */; };
 		6B6E38141D4647A10087123A /* StyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F781D4645BF002E77AC /* StyleTests.swift */; };
 		6B6E38151D4647A20087123A /* StyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B122F781D4645BF002E77AC /* StyleTests.swift */; };
+		6B7644AE1DE52BD200A61711 /* UIButton+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7644AD1DE52BD200A61711 /* UIButton+Style.swift */; };
+		6B7644B01DE5312000A61711 /* UIButton+StyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7644AF1DE5312000A61711 /* UIButton+StyleTests.swift */; };
 		6B8383781D416EFC0055A125 /* UIButton+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8383771D416EFC0055A125 /* UIButton+Color.swift */; };
 		6B83837A1D41712D0055A125 /* UIButton+ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8383791D41712D0055A125 /* UIButton+ColorTests.swift */; };
 		6B83837C1D4173030055A125 /* UILabel+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B83837B1D4173030055A125 /* UILabel+Style.swift */; };
@@ -96,6 +98,8 @@
 		6B2D45A81D410E9800679A0C /* UIImage+ColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ColorTests.swift"; sourceTree = "<group>"; };
 		6B3580161DDE49790021D9BF /* TestColorSetExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestColorSetExtension.swift; sourceTree = "<group>"; };
 		6B62B4011D42903000211697 /* UILabel+StyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+StyleTests.swift"; sourceTree = "<group>"; };
+		6B7644AD1DE52BD200A61711 /* UIButton+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Style.swift"; sourceTree = "<group>"; };
+		6B7644AF1DE5312000A61711 /* UIButton+StyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+StyleTests.swift"; sourceTree = "<group>"; };
 		6B8383771D416EFC0055A125 /* UIButton+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Color.swift"; sourceTree = "<group>"; };
 		6B8383791D41712D0055A125 /* UIButton+ColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+ColorTests.swift"; sourceTree = "<group>"; };
 		6B83837B1D4173030055A125 /* UILabel+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Style.swift"; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 				6B8383791D41712D0055A125 /* UIButton+ColorTests.swift */,
 				6B62B4011D42903000211697 /* UILabel+StyleTests.swift */,
 				6BE61E421DEC73B4007DA959 /* UITextField+StyleTests.swift */,
+				6B7644AF1DE5312000A61711 /* UIButton+StyleTests.swift */,
 			);
 			path = "Test Cases";
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 			children = (
 				6B2D45A31D4108BD00679A0C /* UIImage+Color.swift */,
 				6B8383771D416EFC0055A125 /* UIButton+Color.swift */,
+				6B7644AD1DE52BD200A61711 /* UIButton+Style.swift */,
 				6B83837B1D4173030055A125 /* UILabel+Style.swift */,
 				6BE61E3E1DEC717A007DA959 /* UITextField+Style.swift */,
 			);
@@ -516,6 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B8383781D416EFC0055A125 /* UIButton+Color.swift in Sources */,
+				6B7644AE1DE52BD200A61711 /* UIButton+Style.swift in Sources */,
 				6B122F641D464543002E77AC /* NSString+Pointer.swift in Sources */,
 				6B122F6E1D464543002E77AC /* Font.swift in Sources */,
 				6BAC4ECC1D46A79700E223F2 /* StyleType.swift in Sources */,
@@ -547,6 +554,7 @@
 				6B6E380E1D4647940087123A /* FontTests.swift in Sources */,
 				6B6E38111D4647980087123A /* PlatformColor+ComponentsTests.swift in Sources */,
 				6BE61E431DEC73B4007DA959 /* UITextField+StyleTests.swift in Sources */,
+				6B7644B01DE5312000A61711 /* UIButton+StyleTests.swift in Sources */,
 				6B83837A1D41712D0055A125 /* UIButton+ColorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
