@@ -50,6 +50,7 @@
 		6BAC4ECA1D46A6A600E223F2 /* ColorSetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAC4EC81D46A6A600E223F2 /* ColorSetType.swift */; };
 		6BAC4ECC1D46A79700E223F2 /* StyleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAC4ECB1D46A79700E223F2 /* StyleType.swift */; };
 		6BAC4ECD1D46A79700E223F2 /* StyleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAC4ECB1D46A79700E223F2 /* StyleType.swift */; };
+		6BE61E411DEC71D8007DA959 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE61E401DEC71D8007DA959 /* Box.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		6B971B501D400B7700532C38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BAC4EC81D46A6A600E223F2 /* ColorSetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSetType.swift; sourceTree = "<group>"; };
 		6BAC4ECB1D46A79700E223F2 /* StyleType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleType.swift; sourceTree = "<group>"; };
+		6BE61E401DEC71D8007DA959 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		6BEBD3F41D539DDD00EF1FA6 /* Flair.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; name = Flair.podspec; path = ../Flair.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,6 +183,7 @@
 		6B122F5D1D464543002E77AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6BE61E401DEC71D8007DA959 /* Box.swift */,
 				6B122F5E1D464543002E77AC /* Color.swift */,
 				6B122F5F1D464543002E77AC /* ColorSet.swift */,
 				6BAC4EC81D46A6A600E223F2 /* ColorSetType.swift */,
@@ -515,6 +518,7 @@
 				6B122F6C1D464543002E77AC /* ColorSet.swift in Sources */,
 				6B122F621D464543002E77AC /* CGFloat+Round.swift in Sources */,
 				6B122F6A1D464543002E77AC /* Color.swift in Sources */,
+				6BE61E411DEC71D8007DA959 /* Box.swift in Sources */,
 				6B2D45A41D4108BD00679A0C /* UIImage+Color.swift in Sources */,
 				6B83837C1D4173030055A125 /* UILabel+Style.swift in Sources */,
 				6BAC4EC91D46A6A600E223F2 /* ColorSetType.swift in Sources */,
