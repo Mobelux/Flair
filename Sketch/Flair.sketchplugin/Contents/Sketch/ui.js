@@ -40,7 +40,6 @@ flair.ui = {
 		var alert = [[NSAlert alloc] init];
 		[alert setMessageText: errorMessage];
 		[alert addButtonWithTitle: 'OK'];
-		[alert setAccessoryView: accessory];
 
 		[alert runModal];
 	}
