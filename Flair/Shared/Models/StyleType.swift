@@ -43,8 +43,8 @@ public extension StyleType {
      
      - returns: A dictionary of attributes
      */
-    public func textAttributes(alignment: NSTextAlignment = .left, lineBreakMode: NSLineBreakMode = .byWordWrapping) -> [String : AnyObject] {
-        var attributes = [String : AnyObject]()
+    public func textAttributes(alignment: NSTextAlignment = .left, lineBreakMode: NSLineBreakMode = .byWordWrapping) -> [String : Any] {
+        var attributes = [String : Any]()
         
         attributes[NSFontAttributeName] = font.font
         
