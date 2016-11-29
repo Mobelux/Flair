@@ -74,9 +74,9 @@ class UIButton_StyleTests: XCTestCase {
 
         XCTAssert(button.style == style, "The style we just set doesn't match the style it has now")
 
-        let alignment = NSTextAlignment.left
-        let lineBreakMode = NSLineBreakMode.byWordWrapping
-        let attributes = style.textAttributes(alignment: alignment, lineBreakMode: lineBreakMode)
+        let alignment = button.titleLabel?.textAlignment ?? .center
+        let lineBreakMode = button.titleLabel?.lineBreakMode ?? .byTruncatingMiddle
+        let attributes = style.textAttributes(alignment: alignment, lineBreakMode: lineBreakMode, multiline: false)
 
         let expectedNormalText = NSAttributedString(string: initialNormalText, attributes: attributes)
         XCTAssert(expectedNormalText == button.attributedTitle(for: .normal), "The normal text doesn't match")
