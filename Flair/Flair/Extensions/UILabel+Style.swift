@@ -75,12 +75,7 @@ import Foundation
                 }
             } else {
                 let textToSet = text ?? ""
-                var attributes = style.textAttributes(alignment: textAlignment, lineBreakMode: lineBreakMode)
-                if numberOfLines != 1, let paragraph = attributes[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle {
-                    // labels will look goofy (vertical alignment off) if you set line height but only have 1 line of text
-                    paragraph.lineHeightMultiple = 1
-                }
-                attributedText = NSAttributedString(string: textToSet, attributes: attributes)
+                attributedText = textToSet.attributedString(for: style, alignment: textAlignment, lineBreakMode: lineBreakMode, multiline: numberOfLines != 1)
             }
         }
         

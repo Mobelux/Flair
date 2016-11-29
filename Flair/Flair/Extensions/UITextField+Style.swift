@@ -80,12 +80,7 @@ import Foundation
                     self.textColor = textColor.normalColor.color
                 }
             } else {
-                var attributes = style.textAttributes(alignment: textAlignment)
-                if let paragraph = attributes[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle {
-                    // Text fields break if you set line height on them since they are meant to be a single line
-                    paragraph.lineHeightMultiple = 1
-                }
-                defaultTextAttributes = attributes
+                defaultTextAttributes = style.textAttributes(alignment: textAlignment, lineBreakMode: .byTruncatingTail, multiline: false)
             }
         }
     }

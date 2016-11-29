@@ -55,17 +55,13 @@ import Foundation
 
             let alignment = titleLabel?.textAlignment ?? .center
             let lineBreakMode = titleLabel?.lineBreakMode ?? .byTruncatingMiddle
-            var attributes = style.textAttributes(alignment: alignment, lineBreakMode: lineBreakMode)
+            var attributes = style.textAttributes(alignment: alignment, lineBreakMode: lineBreakMode, multiline: false)
 
             if let textColor = style.textColor {
                 setTitle(colorSet: textColor)
             }
             if let textColor = titleColor(for: state) {
                 attributes[NSForegroundColorAttributeName] = textColor
-            }
-            if let paragraph = attributes[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle {
-                // buttons will look goofy (vertical alignment off) if you set line height on them since they are meant to be a single line
-                paragraph.lineHeightMultiple = 1
             }
 
             let attributedTitle = NSAttributedString(string: title, attributes: attributes)

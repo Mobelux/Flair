@@ -40,10 +40,11 @@ public extension StyleType {
      
      - parameter alignment:           The text alignment to use. (Defaults to Left)
      - parameter lineBreakMode:       The line break mode to use. (Defaults to Word Wrapping)
+     - parameter multiline:           Will this style use multiple lines. If not then the line height won't be changed
      
      - returns: A dictionary of attributes
      */
-    public func textAttributes(alignment: NSTextAlignment = .left, lineBreakMode: NSLineBreakMode = .byWordWrapping) -> [String : Any] {
+    public func textAttributes(alignment: NSTextAlignment = .left, lineBreakMode: NSLineBreakMode = .byWordWrapping, multiline: Bool = true) -> [String : Any] {
         var attributes = [String : Any]()
         
         attributes[NSFontAttributeName] = font.font
@@ -60,7 +61,7 @@ public extension StyleType {
         paragraphStyle.lineBreakMode = lineBreakMode
         paragraphStyle.alignment = alignment
         
-        if lineHeightMultiple != 0 {
+        if multiline && lineHeightMultiple != 0 {
             paragraphStyle.lineHeightMultiple = lineHeightMultiple
         }
         
