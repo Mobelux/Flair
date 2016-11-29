@@ -63,6 +63,10 @@ import Foundation
             if let textColor = titleColor(for: state) {
                 attributes[NSForegroundColorAttributeName] = textColor
             }
+            if let paragraph = attributes[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle {
+                // buttons will look goofy (vertical alignment off) if you set line height on them since they are meant to be a single line
+                paragraph.lineHeightMultiple = 1
+            }
 
             let attributedTitle = NSAttributedString(string: title, attributes: attributes)
             setAttributedTitle(attributedTitle, for: state)
