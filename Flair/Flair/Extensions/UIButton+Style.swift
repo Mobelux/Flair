@@ -40,6 +40,17 @@ import Foundation
             }
         }
 
+        /// Sets a title to be displayed for all control states. Similar to calling `setTitle(for:)` for each control state, but it will use the formatting from `Style`.
+        /// This behaves exactly like `setTitle(for:)` if the `style` property is `nil`
+        ///
+        /// - Parameter newTitle: The text to display
+        public func setStyled(title newTitle: String?) {
+            setStyled(title: newTitle, for: .normal)
+            setStyled(title: newTitle, for: .highlighted)
+            setStyled(title: newTitle, for: .selected)
+            setStyled(title: newTitle, for: .disabled)
+        }
+
         /// Sets a title to be displayed for the state. Similar to `setTitle(for:)` but it will preserve the formatting you expect for the `Style`.
 
         /// This behaves exactly like `setTitle(for:)` if the `style` property is `nil`
