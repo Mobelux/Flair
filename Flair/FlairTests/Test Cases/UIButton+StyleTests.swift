@@ -76,7 +76,7 @@ class UIButton_StyleTests: XCTestCase {
 
         let alignment = button.titleLabel?.textAlignment ?? .center
         let lineBreakMode = button.titleLabel?.lineBreakMode ?? .byTruncatingMiddle
-        let attributes = style.textAttributes(alignment: alignment, lineBreakMode: lineBreakMode, multiline: false)
+        let attributes = style.textAttributes(alignment: alignment, lineBreakMode: lineBreakMode)
 
         let expectedNormalText = NSAttributedString(string: initialNormalText, attributes: attributes)
         XCTAssert(expectedNormalText == button.attributedTitle(for: .normal), "The normal text doesn't match")
