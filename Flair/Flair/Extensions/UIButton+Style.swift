@@ -66,7 +66,7 @@ import Foundation
 
             let alignment = titleLabel?.textAlignment ?? .center
             let lineBreakMode = titleLabel?.lineBreakMode ?? .byTruncatingMiddle
-            var attributes = style.textAttributes(alignment: alignment, lineBreakMode: lineBreakMode, multiline: false)
+            var attributes = style.textAttributes(alignment: alignment, lineBreakMode: lineBreakMode)
 
             if let textColor = style.textColor {
                 setTitle(colorSet: textColor)
