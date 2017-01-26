@@ -52,7 +52,7 @@ class UILabel_StyleTests: XCTestCase {
         label.setStyled(text: initialText)
         XCTAssert(label.text == initialText, "The text doesn't match")
 
-        let expectedAttributedString = initialText.attributedString(for: style, alignment: label.textAlignment, lineBreakMode: label.lineBreakMode, multiline: true)
+        let expectedAttributedString = initialText.attributedString(for: style, alignment: label.textAlignment, lineBreakMode: label.lineBreakMode)
         XCTAssert(label.attributedText == expectedAttributedString, "Attributed string doesn't match expected")
     }
 }
