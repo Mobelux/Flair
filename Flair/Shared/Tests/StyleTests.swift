@@ -39,8 +39,16 @@ class StyleTests: XCTestCase {
     }
     
     func testTextAttributes() {
+        let inutFont = systemFont()
+        guard let platformFont = inutFont.font else {
+            XCTAssert(false, "Couldn't get a font")
+            return
+        }
+        let lineHeightMultiple: CGFloat = 2.0
+        let expectedLineSpacing = (lineHeightMultiple * platformFont.pointSize - platformFont.pointSize) / 2
+
         let textColor = ColorSet(normalColor: Color(color: PlatformColor.red)!)
-        let style = Style(font: systemFont(), kerning: 2, lineHeightMultiple: 2.0, textColor: textColor)
+        let style = Style(font: inutFont, kerning: 2, lineHeightMultiple: lineHeightMultiple, textColor: textColor)
         let alignment = NSTextAlignment.center
         let lineBreakMode = NSLineBreakMode.byCharWrapping
         let attributes = style.textAttributes(alignment: alignment, lineBreakMode: lineBreakMode)
@@ -61,6 +69,6 @@ class StyleTests: XCTestCase {
         guard let paragraphStyle = attributes[NSParagraphStyleAttributeName] as? NSParagraphStyle else { return }
         XCTAssert(paragraphStyle.lineBreakMode == lineBreakMode, "Line break mode doesn't match")
         XCTAssert(paragraphStyle.alignment == alignment, "Alignment doesn't match")
-        XCTAssert(paragraphStyle.lineHeightMultiple == style.lineHeightMultiple, "lineHeightMultiple doesn't match")
+        XCTAssert(paragraphStyle.lineSpacing == expectedLineSpacing, "lineSpacing not what we expected")
     }
 }
