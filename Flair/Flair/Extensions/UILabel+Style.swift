@@ -75,7 +75,7 @@ import Foundation
                 }
             } else {
                 let textToSet = text ?? ""
-                attributedText = textToSet.attributedString(for: style, alignment: textAlignment, lineBreakMode: lineBreakMode, multiline: numberOfLines != 1)
+                attributedText = textToSet.attributedString(for: style, alignment: textAlignment, lineBreakMode: lineBreakMode)
             }
         }
         

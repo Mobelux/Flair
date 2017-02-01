@@ -40,11 +40,10 @@ public extension StyleType {
      
      - parameter alignment:           The text alignment to use. (Defaults to Left)
      - parameter lineBreakMode:       The line break mode to use. (Defaults to Word Wrapping)
-     - parameter multiline:           Will this style use multiple lines. If not then the line height won't be changed
      
      - returns: A dictionary of attributes
      */
-    public func textAttributes(alignment: NSTextAlignment = .left, lineBreakMode: NSLineBreakMode = .byWordWrapping, multiline: Bool = true) -> [String : Any] {
+    public func textAttributes(alignment: NSTextAlignment = .left, lineBreakMode: NSLineBreakMode = .byWordWrapping) -> [String : Any] {
         var attributes = [String : Any]()
         
         attributes[NSFontAttributeName] = font.font
@@ -60,11 +59,15 @@ public extension StyleType {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineBreakMode = lineBreakMode
         paragraphStyle.alignment = alignment
-        
-        if multiline && lineHeightMultiple != 0 {
-            paragraphStyle.lineHeightMultiple = lineHeightMultiple
+
+        if lineHeightMultiple != 0, let platformFont = font.font {
+            let pointSize = platformFont.pointSize
+            // The height of the line in points. It should never be less then the point size of the font or clipping would occur
+            let lineHeight = max(lineHeightMultiple * pointSize, pointSize)
+            // Line spacing is EXTRA spacing that is desired beyond what it required to fit the font. We devide by 2 so we have only 1/2 above, and 1/2 below
+            paragraphStyle.lineSpacing = (lineHeight - pointSize) / 2
         }
-        
+
         attributes[NSParagraphStyleAttributeName] = paragraphStyle
         
         return attributes

@@ -80,7 +80,7 @@ import Foundation
                     self.textColor = textColor.normalColor.color
                 }
             } else {
-                defaultTextAttributes = style.textAttributes(alignment: textAlignment, lineBreakMode: .byTruncatingTail, multiline: false)
+                defaultTextAttributes = style.textAttributes(alignment: textAlignment, lineBreakMode: .byTruncatingTail)
             }
         }
     }
