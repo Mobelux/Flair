@@ -52,7 +52,7 @@ enum NamedColorSetGenerator: ExtensionGenerator {
         }
         returnLine.append(")\n")
         
-        var colorFunc = "    static func \(color.name)() -> ColorSet {\n"
+        var colorFunc = "    static var \(color.name): ColorSet {\n"
         colorFunc.append(normal)
         if let highlighted = highlighted {
             colorFunc.append(highlighted)
@@ -65,11 +65,6 @@ enum NamedColorSetGenerator: ExtensionGenerator {
         }
         
         colorFunc.append(returnLine)
-        colorFunc.append("    }\n\n")
-
-        // Adds an overload on this color function that returns the normal color's platform color
-        colorFunc.append("    static func \(color.name)() -> PlatformColor {\n")
-        colorFunc.append("        return \(color.name)().normalColor.color\n")
         colorFunc.append("    }\n\n")
 
         return colorFunc

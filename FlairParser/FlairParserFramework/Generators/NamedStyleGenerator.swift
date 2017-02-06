@@ -50,7 +50,7 @@ enum NamedStyleGenerator: ExtensionGenerator {
         }
         returnLine.append(")\n")
         
-        var styleFunc = "    static func \(style.name)() -> Style {\n"
+        var styleFunc = "    static var \(style.name): Style {\n"
         styleFunc.append(font)
         styleFunc.append(returnLine)
         styleFunc.append("    }\n\n")

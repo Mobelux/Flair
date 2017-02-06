@@ -4,12 +4,12 @@
 import Flair
 
 extension Style {
-    static func body() -> Style {
+    static var body: Style {
         let font = Font(type: .system(weight: .ultralight), sizeType: .dynamicSize(pointSizeBase: 16.0))
         return Style(font: font, kerning: 3.25, lineHeightMultiple: 3.0, textColor: ColorSet.coolOrange())
     }
 
-    static func title() -> Style {
+    static var title: Style {
         let font = Font(type: .normal(fontName: "Arial-Black"), sizeType: .staticSize(pointSize: 20.0))
         return Style(font: font, textColor: ColorSet.brandBlue())
     }
