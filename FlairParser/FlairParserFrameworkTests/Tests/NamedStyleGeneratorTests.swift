@@ -17,14 +17,11 @@ class NamedStyleGeneratorTests: XCTestCase {
         
         do {
             let parser = try Parser(json: json)
-            let (colors, styles, jsonHash) = try parser.parse()
+            let (colors, styles) = try parser.parse()
             XCTAssert(colors.count == 2, "Invalid # of colors")
             XCTAssert(styles.count == 2, "Invalid # of styles")
-            XCTAssert(jsonHash.characters.count > 0, "Invalid hash")
-            
-            let hashComment = Generator.jsonHashComment(jsonHash: jsonHash)
-            
-            let generatedSwift = NamedStyleGenerator.generate(styles: styles, headerComment: hashComment)
+
+            let generatedSwift = NamedStyleGenerator.generate(styles: styles)
             
             let expectedURL = Bundle(for: NamedStyleGeneratorTests.self).url(forResource: "Style+FlairParser", withExtension: "swift.output")!
             let expectedSwift = try! String(contentsOf: expectedURL)

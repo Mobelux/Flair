@@ -17,10 +17,9 @@ class GeneratorTests: XCTestCase {
         
         do {
             let parser = try Parser(json: json)
-            let (colors, styles, jsonHash) = try parser.parse()
+            let (colors, styles) = try parser.parse()
             XCTAssert(colors.count == 2, "Invalid # of colors")
             XCTAssert(styles.count == 2, "Invalid # of styles")
-            XCTAssert(jsonHash.characters.count > 0, "Invalid hash")
             
             let outputDirectory = URL(fileURLWithPath: NSTemporaryDirectory())
             let generatedColorFile = try! Generator.createFileURL(fileName: Generator.Constants.colorsFileName, outputDirectory: outputDirectory)
@@ -29,7 +28,7 @@ class GeneratorTests: XCTestCase {
             let _ = try? FileManager.default.removeItem(at: generatedColorFile)
             let _ = try? FileManager.default.removeItem(at: generatedStyleFile)
             
-            try Generator.generate(colors: colors, styles: styles, outputDirectory: outputDirectory, jsonHash: jsonHash)
+            try Generator.generate(colors: colors, styles: styles, outputDirectory: outputDirectory)
             
             do {
                 let generatedColorSwift = try String(contentsOf: generatedColorFile)
