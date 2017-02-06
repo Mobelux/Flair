@@ -13,6 +13,7 @@ public struct ColorSet : ColorSetType {
     public let highlightedColor: Color?
     public let selectedColor: Color?
     public let disabledColor: Color?
+    public var color: PlatformColor { return normalColor.color }
     
     public init(normalColor: Color, highlightedColor: Color? = nil, selectedColor: Color? = nil, disabledColor: Color? = nil) {
         self.normalColor = normalColor

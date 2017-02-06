@@ -22,15 +22,14 @@ enum NamedColorSetGenerator: ExtensionGenerator {
         Generates the Swift code for `NamedColorSet` as an extension on `ColorSet`
      
         - parameter colors:         The colors that we want in the extension. Ordering of this array is ignored, and generated colors will always be sorted by `color.name`
-        - parameter headerComment:  The comment to place at the very beginning of the `String`. This comment should include the JSON hash, but that isn't required
         
         - returns: The Swift source for this new extension on `ColorSet`, ready to write to disk
     */
-    static func generate(colors: [NamedColorSet], headerComment: String) -> String {
+    static func generate(colors: [NamedColorSet]) -> String {
         let sortedColors = colors.sorted { $0.name < $1.name }
         let functions = sortedColors.map({ generate(color: $0) })
         
-        let swiftCode = generate(functions: functions, extending: "ColorSet", headerComment: headerComment)
+        let swiftCode = generate(functions: functions, extending: "ColorSet")
         return swiftCode
     }
     
@@ -52,7 +51,7 @@ enum NamedColorSetGenerator: ExtensionGenerator {
         }
         returnLine.append(")\n")
         
-        var colorFunc = "    static func \(color.name)() -> ColorSet {\n"
+        var colorFunc = "    static var \(color.name): ColorSet {\n"
         colorFunc.append(normal)
         if let highlighted = highlighted {
             colorFunc.append(highlighted)
@@ -65,11 +64,6 @@ enum NamedColorSetGenerator: ExtensionGenerator {
         }
         
         colorFunc.append(returnLine)
-        colorFunc.append("    }\n\n")
-
-        // Adds an overload on this color function that returns the normal color's platform color
-        colorFunc.append("    static func \(color.name)() -> PlatformColor {\n")
-        colorFunc.append("        return \(color.name)().normalColor.color\n")
         colorFunc.append("    }\n\n")
 
         return colorFunc

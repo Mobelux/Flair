@@ -11,14 +11,6 @@ import Foundation
 #if os(iOS) || os(tvOS)
     import UIKit
   
-    private class Box<T> {
-        let object: T
-        
-        init(object: T) {
-            self.object = object
-        }
-    }
-    
     public extension UILabel {
         
         private static var styleKey: NSString = "styleKey"
@@ -83,7 +75,7 @@ import Foundation
                 }
             } else {
                 let textToSet = text ?? ""
-                attributedText = textToSet.attributedString(for: style, alignment: textAlignment)
+                attributedText = textToSet.attributedString(for: style, alignment: textAlignment, lineBreakMode: lineBreakMode)
             }
         }
         

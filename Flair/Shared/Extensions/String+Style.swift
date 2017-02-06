@@ -27,6 +27,7 @@ public extension String {
      */
     public func attributedString(for style: Style, alignment: NSTextAlignment = .left, lineBreakMode: NSLineBreakMode = .byWordWrapping) -> NSAttributedString {
         let attributes = style.textAttributes(alignment: alignment, lineBreakMode: lineBreakMode)
+
         return NSAttributedString(string: self, attributes: attributes)
     }
 }

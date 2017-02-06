@@ -42,6 +42,7 @@ class UILabel_StyleTests: XCTestCase {
         
         let label = UILabel()
         label.text = initialText
+        label.numberOfLines = 0
         label.style = style
         label.textAlignment = .center
         
@@ -50,8 +51,8 @@ class UILabel_StyleTests: XCTestCase {
         label.text = nil
         label.setStyled(text: initialText)
         XCTAssert(label.text == initialText, "The text doesn't match")
-        
-        let expectedAttributedString = initialText.attributedString(for: style, alignment: label.textAlignment)
+
+        let expectedAttributedString = initialText.attributedString(for: style, alignment: label.textAlignment, lineBreakMode: label.lineBreakMode)
         XCTAssert(label.attributedText == expectedAttributedString, "Attributed string doesn't match expected")
     }
 }
