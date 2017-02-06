@@ -22,15 +22,14 @@ enum NamedStyleGenerator: ExtensionGenerator {
      Generates the Swift code for `NamedStyle` as an extension on `Style`
      
      - parameter styles:         The styles that we want in the extension. Ordering of this array is ignored, and generated styles will always be sorted by `style.name`
-     - parameter headerComment:  The comment to place at the very beginning of the `String`. This comment should include the JSON hash, but that isn't required
      
      - returns: The Swift source for this new extension on `Style`, ready to write to disk
      */
-    static func generate(styles: [NamedStyle], headerComment: String) -> String {
+    static func generate(styles: [NamedStyle]) -> String {
         let sortedStyles = styles.sorted { $0.name < $1.name }
         let functions = sortedStyles.map({ generate(style: $0) })
         
-        let swiftCode = generate(functions: functions, extending: "Style", headerComment: headerComment)
+        let swiftCode = generate(functions: functions, extending: "Style")
         return swiftCode
     }
     

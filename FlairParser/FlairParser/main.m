@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 @import FlairParserFramework;
-#import "ArgumentParser.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -18,6 +17,6 @@ int main(int argc, const char * argv[]) {
             [arguments addObject:argument];
         }
         
-        return [ArgumentParser parseArguments:arguments];
+        return (int)[ArgumentParser parseWithArguments:arguments];
     }
 }

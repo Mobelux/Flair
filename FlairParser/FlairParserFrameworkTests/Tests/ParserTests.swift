@@ -26,15 +26,13 @@ class ParserTests: XCTestCase {
         let parser = Parser(json: json)
         
         do {
-            let (namedColors, styles, jsonHash) = try parser.parse()
+            let (namedColors, styles) = try parser.parse()
             XCTAssert(namedColors.count == colors.count, "Incorrect # of colors")
             XCTAssert(styles.count == 0, "Shouldn't have any styles")
             
             for namedColorSet in namedColors {
                 XCTAssert(colorNames.contains(namedColorSet.name), "Expected name doesn't match")
             }
-            
-            XCTAssert(jsonHash.characters.count > 0, "No JSON Hash")
         } catch let error as Parser.ParserError {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
@@ -116,7 +114,7 @@ class ParserTests: XCTestCase {
         let parser = Parser(json: json)
         
         do {
-            let (namedColors, styles, _) = try parser.parse()
+            let (namedColors, styles) = try parser.parse()
             XCTAssert(namedColors.count == colors.count, "Incorrect # of colors")
             XCTAssert(styles.count == namedStyles.count, "Incorrect # of styles")
             
@@ -139,7 +137,7 @@ class ParserTests: XCTestCase {
         
         do {
             let parser = try Parser(json: json)
-            let (colors, styles, _) = try parser.parse()
+            let (colors, styles) = try parser.parse()
             XCTAssert(colors.count == 2, "Invalid # of colors")
             XCTAssert(styles.count == 2, "Invalid # of styles")
             
@@ -177,6 +175,16 @@ class ParserTests: XCTestCase {
             XCTAssert(false, "Failed with error \(error.legacyError)")
         } catch {
             XCTAssert(false, "Unknown error")
+        }
+    }
+
+    func testParserPerformance() {
+        let jsonURL = Bundle(for: ParserTests.self).url(forResource: "validColorAndStyle", withExtension: "json")!
+        let outputPath = NSTemporaryDirectory()
+        let arguments = ["--json", jsonURL.absoluteString, "--output", outputPath]
+
+        measure {
+            _ = ArgumentParser.parse(arguments: arguments)
         }
     }
 }
