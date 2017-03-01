@@ -45,12 +45,23 @@ import Foundation
          - returns:          An image filled with a color
          */
         public static func image(of color: UIColor, size: CGSize) -> UIImage {
-            let renderer = UIGraphicsImageRenderer(size: size)
-            
-            let image = renderer.image(actions: { (context) in
+            let image: UIImage
+
+            if #available(iOS 10.0, *) {
+                let renderer = UIGraphicsImageRenderer(size: size)
+                image = renderer.image(actions: { (context) in
+                    color.setFill()
+                    context.fill(renderer.format.bounds)
+                })
+            } else {
+                UIGraphicsBeginImageContext(size)
+                let context = UIGraphicsGetCurrentContext()
                 color.setFill()
-                context.fill(renderer.format.bounds)
-            })
+                context?.fill(CGRect(origin: .zero, size: size))
+                image = UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()
+                UIGraphicsEndImageContext()
+            }
+
             return image
         }
         
