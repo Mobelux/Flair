@@ -29,6 +29,43 @@ import Flair
                 XCTAssert(false, "Failed to get pixels")
             }
         }
-        
+
+        func testPixelAt() {
+            let firstColor = Color(red: 1, green: 0, blue: 0, alpha: 1)
+            let secondColor = Color(red: 0, green: 1, blue: 0, alpha: 1)
+
+            let width: CGFloat = 10
+            let height: CGFloat = 10
+            let scale: CGFloat = 2
+
+            UIGraphicsBeginImageContextWithOptions(CGSize(width: width, height: height), true, scale)
+            let context = UIGraphicsGetCurrentContext()
+
+            firstColor.color.setFill()
+            context?.addRect(CGRect(x: 0, y: 0, width: width / 2, height: height))
+            context?.fillPath()
+            secondColor.color.setFill()
+            context?.addRect(CGRect(x: width/2, y: 0, width: width / 2, height: height))
+            context?.fillPath()
+
+            guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
+                XCTAssert(false, "Couldn't create the image")
+                return
+            }
+            UIGraphicsEndImageContext()
+
+
+
+            let foundFirst = try! image.pixelAt(x: Int(width / 2 - 1), y: 0)
+            let foundSecond = try! image.pixelAt(x: Int(width - 1), y: 0)
+            XCTAssertNotNil(foundFirst, "Couldn't find the color")
+            XCTAssertNotNil(foundSecond, "Couldn't find the color")
+            if let foundFirst = foundFirst {
+                XCTAssert(foundFirst == firstColor, "First color dosn't match")
+            }
+            if let foundSecond = foundSecond {
+                XCTAssert(foundSecond == secondColor, "Second color doesn't match")
+            }
+        }
     }
 #endif

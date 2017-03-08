@@ -110,5 +110,23 @@ import Foundation
             
             return pixels
         }
+
+        /// Get the color of a single pixel, in the sRGB color space (for now)
+        ///
+        /// - Parameters:
+        ///   - x: The x cordinate of the pixel in points
+        ///   - y: The y cordinate of the pixel in points
+        /// - Returns: The color for that pixel if the coordinates are in bounds
+        /// - Throws: ImageError
+        public func pixelAt(x: Int, y: Int) throws -> Color? {
+            let colors = try pixels()
+            let colorsPerRow = Int(size.width * scale)
+            let yInPixels = y * Int(scale)
+            let xInPixels = x * Int(scale)
+            let index = yInPixels * colorsPerRow + xInPixels
+
+            guard index < colors.count else { return nil }
+            return colors[index]
+        }
     }
 #endif
