@@ -18,8 +18,19 @@ import Foundation
     public typealias PlatformColor = NSColor
 #endif
 
+public protocol ColorType {
+    var red: CGFloat { get }
+    var green: CGFloat { get }
+    var blue: CGFloat { get }
+    var alpha: CGFloat { get }
+    var color: PlatformColor { get }
+
+    init(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
+    init?(color: PlatformColor?)
+}
+
 /// Platform agnostic color representation
-public struct Color: Equatable {
+public struct Color: ColorType, Equatable {
     /// Red component in the range 0 to 1
     public let red: CGFloat
     /// Green component in the range 0 to 1
