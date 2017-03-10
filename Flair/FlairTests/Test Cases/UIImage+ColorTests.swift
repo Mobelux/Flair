@@ -61,10 +61,10 @@ import Flair
             XCTAssertNotNil(foundFirst, "Couldn't find the color")
             XCTAssertNotNil(foundSecond, "Couldn't find the color")
             if let foundFirst = foundFirst {
-                XCTAssert(foundFirst == firstColor, "First color dosn't match")
+                XCTAssert(foundFirst ~= firstColor, "First color dosn't match")
             }
             if let foundSecond = foundSecond {
-                XCTAssert(foundSecond == secondColor, "Second color doesn't match")
+                XCTAssert(foundSecond ~= secondColor, "Second color doesn't match")
             }
         }
     }
