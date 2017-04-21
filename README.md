@@ -88,3 +88,6 @@ A `font` has a required `sizeType` that is either `static` if the app should alw
 
 1. specify a `systemFontWeight` key with a value of: `regular`, `medium`, `bold`, `thin`, `black`, `semibold` or `ultralight`.
 2. specify a `fontName` key with a value of the font's Postscript font name
+
+# Contributing
+Check out our [contribution guide](https://github.com/Mobelux/Flair/master/CONTRIBUTING.md)
