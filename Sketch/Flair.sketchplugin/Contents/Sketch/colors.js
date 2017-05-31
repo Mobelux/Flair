@@ -1,3 +1,26 @@
+//  MIT License
+//
+//  Copyright (c) 2017 Mobelux
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
+//
+
 @import 'common.js'
 
 flair.colors = {
@@ -8,7 +31,7 @@ flair.colors = {
 	selectedColorName: "Selected",
 	disabledColorName: "Disabled",
 
-	/// Gets all the group layers in the given artboards. It doesn't 
+	/// Gets all the group layers in the given artboards. It doesn't
     getColorGroupsFromArtboards: function (artboards) {
 	    var colorGroups = [];
 
@@ -20,7 +43,7 @@ flair.colors = {
 	        	if (layer.class() == MSLayerGroup.class()) {
 	        		colorGroups.push(layer);
 	        	}
-	        }    
+	        }
 	    }
 
 	    return colorGroups;
@@ -70,9 +93,9 @@ flair.colors = {
     	if (nsColor == null || colorSets == null || colorSets.length == 0) {
     		return null;
     	}
-   
+
     	var genericRGBColorSpace = [NSColorSpace genericRGBColorSpace];
-   
+
     	if ([nsColor colorSpace] != genericRGBColorSpace) {
     		nsColor = [nsColor colorUsingColorSpace:genericRGBColorSpace];
     	}
@@ -97,7 +120,7 @@ flair.colors = {
 	    	// Due to color space conversion, it's pretty common to have colors that should be considered the same but floating point precision...
 	    	var tolerance = 1.0 / 255.0 / 3.0;
 
-    		if (flair.approximatelyEqual(normalRed, textRed, tolerance) && flair.approximatelyEqual(normalGreen, textGreen, tolerance) && 
+    		if (flair.approximatelyEqual(normalRed, textRed, tolerance) && flair.approximatelyEqual(normalGreen, textGreen, tolerance) &&
     			flair.approximatelyEqual(normalBlue, textBlue, tolerance) && flair.approximatelyEqual(normalAlpha, textAlpha, tolerance)) {
     			return colorSet.name;
     		}
