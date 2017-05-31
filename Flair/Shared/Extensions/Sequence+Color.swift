@@ -1,5 +1,5 @@
 //
-//  String+Style.swift
+//  Sequence+Color.swift
 //  Flair
 //
 //  MIT License
@@ -22,8 +22,7 @@
 //  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-//  THE SOFTWARE.
-//
+//  THE SOFTWARE.//
 
 #if os(iOS) || os(tvOS)
     import UIKit
@@ -33,20 +32,22 @@
     import AppKit
 #endif
 
-public extension String {
-    
-    /**
-     Creates an `NSAttributedString`. This is a convenience method to calling `textAttributes(alignment:, lineBreakMode:, showBackgroundColor:)` on a `Style`, and then creating an attributed string using those attributes. If `textColor` is not nil then `textColor.normalColor` will be used for the text.
-     
-     - parameter style:               The `Style` to use for the core attributes
-     - parameter alignment:           The text alignment to use. (Defaults to Left)
-     - parameter lineBreakMode:       The line break mode to use. (Defaults to Word Wrapping)
-     
-     - returns: A dictionary of attributes
-     */
-    public func attributedString(for style: Style, alignment: NSTextAlignment = .left, lineBreakMode: NSLineBreakMode = .byWordWrapping) -> NSAttributedString {
-        let attributes = style.textAttributes(alignment: alignment, lineBreakMode: lineBreakMode)
+public extension Array where Element: ColorType {
+    /// Get the color of a single pixel, in the sRGB color space (for now). Useful if you want to cache an array of Colors since geting the pixel colors from an image is expensive
+    ///
+    /// - Parameters:
+    ///   - x: The x cordinate of the pixel in points
+    ///   - y: The y cordinate of the pixel in points
+    ///   - imageSize: The size of the image these pixels came from, in points
+    ///   - imageScale: The scale (1x, 2x, 3x) for the image these pixels came from
+    /// - Returns: The color for that pixel if the coordinates are in bounds
+    public func pixelAt(x: Int, y: Int, imageSize: CGSize, imageScale: CGFloat) -> ColorType? {
+        let colorsPerRow = Int(imageSize.width * imageScale)
+        let yInPixels = y * Int(imageScale)
+        let xInPixels = x * Int(imageScale)
+        let index = yInPixels * colorsPerRow + xInPixels
 
-        return NSAttributedString(string: self, attributes: attributes)
+        guard index < count else { return nil }
+        return self[index]
     }
 }

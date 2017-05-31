@@ -2,8 +2,27 @@
 //  Color.swift
 //  Flair
 //
-//  Created by Jerry Mayers on 7/20/16.
-//  Copyright © 2016 Mobelux. All rights reserved.
+//  MIT License
+//
+//  Copyright (c) 2017 Mobelux
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 //
 
 import Foundation
@@ -18,8 +37,39 @@ import Foundation
     public typealias PlatformColor = NSColor
 #endif
 
+public protocol ColorType {
+    var red: CGFloat { get }
+    var green: CGFloat { get }
+    var blue: CGFloat { get }
+    var alpha: CGFloat { get }
+    var color: PlatformColor { get }
+
+    init(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
+    init?(color: PlatformColor?)
+}
+
+/**
+ Are two Colors approximately the same. Compares 2 Colors with around 255 steps of accuracy for each channel.
+ */
+public func ~=(lhs: ColorType, rhs: ColorType) -> Bool {
+    // If colors have been converted from UInt8 then we only have 1/255 = 0.0039 for the precision, so realistically we need to compare at most 2 decimals to be approximately equal
+    let numberOfDecimals = 2
+
+    let lhsRed = lhs.red.roundTo(numberOfDecimalPlaces: numberOfDecimals)
+    let lhsGreen = lhs.green.roundTo(numberOfDecimalPlaces: numberOfDecimals)
+    let lhsBlue = lhs.blue.roundTo(numberOfDecimalPlaces: numberOfDecimals)
+    let lhsAlpha = lhs.alpha.roundTo(numberOfDecimalPlaces: numberOfDecimals)
+
+    let rhsRed = rhs.red.roundTo(numberOfDecimalPlaces: numberOfDecimals)
+    let rhsGreen = rhs.green.roundTo(numberOfDecimalPlaces: numberOfDecimals)
+    let rhsBlue = rhs.blue.roundTo(numberOfDecimalPlaces: numberOfDecimals)
+    let rhsAlpha = rhs.alpha.roundTo(numberOfDecimalPlaces: numberOfDecimals)
+
+    return lhsRed == rhsRed && lhsGreen == rhsGreen && lhsBlue == rhsBlue && lhsAlpha == rhsAlpha
+}
+
 /// Platform agnostic color representation
-public struct Color: Equatable {
+public struct Color: ColorType, Equatable {
     /// Red component in the range 0 to 1
     public let red: CGFloat
     /// Green component in the range 0 to 1
@@ -72,27 +122,7 @@ public struct Color: Equatable {
 // MARK: - Equatable
 
 public func ==(lhs: Color, rhs: Color) -> Bool {
-    return lhs.red == rhs.red && lhs.green == rhs.green && lhs.blue == rhs.blue && lhs.alpha == rhs.alpha
-}
-
-/**
-    Are two Colors approximately the same. Compares 2 Colors with around 255 steps of accuracy for each channel.
-*/
-public func ~=(lhs: Color, rhs: Color) -> Bool {
-    // If colors have been converted from UInt8 then we only have 1/255 = 0.0039 for the precision, so realistically we need to compare at most 2 decimals to be approximately equal
-    let numberOfDecimals = 2
-    
-    let lhsRed = lhs.red.roundTo(numberOfDecimalPlaces: numberOfDecimals)
-    let lhsGreen = lhs.green.roundTo(numberOfDecimalPlaces: numberOfDecimals)
-    let lhsBlue = lhs.blue.roundTo(numberOfDecimalPlaces: numberOfDecimals)
-    let lhsAlpha = lhs.alpha.roundTo(numberOfDecimalPlaces: numberOfDecimals)
-    
-    let rhsRed = rhs.red.roundTo(numberOfDecimalPlaces: numberOfDecimals)
-    let rhsGreen = rhs.green.roundTo(numberOfDecimalPlaces: numberOfDecimals)
-    let rhsBlue = rhs.blue.roundTo(numberOfDecimalPlaces: numberOfDecimals)
-    let rhsAlpha = rhs.alpha.roundTo(numberOfDecimalPlaces: numberOfDecimals)
-    
-    return lhsRed == rhsRed && lhsGreen == rhsGreen && lhsBlue == rhsBlue && lhsAlpha == rhsAlpha
+    return lhs ~= rhs
 }
 
 public func ==(pixel: Color, color: PlatformColor) -> Bool {

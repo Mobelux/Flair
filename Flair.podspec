@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
 
   s.name         = "Flair"
-  s.version      = "1.1.1"
+  s.version      = "1.2.1"
   s.summary      = "A way to provide style (color & text) in JSON, and have that converted to Swift"
   s.homepage     = "https://github.com/Mobelux/Flair"
   s.license      = "MIT"
 
-  s.author             = { "Andrew Mayers" => "andrew@mobelux.com" }
-  s.social_media_url   = "http://twitter.com/jamayers"
+  s.author             = { "Mobelux" => "contact@mobelux.com" }
+  s.social_media_url   = "http://twitter.com/mobelux"
 
   s.ios.deployment_target = "10.0"
   s.osx.deployment_target = "10.11"

@@ -2,8 +2,27 @@
 //  UIImage+Color.swift
 //  Flair
 //
-//  Created by Jerry Mayers on 7/21/16.
-//  Copyright © 2016 Mobelux. All rights reserved.
+//  MIT License
+//
+//  Copyright (c) 2017 Mobelux
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 //
 
 import Foundation
@@ -45,12 +64,23 @@ import Foundation
          - returns:          An image filled with a color
          */
         public static func image(of color: UIColor, size: CGSize) -> UIImage {
-            let renderer = UIGraphicsImageRenderer(size: size)
-            
-            let image = renderer.image(actions: { (context) in
+            let image: UIImage
+
+            if #available(iOS 10.0, *) {
+                let renderer = UIGraphicsImageRenderer(size: size)
+                image = renderer.image(actions: { (context) in
+                    color.setFill()
+                    context.fill(renderer.format.bounds)
+                })
+            } else {
+                UIGraphicsBeginImageContext(size)
+                let context = UIGraphicsGetCurrentContext()
                 color.setFill()
-                context.fill(renderer.format.bounds)
-            })
+                context?.fill(CGRect(origin: .zero, size: size))
+                image = UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()
+                UIGraphicsEndImageContext()
+            }
+
             return image
         }
         
@@ -98,6 +128,18 @@ import Foundation
             }
             
             return pixels
+        }
+
+        /// Get the color of a single pixel, in the sRGB color space (for now)
+        ///
+        /// - Parameters:
+        ///   - x: The x cordinate of the pixel in points
+        ///   - y: The y cordinate of the pixel in points
+        /// - Returns: The color for that pixel if the coordinates are in bounds
+        /// - Throws: ImageError
+        public func pixelAt(x: Int, y: Int) throws -> ColorType? {
+            let colors = try pixels()
+            return colors.pixelAt(x: x, y: y, imageSize: size, imageScale: scale)
         }
     }
 #endif
