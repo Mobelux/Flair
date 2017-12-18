@@ -81,6 +81,11 @@ import Foundation
 				}
 			} else {
 				typingAttributes = style.textAttributes(alignment: textAlignment, lineBreakMode: .byTruncatingTail)
+				
+				// Update current attributedText to use new style (typingAttibutes)
+				let mutableText = NSMutableAttributedString(attributedString: attributedText)
+				mutableText.addAttributes(typingAttributes, range: NSRange(0..<text.count))
+				attributedText = mutableText
 			}
 		}
 	}

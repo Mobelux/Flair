@@ -90,6 +90,5 @@ class UITextView_StyleTests: XCTestCase {
 		
 		XCTAssert(fontFound, "Didn't find a matching font")
 		XCTAssert(colorFound, "Didn't find a matching color")
-		// Ideally we should test for the kerning, however the `attributedText` coming out of the text field will never have that (bug in UIKit?). But a visual inspection shows that the displayed text respects it. :(
 	}
 }
