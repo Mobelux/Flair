@@ -58,6 +58,7 @@
 		6BE61E411DEC71D8007DA959 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE61E401DEC71D8007DA959 /* Box.swift */; };
 		6BE61E431DEC73B4007DA959 /* UITextField+StyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE61E421DEC73B4007DA959 /* UITextField+StyleTests.swift */; };
 		D523F6EE1FE8638C00EB845D /* UITextView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = D523F6ED1FE8638C00EB845D /* UITextView+Style.swift */; };
+		D523F6F01FE8645A00EB845D /* UITextView+StyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D523F6EF1FE8645A00EB845D /* UITextView+StyleTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		6BE61E421DEC73B4007DA959 /* UITextField+StyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+StyleTests.swift"; sourceTree = "<group>"; };
 		6BEBD3F41D539DDD00EF1FA6 /* Flair.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; name = Flair.podspec; path = ../Flair.podspec; sourceTree = "<group>"; };
 		D523F6ED1FE8638C00EB845D /* UITextView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Style.swift"; sourceTree = "<group>"; };
+		D523F6EF1FE8645A00EB845D /* UITextView+StyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+StyleTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 				6B8383791D41712D0055A125 /* UIButton+ColorTests.swift */,
 				6B62B4011D42903000211697 /* UILabel+StyleTests.swift */,
 				6BE61E421DEC73B4007DA959 /* UITextField+StyleTests.swift */,
+				D523F6EF1FE8645A00EB845D /* UITextView+StyleTests.swift */,
 				6B7644AF1DE5312000A61711 /* UIButton+StyleTests.swift */,
 			);
 			path = "Test Cases";
@@ -554,6 +557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D523F6F01FE8645A00EB845D /* UITextView+StyleTests.swift in Sources */,
 				6B6E38131D46479D0087123A /* String+StyleTests.swift in Sources */,
 				6B6E380B1D46478D0087123A /* ColorSetTests.swift in Sources */,
 				6B6E38151D4647A20087123A /* StyleTests.swift in Sources */,
