@@ -73,7 +73,7 @@ class UITextField_StyleTests: XCTestCase {
         XCTAssertNotNil(field.attributedText, "Attributed text was nil")
         guard let attributedText = field.attributedText else { return }
 
-        let range = NSRange(0..<attributedText.string.count)
+        let range = NSRange(0..<attributedText.length)
         var fontFound = false
         var colorFound = false
 

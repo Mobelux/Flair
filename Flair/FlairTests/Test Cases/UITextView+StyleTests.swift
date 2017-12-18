@@ -73,7 +73,7 @@ class UITextView_StyleTests: XCTestCase {
 		XCTAssertNotNil(view.attributedText, "Attributed text was nil")
 		guard let attributedText = view.attributedText else { return }
 		
-		let range = NSRange(0..<attributedText.string.count)
+		let range = NSRange(0..<attributedText.length)
 		var fontFound = false
 		var colorFound = false
 		
