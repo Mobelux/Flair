@@ -80,7 +80,7 @@ import Foundation
 					self.textColor = textColor.normalColor.color
 				}
 			} else {
-				typingAttributes = style.textAttributes(alignment: textAlignment, lineBreakMode: .byTruncatingTail)
+				typingAttributes = style.textAttributes(alignment: textAlignment, lineBreakMode: .byWordWrapping)
 				
 				// Update current attributedText to use new style (typingAttibutes)
 				let mutableText = NSMutableAttributedString(attributedString: attributedText)
