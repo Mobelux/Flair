@@ -72,20 +72,20 @@ class StyleTests: XCTestCase {
         let lineBreakMode = NSLineBreakMode.byCharWrapping
         let attributes = style.textAttributes(alignment: alignment, lineBreakMode: lineBreakMode)
         
-        XCTAssert(attributes.keys.contains(NSFontAttributeName), "Font not included")
-        guard let font = attributes[NSFontAttributeName] as? PlatformFont else { return }
+        XCTAssert(attributes.keys.contains(NSAttributedStringKey.font), "Font not included")
+        guard let font = attributes[NSAttributedStringKey.font] as? PlatformFont else { return }
         XCTAssert(font == style.font.font, "Fonts don't match")
         
-        XCTAssert(attributes.keys.contains(NSForegroundColorAttributeName), "Text color not included")
-        guard let foundTextColor = attributes[NSForegroundColorAttributeName] as? PlatformColor, let styleTextColor = style.textColor else { return }
+        XCTAssert(attributes.keys.contains(NSAttributedStringKey.foregroundColor), "Text color not included")
+        guard let foundTextColor = attributes[NSAttributedStringKey.foregroundColor] as? PlatformColor, let styleTextColor = style.textColor else { return }
         XCTAssert(foundTextColor == styleTextColor.normalColor.color, "Text color doesn't match")
         
-        XCTAssert(attributes.keys.contains(NSKernAttributeName), "Kerning not included")
-        guard let kerning = attributes[NSKernAttributeName] as? CGFloat else { return }
+        XCTAssert(attributes.keys.contains(NSAttributedStringKey.kern), "Kerning not included")
+        guard let kerning = attributes[NSAttributedStringKey.kern] as? CGFloat else { return }
         XCTAssert(kerning == style.kerning, "Kerning doesn't match")
         
-        XCTAssert(attributes.keys.contains(NSParagraphStyleAttributeName), "Paragraph style not included")
-        guard let paragraphStyle = attributes[NSParagraphStyleAttributeName] as? NSParagraphStyle else { return }
+        XCTAssert(attributes.keys.contains(NSAttributedStringKey.paragraphStyle), "Paragraph style not included")
+        guard let paragraphStyle = attributes[NSAttributedStringKey.paragraphStyle] as? NSParagraphStyle else { return }
         XCTAssert(paragraphStyle.lineBreakMode == lineBreakMode, "Line break mode doesn't match")
         XCTAssert(paragraphStyle.alignment == alignment, "Alignment doesn't match")
         XCTAssert(paragraphStyle.lineSpacing == expectedLineSpacing, "lineSpacing not what we expected")

@@ -61,21 +61,21 @@ public struct Font: Equatable {
             #if os(iOS) || os(tvOS) || os(watchOS)
                 switch self {
                 case .regular:
-                    return UIFontWeightRegular
+                    return UIFont.Weight.regular.rawValue
                 case .medium:
-                    return UIFontWeightMedium
+                    return UIFont.Weight.medium.rawValue
                 case .bold:
-                    return UIFontWeightBold
+                    return UIFont.Weight.bold.rawValue
                 case .thin:
-                    return UIFontWeightThin
+                    return UIFont.Weight.thin.rawValue
                 case .black:
-                    return UIFontWeightBlack
+                    return UIFont.Weight.black.rawValue
                 case .semibold:
-                    return UIFontWeightSemibold
+                    return UIFont.Weight.semibold.rawValue
                 case .ultralight:
-                    return UIFontWeightUltraLight
+                    return UIFont.Weight.ultraLight.rawValue
                 case .light:
-                    return UIFontWeightLight
+                    return UIFont.Weight.light.rawValue
                 }
             #elseif os(OSX)
                 switch self {
@@ -135,7 +135,7 @@ public struct Font: Equatable {
         case .normal(let fontName):
             return PlatformFont(name: fontName, size: pointSize)
         case .system(let weight):
-            return PlatformFont.systemFont(ofSize: pointSize, weight: weight.value)
+            return PlatformFont.systemFont(ofSize: pointSize, weight: UIFont.Weight(rawValue: weight.value))
         }
     }
     

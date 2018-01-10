@@ -65,9 +65,9 @@ class UITextField_StyleTests: XCTestCase {
         XCTAssert(field.text == initialText, "The text doesn't match")
 
         let expectedAttributes = style.textAttributes()
-        let expectedFont = expectedAttributes[NSFontAttributeName] as? UIFont
+        let expectedFont = expectedAttributes[NSAttributedStringKey.font] as? UIFont
         XCTAssertNotNil(expectedFont, "Font missing")
-        let expectedTextColor = expectedAttributes[NSForegroundColorAttributeName] as? UIColor
+        let expectedTextColor = expectedAttributes[NSAttributedStringKey.foregroundColor] as? UIColor
         XCTAssertNotNil(expectedTextColor, "Text color missing")
 
         XCTAssertNotNil(field.attributedText, "Attributed text was nil")
@@ -78,11 +78,11 @@ class UITextField_StyleTests: XCTestCase {
         var colorFound = false
 
         attributedText.enumerateAttributes(in: range, options: []) { (attributes, range, stop) in
-            if let color = attributes[NSForegroundColorAttributeName] as? UIColor {
+            if let color = attributes[NSAttributedStringKey.foregroundColor] as? UIColor {
                 colorFound = true
                 XCTAssert(color == expectedTextColor, "Text color doesn't match")
             }
-            if let font = attributes[NSFontAttributeName] as? UIFont {
+            if let font = attributes[NSAttributedStringKey.font] as? UIFont {
                 fontFound = true
                 XCTAssert(font == expectedFont, "Font doesn't match")
             }
