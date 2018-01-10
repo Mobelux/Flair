@@ -44,7 +44,7 @@ public extension String {
      
      - returns: A dictionary of attributes
      */
-    public func attributedString(for style: Style, alignment: NSTextAlignment = .left, lineBreakMode: NSLineBreakMode = .byWordWrapping) -> NSAttributedString {
+	public func attributedString(for style: Style, alignment: NSTextAlignment = .left, lineBreakMode: LineBreak = .byWordWrapping) -> NSAttributedString {
         let attributes = style.textAttributes(alignment: alignment, lineBreakMode: lineBreakMode)
 
         return NSAttributedString(string: self, attributes: attributes)

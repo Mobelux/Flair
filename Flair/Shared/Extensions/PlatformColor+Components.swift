@@ -57,7 +57,7 @@ public extension PlatformColor {
                 marked as throws so in Swift we can't do a try/catch to prevent a crash. So for now we are just checking for the most
                 common case that would cause a crash: if the color is from a pattern image.
             */
-            if colorSpaceName == NSPatternColorSpace {
+			if colorSpaceName == NSColorSpaceName.pattern {
                 return nil
             } else {
                 getRed(&red, green: &green, blue: &blue, alpha: &alpha)
