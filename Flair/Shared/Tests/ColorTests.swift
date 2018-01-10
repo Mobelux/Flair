@@ -48,6 +48,6 @@ class ColorTests: XCTestCase {
     func testLuminance() {
         let color = Color(red: 1, green: 0, blue: 0, alpha: 1)
         let expectedLuminance: CGFloat = 0.21
-        XCTAssertEqualWithAccuracy(color.luminance, expectedLuminance, accuracy: 0.001, "Luminance is wrong")
+		XCTAssertEqual(color.luminance, expectedLuminance, accuracy: 0.001, "Luminance is wrong")
     }
 }
