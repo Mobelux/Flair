@@ -69,7 +69,7 @@ class StyleTests: XCTestCase {
         let textColor = ColorSet(normalColor: Color(color: PlatformColor.red)!)
         let style = Style(font: inutFont, kerning: 2, lineHeightMultiple: lineHeightMultiple, textColor: textColor)
         let alignment = NSTextAlignment.center
-        let lineBreakMode = NSLineBreakMode.byCharWrapping
+        let lineBreakMode = LineBreak.byCharWrapping
         let attributes = style.textAttributes(alignment: alignment, lineBreakMode: lineBreakMode)
         
         XCTAssert(attributes.keys.contains(NSAttributedStringKey.font), "Font not included")
