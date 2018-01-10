@@ -11,11 +11,8 @@ import Foundation
 extension Dictionary where Key == NSAttributedStringKey {
 	/// Converts keys from NSAttributedStringKey to String
 	func format() -> [String: Value] {
-		print("before:", self)
-		let after = reduce(into: [:], {
+		return reduce(into: [:], {
 			$0[$1.key.rawValue] = $1.value
 		})
-		print("after:", after)
-		return after
 	}
 }
