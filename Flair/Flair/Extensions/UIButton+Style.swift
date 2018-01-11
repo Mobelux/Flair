@@ -91,7 +91,7 @@ import Foundation
                 setTitle(colorSet: textColor)
             }
             if let textColor = titleColor(for: state) {
-                attributes[NSForegroundColorAttributeName] = textColor
+                attributes[NSAttributedStringKey.foregroundColor] = textColor
             }
 
             let attributedTitle = NSAttributedString(string: title, attributes: attributes)

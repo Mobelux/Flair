@@ -51,7 +51,7 @@ class String_StyleTests: XCTestCase {
         let style = Style(font: font, kerning: 2, lineHeightMultiple: 3, textColor: colorSet)
         
         let textAlignment = NSTextAlignment.center
-        let lineBreakMode = NSLineBreakMode.byCharWrapping
+        let lineBreakMode = LineBreak.byCharWrapping
         
         let attributedString = string.attributedString(for: style, alignment: textAlignment, lineBreakMode: lineBreakMode)
         XCTAssert(attributedString.string == string, "Strings don't match")

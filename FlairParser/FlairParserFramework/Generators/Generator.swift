@@ -29,7 +29,7 @@ import Foundation
 import Flair
 
 /// Object that handles creating Swift code for ColorSets & Styles, and writing them to disk.
-public enum Generator {
+public enum FlairGenerator {
     public enum GeneratorError: Int, Error {
         case unknown = 10
         case cantWriteSwiftFile = 11
@@ -105,7 +105,8 @@ public enum Generator {
 
 private extension String {
     func utf8Data() throws -> Data {
-        guard let data = self.data(using: .utf8) else { throw Generator.GeneratorError.cantConvertSwiftStringToData }
+		
+		guard let data = self.data(using: .utf8) else { throw FlairGenerator.GeneratorError.cantConvertSwiftStringToData }
         return data
     }
 }
@@ -117,7 +118,7 @@ private extension Data {
         do {
             try write(to: url)
         } catch {
-            throw FlairParserFramework.Generator.GeneratorError.cantWriteSwiftFile
+            throw FlairParserFramework.FlairGenerator.GeneratorError.cantWriteSwiftFile
         }
     }
 }

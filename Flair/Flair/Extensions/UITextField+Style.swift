@@ -99,7 +99,7 @@ import Foundation
                     self.textColor = textColor.normalColor.color
                 }
             } else {
-                defaultTextAttributes = style.textAttributes(alignment: textAlignment, lineBreakMode: .byTruncatingTail)
+                defaultTextAttributes = style.textAttributes(alignment: textAlignment, lineBreakMode: .byTruncatingTail).format()
             }
         }
     }

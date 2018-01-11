@@ -27,10 +27,13 @@
 
 #if os(iOS) || os(tvOS)
     import UIKit
+	public typealias LineBreak = NSLineBreakMode
 #elseif os(watchOS)
     import WatchKit
+	public typealias LineBreak = NSLineBreakMode
 #elseif os(OSX)
     import AppKit
+	public typealias LineBreak = NSParagraphStyle.LineBreakMode
 #endif
 
 /**
@@ -62,17 +65,17 @@ public extension StyleType {
      
      - returns: A dictionary of attributes
      */
-    public func textAttributes(alignment: NSTextAlignment = .left, lineBreakMode: NSLineBreakMode = .byWordWrapping) -> [String : Any] {
-        var attributes = [String : Any]()
+	public func textAttributes(alignment: NSTextAlignment = .left, lineBreakMode: LineBreak = .byWordWrapping) -> [NSAttributedStringKey : Any] {
+        var attributes = [NSAttributedStringKey : Any]()
         
-        attributes[NSFontAttributeName] = font.font
+        attributes[NSAttributedStringKey.font] = font.font
         
         if let textColor = textColor {
-            attributes[NSForegroundColorAttributeName] = textColor.normalColor.color
+            attributes[NSAttributedStringKey.foregroundColor] = textColor.normalColor.color
         }
         
         if kerning != 0 {
-            attributes[NSKernAttributeName] = kerning as NSNumber
+            attributes[NSAttributedStringKey.kern] = kerning as NSNumber
         }
         
         let paragraphStyle = NSMutableParagraphStyle()
@@ -87,7 +90,7 @@ public extension StyleType {
             paragraphStyle.lineSpacing = (lineHeight - pointSize) / 2
         }
 
-        attributes[NSParagraphStyleAttributeName] = paragraphStyle
+        attributes[NSAttributedStringKey.paragraphStyle] = paragraphStyle
         
         return attributes
     }

@@ -80,11 +80,14 @@ import Foundation
 					self.textColor = textColor.normalColor.color
 				}
 			} else {
-				typingAttributes = style.textAttributes(alignment: textAlignment, lineBreakMode: .byWordWrapping)
+				let attributes = style.textAttributes(alignment: textAlignment, lineBreakMode: .byWordWrapping)
 				
+				let mapped = attributes.lazy.map({ ($0.key.rawValue, $0.value) })
+				
+				typingAttributes = Dictionary(uniqueKeysWithValues: mapped)
 				// Update current attributedText to use new style (typingAttibutes)
 				let mutableText = NSMutableAttributedString(attributedString: attributedText)
-				mutableText.addAttributes(typingAttributes, range: NSRange(0..<attributedText.length))
+				mutableText.addAttributes(attributes, range: NSRange(0..<attributedText.length))
 				attributedText = mutableText
 			}
 		}
