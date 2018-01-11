@@ -41,13 +41,13 @@ class GeneratorTests: XCTestCase {
             XCTAssert(styles.count == 2, "Invalid # of styles")
             
             let outputDirectory = URL(fileURLWithPath: NSTemporaryDirectory())
-            let generatedColorFile = try! Generator.createFileURL(fileName: Generator.Constants.colorsFileName, outputDirectory: outputDirectory)
-            let generatedStyleFile = try! Generator.createFileURL(fileName: Generator.Constants.stylesFileName, outputDirectory: outputDirectory)
+            let generatedColorFile = try! FlairGenerator.createFileURL(fileName: FlairGenerator.Constants.colorsFileName, outputDirectory: outputDirectory)
+            let generatedStyleFile = try! FlairGenerator.createFileURL(fileName: FlairGenerator.Constants.stylesFileName, outputDirectory: outputDirectory)
             
             let _ = try? FileManager.default.removeItem(at: generatedColorFile)
             let _ = try? FileManager.default.removeItem(at: generatedStyleFile)
             
-            try Generator.generate(colors: colors, styles: styles, outputDirectory: outputDirectory)
+            try FlairGenerator.generate(colors: colors, styles: styles, outputDirectory: outputDirectory)
             
             do {
                 let generatedColorSwift = try String(contentsOf: generatedColorFile)
@@ -61,7 +61,7 @@ class GeneratorTests: XCTestCase {
                 
                 XCTAssert(generatedColorSwift == expectedColorSwift, "Generated color code doesn't match the expected")
                 XCTAssert(generatedStyleSwift == expectedStyleSwift, "Generated style code doesn't match the expected")
-            } catch let error as Generator.GeneratorError {
+            } catch let error as FlairGenerator.GeneratorError {
                 XCTAssert(false, "Failed with error \(error.legacyError)")
             } catch {
                 XCTAssert(false, "Unknown error")
