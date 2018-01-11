@@ -45,7 +45,7 @@ public class ArgumentParser: NSObject {
             do {
                 let parser = try Parser(json: jsonURL)
                 let (colors, styles) = try parser.parse()
-                try Generator.generate(colors: colors, styles: styles, outputDirectory: outputDirectoryURL)
+                try FlairGenerator.generate(colors: colors, styles: styles, outputDirectory: outputDirectoryURL)
                 return 0
             } catch let error as Parser.ParserError {
                 print("\(error.legacyError.code) - \(error.localizedDescription)")
