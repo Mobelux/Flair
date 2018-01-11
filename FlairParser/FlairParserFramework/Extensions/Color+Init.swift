@@ -38,7 +38,7 @@ extension Color {
         guard let prefixRange = string.range(of: Constants.prefix), let suffixRange = string.range(of: Constants.suffix) else { throw Parser.ParserError.invalidColorValue }
         
         let componentRange = prefixRange.upperBound ..< suffixRange.lowerBound
-        let componentString = string.substring(with: componentRange)
+        let componentString = string[componentRange]
         let componentArray = componentString.components(separatedBy: ",").map { $0.trimmingCharacters(in: CharacterSet.whitespaces) }
         
         guard componentArray.count == 4 else { throw Parser.ParserError.invalidColorValue }
