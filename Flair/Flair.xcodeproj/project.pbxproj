@@ -281,7 +281,6 @@
 			isa = PBXGroup;
 			children = (
 				6B971B581D400BC200532C38 /* Extensions */,
-				6B971B591D400BC200532C38 /* Models */,
 				6B971B431D400B7700532C38 /* Flair.h */,
 				6B971B441D400B7700532C38 /* Info.plist */,
 			);
@@ -311,13 +310,6 @@
 				D50A4721200572E900091FF4 /* Dictionary+NSAttributedStringKey.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		6B971B591D400BC200532C38 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
